@@ -6,14 +6,54 @@ require '../vendor/autoload.php';
 require '../src/config/db.php';
 
 $app = new \Slim\App;
-$app->get('/hello/{name}', function (Request $request, Response $response, array $args) {
-    $name = $args['name'];
-    $response->getBody()->write("Hello, $name");
+$app->get('/api/{path}', function (Request $request, Response $response, array $args) {
+    $name = $args['path'];
 
-    return $response;
+    if($name=='videos'){
+      // VIDEO ROUTE
+      $sql = "SELECT * FROM videostable";
+
+      try{
+        //get dbobject
+        $db = new db();
+
+        //connect
+        $db = $db->connect();
+
+        $stmt = $db->query($sql);
+        $comics = $stmt->fetchAll(PDO::FETCH_OBJ);
+        $db = null;
+        echo json_encode($comics);
+      }catch(PDOException $e){
+        echo '{"error": {"text": '.$e->getMessage().'}';
+      };
+    }
+    else if($name=='comics'){
+
+      $sql = "SELECT * FROM comicstable";
+
+      try{
+        //get dbobject
+        $db = new db();
+
+        //connect
+        $db = $db->connect();
+
+        $stmt = $db->query($sql);
+        $videos = $stmt->fetchAll(PDO::FETCH_OBJ);
+        $db = null;
+        echo json_encode($videos);
+        return $videos;
+      }catch(PDOException $e){
+        echo '{"error": {"text": '.$e->getMessage().'}';
+      };
+    }
+    else
+    {
+      echo "no such api";
+    }
+
 });
 
-// VIDEO ROUTES
-require '../src/routes/videos.php';
 
 $app->run();
