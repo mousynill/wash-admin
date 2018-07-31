@@ -1,0 +1,108 @@
+body {
+  margin: 0px;
+}
+.parasite {
+  margin-top: 140px;
+}
+button {
+  background: #278BCF;
+  color: #fff;
+  border-radius: 5px;
+  width: 125px;
+  height: 125px;
+  outline: none;
+  border: 0;
+  text-align: center;
+  margin-left: 115px;
+  -webkit-box-shadow: 4px 4px 10px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 4px 4px 10px 0px rgba(0,0,0,0.75);
+  box-shadow: 4px 4px 10px 0px rgba(0,0,0,0.75);
+}
+.arrow-down {
+  margin-top: -150px;
+  width: 0;
+  height: 0;
+  position: absolute;
+  border-left: 19px solid transparent;
+  border-right: 19px solid transparent;
+  border-top: 19px solid #278BCF;
+  margin-left: 155px;
+}
+.ar-arrow-down {
+  margin-top: -150px;
+  width: 0;
+  height: 0;
+  position: absolute;
+  border-left: 19px solid transparent;
+  border-right: 19px solid transparent;
+  border-top: 19px solid #278BCF;
+  margin-left: 403px;
+}
+.an-arrow-down {
+  margin-top: -150px;
+  width: 0;
+  height: 0;
+  position: absolute;
+  border-left: 19px solid transparent;
+  border-right: 19px solid transparent;
+  border-top: 19px solid #278BCF;
+  margin-left: 648px;
+}
+.gi-arrow-down {
+  margin-top: -150px;
+  width: 0;
+  height: 0;
+  position: absolute;
+  border-left: 19px solid transparent;
+  border-right: 19px solid transparent;
+  border-top: 19px solid #278BCF;
+  margin-left: 892px;
+}
+.cr-arrow-down {
+  margin-top: -150px;
+  width: 0;
+  height: 0;
+  position: absolute;
+  border-left: 19px solid transparent;
+  border-right: 19px solid transparent;
+  border-top:  19px solid #278BCF;
+  margin-left: 1138px;
+}
+
+.chart-container {
+  position: relative;
+  left: 20%;
+  margin-top: 33px;
+  background-color: #f1f1;
+  width: 60vw;
+
+
+/*.chart-form {
+  margin-top: 20px;
+  width: 100%;
+  height: 400px;
+  background-color: #000;
+  color: #fff;
+}*/
+
+
+/*.parasite>form.ascaris {
+  margin-left: 120px;
+}
+.trichuris {
+  margin-left: 240px;
+  margin-top: -125px;
+}
+.ancylostoma {
+  margin-left: 470px;
+  margin-top: -125px;
+}
+.giardia {
+  margin-top: -125px;
+  margin-left: 700px;
+}
+.cryptosporidium {
+  margin-top: -125px;
+  margin-left: 700px;
+
+}

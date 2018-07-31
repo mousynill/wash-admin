@@ -1,0 +1,61 @@
+body {
+  background: url('images/pic3.jpg') no-repeat;
+  background-size: cover;
+  background-position: center;
+  font-family: 'Quicksand';
+  height: 100vh;
+}
+
+.regi-form {
+  position: absolute;
+  height: 84%;
+  width: 472px;
+  background-color: #fff;
+  margin-top: 35px;
+  left: 32%;
+  margin-bottom: 5px;
+  border-radius: 10px;
+
+}
+.regi h1 {
+  text-align: center;
+
+}
+.regi {
+  margin-left: 30px;
+  font-size: 17px;
+
+}
+.regi input{
+
+  padding: 5px;
+  height: 33px;
+  width: 320px;
+  margin-bottom: 10px;
+  margin-top: 5px;
+  outline: none;
+  border: 2px solid #aaa;
+  border-radius: 4px;
+  font-family: Quicksand;
+}
+.regi-form input:focus {
+  border-color: dodgerBlue;
+  box-shadow: 0 0 5px 0 dodgerBlue;
+}
+button {
+  font-family: 'Quicksand';
+  text-align: center;
+  width: 400px;
+  padding: 5px;
+  margin-top: 11px;
+  border-radius: 5px;
+  border-bottom: 4px solid #3492db;
+  color: #fff;
+  background: #278BCF;
+}
+button:hover {
+  background: #3EA2E5;
+}
+button:active {
+  background: #2f93d6;
+}
