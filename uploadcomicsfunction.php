@@ -21,17 +21,16 @@
       $fileExt =  explode('.', $fileName);
       $fileActualExt = strtolower(end($fileExt));
 
-      $allowed = array('jpg','jpeg','png','pdf');
+      $allowed = array('jpg','jpeg','png');
 
       if (in_array($fileActualExt, $allowed)) {
           if ($fileError === 0) {
             $fileNameNew = uniqid('', true).".".$fileActualExt;
 
-            $fileDestination = 'uploads/comics/'.$fileNameNew;
-            move_uploaded_file($fileTmpName,$fileDestination);
+            $fileDestination = 'thumbnails/comics/'.$fileNameNew;
+            move_uploaded_file($fileTmpName, $fileDestination);
 
-            //don't forget to swap the CONSTANT with VARIABLES(`Montsters INC` swap $fileTitle, `Pixars` swap $fileAuthor, `A film by...` swap $fileDescription)//
-            $sql = "INSERT INTO comicstable(ComicFileName, ComicTitle, ComicAuthor, ComicDescription, ComicPath, ComicSize) VALUES ('$fileName', '$fileTitle', '$fileAuthor', '$fileDescription', '$fileDestination', '$fileSize')";
+            $sql = "INSERT INTO comicstable(ComicFileName, ComicTitle, ComicAuthor, ComicDescription, ComicThumbnailPath, ComicSize) VALUES ('$fileName', '$fileTitle', '$fileAuthor', '$fileDescription', '$fileDestination', '$fileSize')";
             mysqli_query($conn, $sql);
 
             header("Location: uploadcomics.php?uploadsuccess");

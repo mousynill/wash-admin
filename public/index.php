@@ -10,48 +10,50 @@ $app->get('/api/{path}', function (Request $request, Response $response, array $
     $name = $args['path'];
 
     if($name=='videos'){
-      // VIDEO ROUTE
-      $sql = "SELECT * FROM videostable";
 
-      try{
-        //get dbobject
-        $db = new db();
+        // VIDEO ROUTE
+        $sql = "SELECT * FROM videostable";
 
-        //connect
-        $db = $db->connect();
+        try{
+          //get dbobject
+          $db = new db();
 
-        $stmt = $db->query($sql);
-        $comics = $stmt->fetchAll(PDO::FETCH_OBJ);
-        $db = null;
-        echo json_encode($comics);
-      }catch(PDOException $e){
-        echo '{"error": {"text": '.$e->getMessage().'}';
-      };
+          //connect
+          $db = $db->connect();
+
+          $stmt = $db->query($sql);
+          $videos = $stmt->fetchAll(PDO::FETCH_OBJ);
+          $db = null;
+          echo json_encode($videos);
+        }catch(PDOException $e){
+          echo '{"error": {"text": '.$e->getMessage().'}';
+        };
+
     }
     else if($name=='comics'){
 
-      $sql = "SELECT * FROM comicstable";
+        $sql = "SELECT * FROM comicstable";
 
-      try{
-        //get dbobject
-        $db = new db();
+        try{
+          //get dbobject
+          $db = new db();
 
-        //connect
-        $db = $db->connect();
+          //connect
+          $db = $db->connect();
 
-        $stmt = $db->query($sql);
-        $videos = $stmt->fetchAll(PDO::FETCH_OBJ);
-        $db = null;
-        echo json_encode($videos);
-        return $videos;
-      }catch(PDOException $e){
-        echo '{"error": {"text": '.$e->getMessage().'}';
-      };
-    }
-    else
-    {
-      echo "no such api";
-    }
+          $stmt = $db->query($sql);
+          $comics = $stmt->fetchAll(PDO::FETCH_OBJ);
+          $db = null;
+          echo json_encode($comics);
+        }catch(PDOException $e){
+          echo '{"error": {"text": '.$e->getMessage().'}';
+        };
+
+      }
+      else
+      {
+        echo "no such api";
+      }
 
 });
 

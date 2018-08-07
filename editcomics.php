@@ -9,10 +9,9 @@
 <body>
   <div class="edit">
     <?php
-      $getComicsQuery = "SELECT ComicTitle, ComicPath, ComicAuthor, ComicDescription, ComicID FROM comicstable";
+      $getComicsQuery = "SELECT ComicTitle, ComicThumbnailPath, ComicAuthor, ComicDescription, SeriesID FROM comicstable";
 
       if($getComics = mysqli_query($conn, $getComicsQuery)){
-
 
         while($getComicsRow = mysqli_fetch_row($getComics)){
         $comicsTitle = $getComicsRow[0];
@@ -88,12 +87,9 @@
                 </span>
             ";
 
-
        }
 
-
      }
-
 
        echo "</form>";
       //<button class='save' type='submit' name='submit' value='$comicsID' style='cursor:pointer;';>Save</button>

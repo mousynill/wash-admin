@@ -13,14 +13,12 @@
 
       if($getVideos = mysqli_query($conn, $getVideosQuery)){
 
-
-
-        while($getVideosRow = mysqli_fetch_row($getVideos)){
-        $videoTitle = $getVideosRow[0];
-        $videoThumbnail = $getVideosRow[1];
-        $videoAuthor = $getVideosRow[2];
-        $videoDescription = $getVideosRow[3];
-        $videoID = $getVideosRow[4];
+          while($getVideosRow = mysqli_fetch_row($getVideos)){
+          $videoTitle = $getVideosRow[0];
+          $videoThumbnail = $getVideosRow[1];
+          $videoAuthor = $getVideosRow[2];
+          $videoDescription = $getVideosRow[3];
+          $videoID = $getVideosRow[4];
 
          echo "<div style='display: flex; flex-direction: row;'>";
         //check the on click event
