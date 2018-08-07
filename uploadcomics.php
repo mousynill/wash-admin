@@ -3,7 +3,7 @@
 ?>
 
 <head>
-  <link rel="stylesheet" type="text/css" href="upload.css">
+  <link rel="stylesheet" type="text/css" href="uploadcomics.css">
   <link href="https://fonts.googleapis.com/css?family=Quicksand:500" rel="stylesheet">
 </head>
 
@@ -13,7 +13,7 @@
   <form name ="myComic"action="uploadcomicsfunction.php" method="POST" class="up" enctype="multipart/form-data" onsubmit="return validateForm()" >
     <div class="input-file">
       <input type="file" name="comicsFile">
-      <p>Drag your files here or click in this area.</p>
+      <p>Upload the cover photo of the series here.</p>
     </input>
     <button type="submit" name="submitButton">Upload</button>
     </div>

@@ -30,7 +30,7 @@ body {
     margin: auto;
     padding: 0;
     border: 1px solid #888;
-    width: 40%;
+    width: 69%;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
     -webkit-animation-name: animatetop;
     -webkit-animation-duration: 0.4s;
@@ -38,12 +38,57 @@ body {
     animation-duration: 0.4s
 }
 .modal-body {
-  padding-top: 5px;
+
   padding-bottom: 5px;
   margin-top: 10px;
+
+}
+.first-column {
+  display: table;
+  width:100%;
+
+
+}
+.second-column{
+  display: table-cell;
+  border-left: 3px solid #E8E8E8;
+  padding-left: 5px;
+
+}
+.first-column>.second-column input[name="cTitle"]{
+  {
+   border: 2px solid #aaa;
+   border-radius: 4px;
+   padding: 3px;
+   box-sizing: border-box;
+   outline: none;
+   transition: .5s;
+   width: 230px;
+ }
 }
 
-.modal-body input {
+.table-row>input[name="chap"] {
+  margin-top:310px;
+  margin-left:55%;
+  outline: none;
+
+  width: 25px;
+}
+.table-row{
+  display: table-row;
+
+}
+
+/*for the vertical line*/
+.vl {
+  margin-left: 430px;
+  height: 350px;
+  border-left: 2px solid gray;
+  top:0;
+}
+.modal-body input[name="title"],
+.modal-body input[name="author"]
+ {
   border: 2px solid #aaa;
   border-radius: 4px;
   padding: 3px;
@@ -71,22 +116,13 @@ body {
   box-shadow: 0 0 5px 0 dodgerBlue;
 }
 
-.modal-footer button.save{
+.modal-footer button {
   width: 75px;
   outline: none;
   border: 0;
   background: #278BCF;
   border-radius: 4px;
   border-bottom: 4px solid #3492db;
-  color: #fff;
-}
-.modal-footer button.delete{
-  width: 75px;
-  outline: none;
-  border: 0;
-  background: red;
-  border-radius: 4px;
-  border-bottom: 4px solid red;
   color: #fff;
 }
 
@@ -109,7 +145,6 @@ body {
     font-weight: bold;
 }
 
-
 .close:hover,
 .close:focus {
     color: #000;
@@ -129,4 +164,3 @@ body {
     padding: 2px 20px 7px 16px;
     background-color: #fff;
     color: white;
-}

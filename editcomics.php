@@ -1,4 +1,4 @@
-<?php
+  <?php
   include 'nav.php';
   include_once 'includes/dbh.inc.php';
 ?>
@@ -52,14 +52,32 @@
                       </div>
 
                       <div class='modal-body'>
-                      Title:
-                      <input type='text' name='title' value='$comicsTitle'><br><br>
-                      Author: <input type='text' name='author'style='width:253px;' value='$comicsAuthor'><br><br>
-                      Description:<br><textarea name='desc'rows='8' cols='36'>$comicsDesc</textarea>
+                        <div class='first-column'>
+                          Title:
+                          <input type='text' name='title' value='$comicsTitle'><br><br>
+                          Author: <input type='text' name='author'style='width:253px;' value='$comicsAuthor'><br><br>
+                          Description:<br><textarea name='desc'rows='8' cols='36'>$comicsDesc</textarea>
+                        <div class='second-column'>
+                          <div class='table-row'>
+                          Chapter 1sssssssssssssssssss
+                          <div class='table-row'>
+                            chapter2
+                            </div>
+
+                          </div>
+
+                        </div>
+                        <div class='second-column'>
+                          Title:
+                          <input type='text' name='cTitle'><br><br>
+                        </div>
+
+                        </div>
+
                       </div>
 
                       <div class='modal-footer'>
-                      <button class='save'id='$comicsID' type='submit' name='submitBtn' value='$comicsID' style='cursor:pointer;'>Submit</button>
+                        <button class='save'id='$comicsID' type='submit' name='submitBtn' value='$comicsID' style='cursor:pointer;'>Submit</button>
                       </div>
 
                       </div>
@@ -93,11 +111,15 @@
   {
         var container = 'modal.'.concat(e);
         document.getElementById(container).style.display="block";
+        if(e.keyCode == 27){
+          document.getElementById(container).style.display="block";
+        }
   }
   function exitModal(e)
   {
       var container = 'modal.'.concat(e);
       document.getElementById(container).style.display="none";
+
   }
 
   </script>

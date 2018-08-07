@@ -38,7 +38,8 @@
              Comics
             </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="uploadcomics.php">Upload Comics</a>
+                <a class="dropdown-item" href="uploadcomics.php">Add Series</a>
+                <a class="dropdown-item" href="uploadchapter.php">Upload Chapter</a>
                 <a class="dropdown-item" href="editcomics.php">Edit Comics</a>
               </div>
           </li>
