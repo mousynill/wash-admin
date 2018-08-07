@@ -19,14 +19,16 @@
         $comicsAuthor = $getComicsRow[2];
         $comicsDesc = $getComicsRow[3];
         $comicsID = $getComicsRow[4];
+        ?>
 
-        echo "<div style='display: flex; flex-direction: row;'>";
-       //check the on click event
-       echo
-          "
+      <!-- RNILL, try mo hanapin nasan yung closing tag neto -->
+      <div style="display: flex; flex-direction: row;">
+
               <span style='height: 200px; width: 150px; margin-left: 30px;'>
-                  <button type='button' id='$comicsID' onclick='openModal(this.id); return false;'
-                   style='background-image: url($comicsThumbnail);
+
+                  <!-- button that opens the modal/with thumbnail partnered with its unique modal -->
+                  <button type='button' id=<?php echo $comicsID; ?> onclick='openModal(this.id); return false;'
+                  style='background-image: url(<?php echo $comicsThumbnail; ?>);
                   background-color:#fff;
                   border-color:transparent;
                   background-repeat: no-repeat;
@@ -37,63 +39,78 @@
                   border-radius: 10px;
                   cursor:pointer;'>
 
-                    <div style='padding-top: 100%;'>$comicsTitle</div>
+                      <div style='padding-top: 100%;'><?php echo $comicsTitle; ?></div>
 
                   </button>
 
-                  <form id='form.$comicsID' action='editcomicsfunction.php' method='POST' class='up' enctype='multipart/form-data'>
-                      <div id='modal.$comicsID' class='modal'>
-                      <div class='modal-content'>
+                  <!-- the form for submission of the changes in the modal -->
+                  <form id='form.<?php echo $comicsID; ?>' action='editcomicsfunction.php' method='POST' class='up' enctype='multipart/form-data'>
 
-                      <div class='modal-header'>
-                      <h2>$comicsTitle</h2>
-                      <span id='$comicsID' class='close' onClick='exitModal(this.id);'>&times;</span>
-                      </div>
+                      <!-- the modal itself -->
+                      <div id='modal.<?php echo $comicsID; ?>' class='modal'>
 
-                      <div class='modal-body'>
-                        <div class='first-column'>
-                          Title:
-                          <input type='text' name='title' value='$comicsTitle'><br><br>
-                          Author: <input type='text' name='author'style='width:253px;' value='$comicsAuthor'><br><br>
-                          Description:<br><textarea name='desc'rows='8' cols='36'>$comicsDesc</textarea>
-                        <div class='second-column'>
-                          <div class='table-row'>
-                          Chapter 1sssssssssssssssssss
-                          <div class='table-row'>
-                            chapter2
-                            </div>
+                          <!-- this is the modal content/columns holder -->
+                          <div class='modal-content'>
+
+                                <!-- this is the modal header -->
+                                <div class='modal-header'>
+                                  <h2><?php echo $comicsTitle; ?></h2>
+                                  <span id=<?php echo $comicsID; ?> class='close' onClick='exitModal(this.id);'>&times;</span>
+                                </div>
+
+                                  <!-- this is the modal body-->
+                                  <div class='modal-body'>
+
+                                      <!-- this is the first column of the modal + other attached columns -->
+                                      <div class='first-column'>
+                                        Title:
+                                        <input type='text' name='title' value=<?php echo $comicsTitle; ?>><br><br>
+                                        Author: <input type='text' name='author'style='width:253px;' value=<?php echo $comicsAuthor; ?>><br><br>
+                                        Description:<br><textarea name='desc'rows='8' cols='36'><?php echo $comicsDesc; ?></textarea>
+
+                                        <!-- this is the second column of the modal   -->
+                                        <div class='second-column'>
+                                          <!-- this is the row container of the second column of the modal -->
+                                          <div class='table-row'>
+                                          Chapter 1sssssssssssssssssss
+                                            <!-- this is the actual rows of the second column AKA chapters -->
+                                            <div class='table-row'>
+                                            chapter2
+                                            </div>
+                                          </div>
+                                        </div>
+
+                                          <!-- this is the third column  of the modal-->
+                                          <div class='second-column'>
+                                            Title:
+                                            <input type='text' name='cTitle'><br><br>
+                                          </div>
+
+                                      </div>
+
+                                  </div>
+
+                                  <!-- this is the footer -->
+                                  <div class='modal-footer'>
+                                    <button class='save'id=<?php echo $comicsID; ?> type='submit' name='submitBtn' value=<?php echo $comicsID; ?> style='cursor:pointer;'>Submit</button>
+                                  </div>
 
                           </div>
 
-                        </div>
-                        <div class='second-column'>
-                          Title:
-                          <input type='text' name='cTitle'><br><br>
-                        </div>
-
-                        </div>
-
                       </div>
+                    <!-- ^where the modal itself ends -->
 
-                      <div class='modal-footer'>
-                        <button class='save'id='$comicsID' type='submit' name='submitBtn' value='$comicsID' style='cursor:pointer;'>Submit</button>
-                      </div>
-
-                      </div>
-
-                      </div>
                   </form>
 
                 </span>
-            ";
 
-       }
-
-     }
-
-       echo "</form>";
-      //<button class='save' type='submit' name='submit' value='$comicsID' style='cursor:pointer;';>Save</button>
+      <?php }
+      // where the loop ends
+      ?>
+    <?php }
+      // where the if statement ends
     ?>
+
 
   <!--End of description form-->
   <script type="text/javascript">
