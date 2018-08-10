@@ -6,6 +6,7 @@
   <title>Edit Comics</title>
   <link rel="stylesheet" type="text/css" href="editcomics.css"> <!--pinalitan ko yung stylesheet-->
 </head>
+
 <body>
   <div class="edit">
     <?php
@@ -13,12 +14,12 @@
 
       if($getComics = mysqli_query($conn, $getComicsQuery)){
 
-        while($getComicsRow = mysqli_fetch_row($getComics)){
-        $comicsTitle = $getComicsRow[0];
-        $comicsThumbnail = $getComicsRow[1];
-        $comicsAuthor = $getComicsRow[2];
-        $comicsDesc = $getComicsRow[3];
-        $comicsID = $getComicsRow[4];
+          while($getComicsRow = mysqli_fetch_row($getComics)){
+          $comicsTitle = $getComicsRow[0];
+          $comicsThumbnail = $getComicsRow[1];
+          $comicsAuthor = $getComicsRow[2];
+          $comicsDesc = $getComicsRow[3];
+          $comicsID = $getComicsRow[4];
         ?>
 
       <!-- RNILL, try mo hanapin nasan yung closing tag neto -->
@@ -61,7 +62,7 @@
                                   <!-- this is the modal body-->
                                   <div class='modal-body'>
 
-                                      <!-- this is the first column of the modal + other attached columns -->
+                                      <!-- this is the first column of the modal + second and third attached columns -->
                                       <div class='first-column'>
                                         Title:
                                         <input type='text' name='title' value=<?php echo $comicsTitle; ?>><br><br>
@@ -72,10 +73,10 @@
                                         <div class='second-column'>
                                           <!-- this is the row container of the second column of the modal -->
                                           <div class='table-row'>
-                                          Chapter 1sssssssssssssssssss
+                                          Chapter 1: how to get the list of chapters
                                             <!-- this is the actual rows of the second column AKA chapters -->
                                             <div class='table-row'>
-                                            chapter2
+                                            Chapter2: how to edit specific chapter
                                             </div>
                                           </div>
                                         </div>
@@ -107,6 +108,7 @@
       <?php }
       // where the loop ends
       ?>
+
     <?php }
       // where the if statement ends
     ?>
