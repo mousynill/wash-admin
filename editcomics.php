@@ -78,12 +78,16 @@
                                             chapter2
                                             </div>
                                           </div>
+                                          <br><br><input type="file" name="chap"></input>
                                         </div>
 
                                           <!-- this is the third column  of the modal-->
                                           <div class='second-column'>
                                             Title:
                                             <input type='text' name='cTitle'><br><br>
+                                            Description:<br><textarea name='desc'rows='8' cols='26'><?php echo $comicsDesc; ?></textarea>
+
+
                                           </div>
 
                                       </div>
@@ -92,6 +96,7 @@
 
                                   <!-- this is the footer -->
                                   <div class='modal-footer'>
+                                    <button type='submit'>Upload</button>
                                     <button class='save'id=<?php echo $comicsID; ?> type='submit' name='submitBtn' value=<?php echo $comicsID; ?> style='cursor:pointer;'>Submit</button>
                                   </div>
 

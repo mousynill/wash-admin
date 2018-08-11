@@ -67,12 +67,22 @@ body {
  }
 }
 
-.table-row>input[name="chap"] {
+.second-column>input[name="chap"] {
   margin-top:310px;
-  margin-left:55%;
+  margin-left:95%;
   outline: none;
 
   width: 25px;
+}
+.second-column>input[name="cdesc"]{
+  border: 0px;
+  resize: none;
+  padding: 0;
+  margin-left: 5px;
+  padding: 3px;
+  outline: none;
+  transition: 1s;
+  border-radius: 4px;
 }
 .table-row{
   display: table-row;
