@@ -75,7 +75,8 @@
 
         source.setAttribute("src", src);
         video.style.display="block";
-        document.getElementById("txt").style.lineHeight = "45px"; //change the line-height of the paragraph when a video uploaded
+        document.getElementById("txt").style.lineHeight = "45px"; //changes the line-height of the paragraph when a video uploaded
+        document.getElementById("txt").style.height = "13.5%";
         video.load();
 
 
