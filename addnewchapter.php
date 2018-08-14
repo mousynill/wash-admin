@@ -2,26 +2,25 @@
 
   include_once 'includes/dbh.inc.php';
 
-    if(isset($_POST['submitButton'])){ /*<--should be the name of the button// references edit comics>add chapter button*/
+    if(isset($_POST['addChapter'])){ /*<--should be the name of the button// references edit comics>add chapter button*/
 
+      $seriesID = $_POST['whatthe'];
+      echo $seriesID;
       $file = $_FILES['chapterFile']; /*<-- should be the name of the input// references edit comics>new chapter file*/
-
-      print_r($file);
-
+        print_r($file);
       $fileTitle = $_POST['chapterTitle'];
-      //$seriesID = $_POST['seriesID'];
-      //$chapterNo = $_POST['chapterNo'];
+      $chapterNo = $_POST['chapterNo'];
 
-      $fileName = $_FILES['comicsFile']['name'];
-      $fileTmpName = $_FILES['comicsFile']['tmp_name'];
-      $fileSize = $_FILES['comicsFile']['size'];
-      $fileError = $_FILES['comicsFile']['error'];
-      $fileType = $_FILES['comicsFile']['type'];
+      $fileName = $_FILES['chapterFile']['name'];
+      $fileTmpName = $_FILES['chapterFile']['tmp_name'];
+      $fileSize = $_FILES['chapterFile']['size'];
+      $fileError = $_FILES['chapterFile']['error'];
+      $fileType = $_FILES['chapterFile']['type'];
 
       $fileExt =  explode('.', $fileName);
       $fileActualExt = strtolower(end($fileExt));
 
-      $allowed = array('pdf');
+      $allowed = array('jpg', 'jpeg');
 
       if (in_array($fileActualExt, $allowed)) {
           if ($fileError === 0) {
@@ -30,7 +29,7 @@
             $fileDestination = 'uploads/comics/'.$fileNameNew;
             move_uploaded_file($fileTmpName, $fileDestination);
 
-            $sql = "INSERT INTO comicchaptertable VALUES (seriesID, chapterNo, chapterTitle, chapterPath) VALUES ('$seriesID', '$chapterNo', '$chapterTitle', '$chapterPath')";
+            $sql = "INSERT INTO trychaptertable VALUES ('$seriesID', '$chapterNo', '$fileTitle', '$fileDestination')";
             mysqli_query($conn, $sql);
 
             header("Location: uploadcomics.php?uploadchaptersuccess");
@@ -38,13 +37,14 @@
           } else {
             echo "There was an error uploading your file.";
           }
-      } else {
+      }
+      else {
           echo "<script type='text/javascript'>
             var result = alert('The video you input must be a jpg file!');
             if (result) {
-              window.location.href = 'uploadcomics.php';
+              window.location.href = 'editcomics.php';
             } else {
-              window.location.href ='uploadcomics.php';
+              window.location.href ='editcomics.php';
             }
 
           </script>";

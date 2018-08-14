@@ -23,7 +23,7 @@
     <button type="submit" name="SubmitButton">Upload</button>
     </div>
     <div class="author">
-      Title: <input type="text" name="videoTitle"placeholder="Enter title here">
+      Title: <input type="text" name="videoTitle" placeholder="Enter title here">
       <br><br><br>Author: <input type="text" name="videoAuthor" placeholder="Enter author here">
     </div>
     <div class="desc">

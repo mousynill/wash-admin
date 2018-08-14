@@ -10,7 +10,7 @@
   <div class="edit">
     <?php
       $getComicsQuery = "SELECT ComicTitle, ComicThumbnailPath, ComicAuthor, ComicDescription, SeriesID FROM comicstable";
-      $getChapterQuery ="SELECT seriesID, chapterNo, chapterTitle, chapterPath FROM comicchaptertable";
+      //$getChapterQuery ="SELECT seriesID, chapterNo, chapterTitle, chapterPath FROM comicchaptertable";
 
       if($getComics = mysqli_query($conn, $getComicsQuery)){
 
@@ -45,70 +45,84 @@
             </button>
 
             <!-- the form for submission of the changes in the modal -->
-            <form id='form.<?php echo $comicsID; ?>' action='editcomicsfunction.php' method='POST' class='up' enctype='multipart/form-data'>
-                <!-- the modal itself -->
-                <div id='modal.<?php echo $comicsID; ?>' class='modal'>
-                    <!-- this is the modal content/columns holder -->
-                    <div class='modal-content'>
-                        <!-- this is the modal header -->
-                        <div class='modal-header'>
-                            <h2><?php echo $comicsTitle; ?></h2>
-                            <span id=<?php echo $comicsID; ?> class='close' onClick='exitModal(this.id);'>&times;</span>
-                        </div>
-                        <!-- modal body-->
-                        <div class='modal-body'>
-                            <!-- first column of the modal + other attached columns -->
-                            <div class='first-column'>
-                                Title: <input type='text' name='title' value=<?php echo $comicsTitle; ?>><br><br>
-                                Author: <input type='text' name='author'style='width:253px;' value=<?php echo $comicsAuthor; ?>><br><br>
-                                Description:<br><textarea name='desc'rows='8' cols='36'><?php echo $comicsDesc; ?></textarea>
+            <div id='modal.<?php echo $comicsID; ?>' class='modal'>
 
-                                <!-- second column of the modal   -->
-                                <div class='second-column'>
-                                    <!-- row container of the second column of the modal -->
-                            <!--         if($getChapter = mysqli_query($conn, $getChapterQuery)){
+                    <!-- the modal itself -->
+                    <div>
+                        <!-- this is the modal content/columns holder -->
+                          <div class='modal-content'>
 
-                                              while($getChapterRow = mysqli_fetch_row($getChapter)){
-                                              $chapterID = $getChapterRow[0];
-                                              $chapterNo = $getChapterRow[1];
-                                              $chapterTitle = $getChapterRow[2];
-                                              $chapterPath = $getChapterRow[3];
-
-                                    ?>
-                                    <div class='table-row'>
-                                      <button>Chapter  echo $chapterNo": " $chapterTitle?></button>
-                                      <button id=" $chapterID ?>" ></button> ..><!-- button for delete -->
-                                    <div class="table-row">
-                                      <button type="button" name="chapBtn">Chapter1 bla Black</button>
-                                      <button type="button" name="deleteBtn" id="delete" onclick="return validation()">X </button>
-
+                                    <!-- this is the modal header -->
+                                    <div class='modal-header'>
+                                        <h2><?php echo $comicsTitle; ?></h2>
+                                        <span id=<?php echo $comicsID; ?> class='close' onClick='exitModal(this.id);'>&times;</span>
                                     </div>
+                                    <!-- modal body-->
+                                    <div class='modal-body'>
+                                        <!-- first column of the modal + other attached columns -->
+                                        <div class='first-column'>
+                                          <form id='form.<?php echo $comicsID; ?>' action='editcomicsfunction.php' method='POST' class='up' enctype='multipart/form-data'>
+                                            Title: <input type='text' name='title' value=<?php echo $comicsTitle; ?>><br><br>
+                                            Author: <input type='text' name='author'style='width:253px;' value=<?php echo $comicsAuthor; ?>><br><br>
+                                            Description:<br><textarea name='desc'rows='8' cols='36'><?php echo $comicsDesc; ?></textarea>
+                                          </form>
+                                        </div>
+                                            <!-- second column of the modal   -->
+                                        <div class='second-column'>
+                                                <!-- row container of the second column of the modal -->
 
+                                              <?php
+                                                    $getChapterQuery = "SELECT * FROM trychaptertable WHERE seriesID = $comicsID";
 
-                                </div>
+                                                      if($getChapter = mysqli_query($conn, $getChapterQuery)){
 
-                              <!-- this is the third column  of the modal-->
-                              <div class="third-column">
-                                Chapter No: <input type='text' name="cNo"><br><br>
-                                Title: <br><input type='text' name='cTitle'>
-                              </div>
-                          </div>
-                      </div>
+                                                        while($getChapterRow = mysqli_fetch_row($getChapter)){
+                                                        $seriesNo = $getChapterRow[0];
+                                                        $chapterNo = $getChapterRow[1];
+                                                        $chapterTitle = $getChapterRow[2];
+                                                        $chapterPath = $getChapterRow[3];
+                                              ?>
 
-                      <!-- this is the footer -->
-                      <div class='modal-footer'>
-                          <input type="file">
-                          <button type='submit'>Upload</button>
-                          <button class='save'id=<?php echo $comicsID; ?> type='submit' name='submitBtn' value=<?php echo $comicsID; ?> style='cursor:pointer;'>Submit</button>
-                      </div>
+                                                <div class="table-row">
+                                                  <button type="button" name="<?php echo $chapterNo; ?> "><?php echo "Chapter $chapterNo: $chapterTitle"?> </button>
+                                                  <button type="button" name="deleteBtn" id="delete" onclick="return validation()">X</button>
+                                                </div>
 
+                                            <?php };
+                                            };
+                                            ?>
+
+                                        </div>
+
+                                          <!-- this is the third column  of the modal-->
+
+                                        <div class="third-column">
+                                          <form id="formuploadcomics.<?php echo $comicsID; ?>" class="formuploadcomics" action="addnewchapter.php" method='POST' class='up' enctype='multipart/form-data'>
+                                            <input type="file" name="chapterFile" form="formuploadcomics.<?php echo $comicsID; ?>">
+                                            <input type="hidden" name="whatthe" value="<?php echo $comicsID ?>">
+                                              Chapter No: <input type='text' name="chapterNo"><br><br>
+                                              Title: <br><input type='text' name="chapterTitle">
+                                          </form>
+                                        </div>
+
+                                  </div>
+
+                                  <!-- this is the footer -->
+                                  <div class='modal-footer'>
+                                      <button type='submit' id=<?php echo $comicsID; ?> name='addChapter' form="formuploadcomics.<?php echo $comicsID; ?>">Upload</button>
+                                      <button class='save'id=<?php echo $comicsID; ?> type='submit' name='submitBtn' value=<?php echo $comicsID; ?> style="cursor:pointer;" form="<?php echo $comicsID; ?>">Submit</button>
+                                  </div>
+
+                        </div>
                   </div>
-              </div>
-              <!-- ^where the modal itself ends -->
-            </form>
+                  <!-- ^where the modal itself ends -->
+
+
+
+            </div>
+            <!-- try adding a new form, will represent the 3rd column // iframe-->
 
           </span>
-        </div>
 
       <?php }
       // where the loop ends
@@ -130,6 +144,7 @@
   <script>
   function openModal(e)
   {
+
         var container = 'modal.'.concat(e);
         document.getElementById(container).style.display="block";
         if(e.keyCode == 27){
