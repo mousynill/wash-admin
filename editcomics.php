@@ -63,19 +63,19 @@
                         </div>
                             <!-- modal body-->
                             <div class='modal-body'>
-                              <ul class="nav nav-tabs" id="myTab" role="tablist">
+
+                            <ul class="nav nav-tabs" id="tabsFor<?php echo $comicsID; ?>" role="tablist">
                               <li class="nav-item">
-                                <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Series</a>
+                                <a class="nav-link active" id="SeriesDetails" data-toggle="tab" href="#SeriesDetailsFor<?php echo $comicsID; ?>" role= "tab" aria-controls="home" aria-selected="true">Series</a>
                               </li>
                               <li class="nav-item">
-                                <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Upload Chapter</a>
-                              </li>
-                              <li class="nav-item">
-                                <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Contact</a>
+                                <a class="nav-link" id="UploadChapter" data-toggle="tab" href="#UploadChapterFor<?php echo $comicsID; ?>" role="tab" aria-controls="profile" aria-selected="false">Upload Chapter</a>
                               </li>
                             </ul>
+
                             <div class="tab-content" id="myTabContent">
-                              <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                              <div class="tab-pane fade show active" id="SeriesDetailsFor<?php echo $comicsID; ?>" role="tabpanel" aria-labelledby="SeriesDetails">
+
                                   <div class='first-column'>
                                     <form id='form.<?php echo $comicsID; ?>' action='editcomicsfunction.php' method='POST' class='up' enctype='multipart/form-data'>
                                       Title: <input type='text' name='title' value=<?php echo $comicsTitle; ?>><br><br>
@@ -103,13 +103,12 @@
                                           <?php };
                                         }; ?>
 
-
-
                                       </div>
                                   </div>
 
                               </div>
-                              <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+
+                              <div class="tab-pane fade" id="UploadChapterFor<?php echo $comicsID; ?>" role="tabpanel" aria-labelledby="UploadChapter">
                                 <form id="formuploadcomics.<?php echo $comicsID; ?>" class="formuploadcomics" action="addnewchapter.php" method='POST' class='up' enctype='multipart/form-data'>
                                     <input type="file" name="chapterFile" form="formuploadcomics.<?php echo $comicsID; ?>">
                                     <input type="hidden" name="whatthe" value="php echo $comicsID ?>">
@@ -117,8 +116,9 @@
                                     Title: <br><input type='text' name="chapterTitle">
                                 </form>
                               </div>
-                              <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">...</div>
+
                             </div>
+
                             </div>
 
                             <!-- this is the footer -->
