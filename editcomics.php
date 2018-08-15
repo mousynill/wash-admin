@@ -110,7 +110,7 @@
                                   <!-- this is the footer -->
                                   <div class='modal-footer'>
                                       <button type='submit' id=<?php echo $comicsID; ?> name='addChapter' form="formuploadcomics.<?php echo $comicsID; ?>">Upload</button>
-                                      <button class='save'id=<?php echo $comicsID; ?> type='submit' name='submitBtn' value=<?php echo $comicsID; ?> style="cursor:pointer;" form="<?php echo $comicsID; ?>">Submit</button>
+                                      <button class='save'id=<?php echo $comicsID; ?> type='submit' name='submitEdit' value=<?php echo $comicsID; ?> style="cursor:pointer;" form="form.<?php echo $comicsID; ?>">Submit</button>
                                   </div>
 
                         </div>

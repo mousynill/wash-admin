@@ -9,14 +9,14 @@
     $row = mysqli_fetch_array($res);
   }*/
 
-  if(isset($_POST['submitBtn'])){
+  if(isset($_POST['submitEdit'])){
 
-    $id =  $_POST['submitBtn'];
+    $id =  $_POST['submitEdit'];
     $comicsTitle = $_POST['title'];
     $comicsAuthor =$_POST['author'];
     $comicsDesc = $_POST['desc'];
 
-    $sql = "UPDATE comicstable SET ComicTitle = '$comicsTitle', ComicAuthor = '$comicsAuthor', ComicDescription = '$comicsDesc' WHERE ComicID = '$id'";
+    $sql = "UPDATE comicstable SET ComicTitle = '$comicsTitle', ComicAuthor = '$comicsAuthor', ComicDescription = '$comicsDesc' WHERE SeriesID = '$id'";
     mysqli_query($conn, $sql);
   }
 
