@@ -4,14 +4,16 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-<title> Welcome to Wash App Kids! </title>
+
   <link rel="stylesheet" type="text/css" href="bootstrap.min.css">
-  <link rel="stylesheet" type="text/css" href="home1.css">
+  <link rel="stylesheet" type="text/css" href="nav.css">
   <link href="https://fonts.googleapis.com/css?family=Quicksand:500" rel="stylesheet">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"></script>
   <script src="jquery-3.3.1.slim.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
   <script type="text/javascript" src="bootstrap.min.js"></script>
+
+
 </head>
 <body>
 
@@ -39,7 +41,6 @@
             </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                 <a class="dropdown-item" href="uploadcomics.php">Add Series</a>
-                <a class="dropdown-item" href="uploadchapter.php">Upload Chapter</a>
                 <a class="dropdown-item" href="editcomics.php">Edit Comics</a>
               </div>
           </li>

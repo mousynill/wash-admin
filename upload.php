@@ -19,7 +19,7 @@
     <video id="video" style="display:none;"height="260"width="650" controls >
       <source id="source" type "video/mp4">
       </video>
-      <p id="txt">Drag your files here or click in this area.</p>
+      <p id="txt">Drag your video here or click in this area.</p>
     <button type="submit" name="SubmitButton">Upload</button>
     </div>
     <div class="author">

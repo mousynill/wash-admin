@@ -14,7 +14,7 @@
 
       <div class="input-file">
       <input type="file" name="comicsFile">
-        <p>Upload the cover photo of the series here.</p>
+        <p>Drag your comics here or click in this area.</p>
       </input>
       <button type="submit" name="submitButton">Upload</button>
       </div>
