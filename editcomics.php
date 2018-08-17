@@ -65,7 +65,7 @@
                                   <a class="nav-link" id="uploadTab" data-toggle="tab" href="#upload" role="tab" aria-controls="upload" aria-selected="false">Upload Chapter</a>
                                 </li>
                                 <li class="nav-item">
-                                  <a class="nav-link" id="editTab"  data-toggle="tab" href="#edit" role="tab" aria-controls="edit" aria-selected="false">Edit Chapter</a>
+                                  <a class="nav-link" id="editTab"  style="display:none;"data-toggle="tab" href="#edit" role="tab" aria-controls="edit" aria-selected="false">Edit Chapter</a>
                                 </li>
                             </ul>
                             <div class="tab-content" id="myTabContent">
@@ -80,7 +80,7 @@
                                       <!-- second column of the modal   -->
                                       <div class='second-column'>
                                         <!-- row container of the second column of the modal -->
-                                        <?php
+                                        <!--php
                                         $getChapterQuery = "SELECT * FROM trychaptertable WHERE seriesID = $comicsID";
                                         if($getChapter = mysqli_query($conn, $getChapterQuery)){
                                           while($getChapterRow = mysqli_fetch_row($getChapter)){
@@ -91,13 +91,18 @@
                                             ?>
 
                                             <div class="table-row">
-                                              <button type="button" name="<?php echo $chapterNo; ?> "><?php echo "Chapter $chapterNo: $chapterTitle"?> </button>
+                                              <button type="button" id="chap" onclick = "return showChapter()">CHapter 1</button>
+                                              button type="button" name="php echo $chapterNo; ?>">php echo "Chapter $chapterNo: $chapterTitle"?> </button>
                                               <button type="button" name="deleteBtn" id="delete" onclick="return validation()">X</button>
                                             </div>
 
-                                          <?php };
+                                          php };
                                         };
-                                        ?>
+                                        ?> -->
+                                        <div class="table-row">
+                                              <button type="button" id="chap" >CHapter 1</button>
+                                              <button type="button" name="deleteBtn" id="delete" onclick="return validation()">X</button>
+                                        </div>
                                       </div>
                                     </div>
                                 </div>
@@ -151,6 +156,16 @@
   <script type="text/javascript">
     $(document).ready(function(){
       $("#ucomics").addClass("active");
+      //show EDIT TAB THEN HIDE THE UPLOAD TAB
+      $("#chap").click(function(){
+
+        $("#editTab a[href='edit']").show();
+        $("#uploadTab").hide();
+      })
+      $("#seriesTab").click(function(){
+        $("#editTab").hide();
+        $("#uploadTab").show();
+      })
     })
   </script>
 
@@ -184,6 +199,7 @@
     }
   }
   </script>
+
 
 </body>
 </html>
