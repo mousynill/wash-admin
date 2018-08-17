@@ -29,10 +29,20 @@
             $fileDestination = 'uploads/comics/'.$fileNameNew;
             move_uploaded_file($fileTmpName, $fileDestination);
 
-            $sql = "INSERT INTO trychaptertable VALUES ('$seriesID', '$chapterNo', '$fileTitle', '$fileDestination')";
+            $getChapNo = "SELECT count(*) FROM trychaptertable WHERE seriesID = $seriesID";
+            $result = mysqli_query($conn, $getChapNo);
+
+            if(mysqli_num_rows($result)>0){
+                while($chapRow = mysqli_fetch_row($result)){
+                      $currentChapNo = $chapRow[0];
+                      $currentChapNo++;
+                  }
+              }
+
+            $sql = "INSERT INTO trychaptertable VALUES ('$seriesID', '$currentChapNo', '$fileTitle', '$fileDestination')";
             mysqli_query($conn, $sql);
 
-            header("Location: uploadcomics.php?uploadchaptersuccess");
+            header("Location: editcomics.php?addchaptersuccess");
 
           } else {
             echo "There was an error uploading your file.";
