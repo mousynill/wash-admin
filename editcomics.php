@@ -57,45 +57,67 @@
                         </div>
                         <!-- modal body-->
                         <div class='modal-body'>
-                            <!-- first column of the modal + other attached columns -->
-                            <div class='first-column'>
-                                <form id='form.<?php echo $comicsID; ?>' action='editcomicsfunction.php' method='POST' class='up' enctype='multipart/form-data'>
-                                    Title: <input type='text' name='title' value=<?php echo $comicsTitle; ?>><br><br>
-                                    Author: <input type='text' name='author'style='width:253px;' value=<?php echo $comicsAuthor; ?>><br><br>
-                                    Description:<br><textarea name='desc'rows='8' cols='36'><?php echo $comicsDesc; ?></textarea>
-                                </form>
-                                <!-- second column of the modal   -->
-                                <div class='second-column'>
-                                      <!-- row container of the second column of the modal -->
-                                      <?php
-                                          $getChapterQuery = "SELECT * FROM trychaptertable WHERE seriesID = $comicsID";
-                                              if($getChapter = mysqli_query($conn, $getChapterQuery)){
-                                                  while($getChapterRow = mysqli_fetch_row($getChapter)){
-                                                      $seriesNo = $getChapterRow[0];
-                                                      $chapterNo = $getChapterRow[1];
-                                                      $chapterTitle = $getChapterRow[2];
-                                                      $chapterPath = $getChapterRow[3];
-                                      ?>
+                            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                <li class="nav-item">
+                                  <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Series</a>
+                                </li>
+                                <li class="nav-item">
+                                  <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Upload Chapter</a>
+                                </li>
+                                <li class="nav-item">
+                                  <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Edit Chapter</a>
+                                </li>
+                            </ul>
+                            <div class="tab-content" id="myTabContent">
+                                <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">...
+                                    <!-- first column of the modal + other attached columns -->
+                                    <div class='first-column'>
+                                      <form id='form.<?php echo $comicsID; ?>' action='editcomicsfunction.php' method='POST' class='up' enctype='multipart/form-data'>
+                                        Title: <input type='text' name='title' value=<?php echo $comicsTitle; ?>><br><br>
+                                        Author: <input type='text' name='author'style='width:253px;' value=<?php echo $comicsAuthor; ?>><br><br>
+                                        Description:<br><textarea name='desc'rows='8' cols='36'><?php echo $comicsDesc; ?></textarea>
+                                      </form>
+                                      <!-- second column of the modal   -->
+                                      <div class='second-column'>
+                                        <!-- row container of the second column of the modal -->
+                                        <?php
+                                        $getChapterQuery = "SELECT * FROM trychaptertable WHERE seriesID = $comicsID";
+                                        if($getChapter = mysqli_query($conn, $getChapterQuery)){
+                                          while($getChapterRow = mysqli_fetch_row($getChapter)){
+                                            $seriesNo = $getChapterRow[0];
+                                            $chapterNo = $getChapterRow[1];
+                                            $chapterTitle = $getChapterRow[2];
+                                            $chapterPath = $getChapterRow[3];
+                                            ?>
 
-                                                    <div class="table-row">
-                                                      <button type="button" name="<?php echo $chapterNo; ?> "><?php echo "Chapter $chapterNo: $chapterTitle"?> </button>
-                                                      <button type="button" name="deleteBtn" id="delete" onclick="return validation()">X</button>
-                                                    </div>
+                                            <div class="table-row">
+                                              <button type="button" name="<?php echo $chapterNo; ?> "><?php echo "Chapter $chapterNo: $chapterTitle"?> </button>
+                                              <button type="button" name="deleteBtn" id="delete" onclick="return validation()">X</button>
+                                            </div>
 
-                                                <?php };
-                                                };
-                                                ?>
-                                  </div>
+                                          <?php };
+                                        };
+                                        ?>
+                                      </div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">...
+                                    <form id="formuploadcomics.<?php echo $comicsID; ?>" class="formuploadcomics" action="addnewchapter.php" method='POST' class='up' enctype='multipart/form-data'>
+                                      <input type="file" name="chapterFile" form="formuploadcomics.<?php echo $comicsID; ?>">
+                                      <input type="hidden" name="whatthe" value="<?php echo $comicsID ?>">
+                                      Chapter No: <input type='text' name="chapterNo"><br><br>
+                                      Title: <br><input type='text' name="chapterTitle">
+                                    </form>
+
+                                </div>
+                                <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+                                  Chapter No: <input type='text' name="chapterNo"><br><br>
+                                  Title: <br><input type='text' name="chapterTitle">
+                                </div>
                             </div>
 
 
 
-                                    <!--  <form id="formuploadcomics.php echo $comicsID; ?>" class="formuploadcomics" action="addnewchapter.php" method='POST' class='up' enctype='multipart/form-data'>
-                                          <input type="file" name="chapterFile" form="formuploadcomics.php echo $comicsID; ?>">
-                                          <input type="hidden" name="whatthe" value="php echo $comicsID ?>">
-                                              Chapter No: <input type='text' name="chapterNo"><br><br>
-                                              Title: <br><input type='text' name="chapterTitle">
-                                      </form> <!-->
 
 
                           </div>
