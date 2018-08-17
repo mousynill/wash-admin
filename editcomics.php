@@ -59,21 +59,21 @@
                         <div class='modal-body'>
                             <ul class="nav nav-tabs" id="myTab" role="tablist">
                                 <li class="nav-item">
-                                  <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Series</a>
+                                  <a class="nav-link active" id="seriesTab" data-toggle="tab" href="#series" role="tab" aria-controls="series" aria-selected="true">Series</a>
                                 </li>
                                 <li class="nav-item">
-                                  <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Upload Chapter</a>
+                                  <a class="nav-link" id="uploadTab" data-toggle="tab" href="#upload" role="tab" aria-controls="upload" aria-selected="false">Upload Chapter</a>
                                 </li>
                                 <li class="nav-item">
-                                  <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Edit Chapter</a>
+                                  <a class="nav-link" id="editTab"  data-toggle="tab" href="#edit" role="tab" aria-controls="edit" aria-selected="false">Edit Chapter</a>
                                 </li>
                             </ul>
                             <div class="tab-content" id="myTabContent">
-                                <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">...
+                                <div class="tab-pane fade show active" id="series" role="tabpanel" aria-labelledby="seriesTab">
                                     <!-- first column of the modal + other attached columns -->
                                     <div class='first-column'>
                                       <form id='form.<?php echo $comicsID; ?>' action='editcomicsfunction.php' method='POST' class='up' enctype='multipart/form-data'>
-                                        Title: <input type='text' name='title' value=<?php echo $comicsTitle; ?>><br><br>
+                                        <br>Title: <input type='text' name='title' value=<?php echo $comicsTitle; ?>><br><br>
                                         Author: <input type='text' name='author'style='width:253px;' value=<?php echo $comicsAuthor; ?>><br><br>
                                         Description:<br><textarea name='desc'rows='8' cols='36'><?php echo $comicsDesc; ?></textarea>
                                       </form>
@@ -101,7 +101,7 @@
                                       </div>
                                     </div>
                                 </div>
-                                <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">...
+                                <div class="tab-pane fade" id="upload" role="tabpanel" aria-labelledby="uploadTab">
                                     <form id="formuploadcomics.<?php echo $comicsID; ?>" class="formuploadcomics" action="addnewchapter.php" method='POST' class='up' enctype='multipart/form-data'>
                                       <input type="file" name="chapterFile" form="formuploadcomics.<?php echo $comicsID; ?>">
                                       <input type="hidden" name="whatthe" value="<?php echo $comicsID ?>">
@@ -110,7 +110,7 @@
                                     </form>
 
                                 </div>
-                                <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+                                <div class="tab-pane fade" id="edit" role="tabpanel" aria-labelledby="editTab">
                                   Chapter No: <input type='text' name="chapterNo"><br><br>
                                   Title: <br><input type='text' name="chapterTitle">
                                 </div>
