@@ -65,7 +65,7 @@
                                   <a class="nav-link" id="uploadTab" data-toggle="tab" href="#upload" role="tab" aria-controls="upload" aria-selected="false">Upload Chapter</a>
                                 </li>
                                 <li class="nav-item">
-                                  <a class="nav-link" id="editTab"  style="display:none;"data-toggle="tab" href="#edit" role="tab" aria-controls="edit" aria-selected="false">Edit Chapter</a>
+                                  <a class="nav-link" id="editTab" style="display: none"data-toggle="tab" href="#edit" role="tab" aria-controls="edit" aria-selected="false">Edit Chapter</a>
                                 </li>
                             </ul>
                             <div class="tab-content" id="myTabContent">
@@ -158,14 +158,15 @@
       $("#ucomics").addClass("active");
       //show EDIT TAB THEN HIDE THE UPLOAD TAB
       $("#chap").click(function(){
-
-        $("#editTab a[href='edit']").show();
+        //$("#editTab").show();
+        $("#editTab").trigger("click");
+        $("#editTab").show();
         $("#uploadTab").hide();
       })
       $("#seriesTab").click(function(){
         $("#editTab").hide();
         $("#uploadTab").show();
-      })
+      });
     })
   </script>
 
