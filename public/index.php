@@ -57,5 +57,14 @@ $app->get('/api/{path}', function (Request $request, Response $response, array $
 
 });
 
+$app->get('/api/comics/{path}', function (Request $request, Response $response, array $args){
+
+        $name = $args['path'];
+
+        echo "hi ".$name;
+
+
+});
+
 
 $app->run();
