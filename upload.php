@@ -14,14 +14,18 @@
   <!--Upload Form -->
   <form name="myForm" action="uploadvideosfunction.php" method="POST" class="up" enctype="multipart/form-data" onsubmit="return validateForm()">
     <div class="input-file">
-      <input type="file" accept="video/mp4,video/*" name="videoFile" onchange="preview(this);">
-    </input>
-    <video id="video" style="display:none;"height="260"width="650" controls >
-      <source id="source" type "video/mp4">
-      </video>
-      <p id="txt">Drag your files here or click in this area.</p>
-    <button type="submit" name="SubmitButton">Upload</button>
+        <input type="file" accept="video/mp4,video/*" name="videoFile" onchange="preview(this);">
+        </input>
+
+        <video id="video" style="display:none;"height="260"width="650" controls >
+        <source id="source" type "video/mp4">
+        </video>
+
+        <p id="txt">Drag your files here or click in this area.</p>
+
+      <button type="submit" name="SubmitButton">Upload</button>
     </div>
+
     <div class="author">
       Title: <input type="text" name="videoTitle" placeholder="Enter title here">
       <br><br><br>Author: <input type="text" name="videoAuthor" placeholder="Enter author here">
@@ -75,8 +79,10 @@
 
         source.setAttribute("src", src);
         video.style.display="block";
+        
         document.getElementById("txt").style.lineHeight = "45px"; //changes the line-height of the paragraph when a video uploaded
         document.getElementById("txt").style.height = "13.5%";
+
         video.load();
 
 

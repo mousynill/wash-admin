@@ -1,4 +1,4 @@
-  <?php
+<?php
   include 'nav.php';
   include_once 'includes/dbh.inc.php';
 ?>
@@ -6,6 +6,7 @@
   <title>Edit Comics</title>
   <link rel="stylesheet" type="text/css" href="editcomics.css"> <!--pinalitan ko yung stylesheet-->
 </head>
+
 <body>
   <div class="edit">
     <?php
@@ -13,12 +14,12 @@
 
       if($getComics = mysqli_query($conn, $getComicsQuery)){
 
-        while($getComicsRow = mysqli_fetch_row($getComics)){
-        $comicsTitle = $getComicsRow[0];
-        $comicsThumbnail = $getComicsRow[1];
-        $comicsAuthor = $getComicsRow[2];
-        $comicsDesc = $getComicsRow[3];
-        $comicsID = $getComicsRow[4];
+          while($getComicsRow = mysqli_fetch_row($getComics)){
+          $comicsTitle = $getComicsRow[0];
+          $comicsThumbnail = $getComicsRow[1];
+          $comicsAuthor = $getComicsRow[2];
+          $comicsDesc = $getComicsRow[3];
+          $comicsID = $getComicsRow[4];
         ?>
 
       <!-- RNILL, try mo hanapin nasan yung closing tag neto -->
@@ -68,6 +69,7 @@
                                 </li>
                             </ul>
 
+
                             <!-- SERIES TAB -->
                             <div class="tab-content" id="myTabContent">
                                 <div class="tab-pane fade show active" id="seriesTabFor<?php echo $comicsID; ?>" role="tabpanel" aria-labelledby="seriesTab">
@@ -75,6 +77,7 @@
                                     <div class='first-column'>
                                       <form id='form.<?php echo $comicsID; ?>' action='editcomicsfunction.php' method='POST' class='up' enctype='multipart/form-data'>
                                         <br>Title: <input type='text' name='title' value=<?php echo $comicsTitle; ?>><br><br>
+
                                         Author: <input type='text' name='author'style='width:253px;' value=<?php echo $comicsAuthor; ?>><br><br>
                                         Description:<br><textarea name='desc'rows='8' cols='36'><?php echo $comicsDesc; ?></textarea>
                                       </form>
@@ -95,6 +98,7 @@
                                               <button class="myrowbutton" type="button" id="chap" value="<?php echo $comicsID; ?>" name="<?php echo $chapterNo; ?>"><?php echo "Chapter $chapterNo: $chapterTitle"?>
                                               </button>
                                               <button type="button" name="deleteBtn" value="<?php echo $comicsID; ?>" id="<?php echo $chapterNo; ?>" onclick="validation(this.value,this.id)">X</button>
+
                                             </div>
 
                                           <?php };
@@ -167,6 +171,7 @@
       <?php }
         // where the loop ends
       ?>
+
     <?php }
       // where the if statement ends
       mysqli_close($conn);
