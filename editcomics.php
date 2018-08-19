@@ -64,9 +64,11 @@
                                   <a class="nav-link" id="uploadTab" data-toggle="tab" href="#uploadForSeries<?php echo $comicsID; ?>" role="tab" aria-controls="upload" aria-selected="false">Upload Chapter</a>
                                 </li>
                                 <li class="nav-item">
-                                  <a class="nav-link" id="editTab"  style="display:none;"data-toggle="tab" href="#edit" role="tab" aria-controls="edit" aria-selected="false">Edit Chapter</a>
+                                  <a class="nav-link" id="editTab"  style="display:none;"data-toggle="tab" href="#editFor<?php echo $comicsID; ?>" role="tab" aria-controls="edit" aria-selected="false">Edit Chapter</a>
                                 </li>
                             </ul>
+
+                            <!-- SERIES TAB -->
                             <div class="tab-content" id="myTabContent">
                                 <div class="tab-pane fade show active" id="seriesTabFor<?php echo $comicsID; ?>" role="tabpanel" aria-labelledby="seriesTab">
                                     <!-- first column of the modal + other attached columns -->
@@ -90,7 +92,7 @@
                                       ?>
 
                                             <div class="table-row">
-                                              <button class="myrowbutton" type="button" value="<?php echo $comicsID; ?>" name="<?php echo $chapterNo; ?>"><?php echo "Chapter $chapterNo: $chapterTitle"?>
+                                              <button class="myrowbutton" type="button" id="chap" value="<?php echo $comicsID; ?>" name="<?php echo $chapterNo; ?>"><?php echo "Chapter $chapterNo: $chapterTitle"?>
                                               </button>
                                               <button type="button" name="deleteBtn" value="<?php echo $comicsID; ?>" id="<?php echo $chapterNo; ?>" onclick="validation(this.value,this.id)">X</button>
                                             </div>
@@ -103,6 +105,7 @@
                                     </div>
                                 </div>
 
+                                <!-- UPLOAD TAB -->
                                 <div class="tab-pane fade" id="uploadForSeries<?php echo $comicsID; ?>" role="tabpanel" aria-labelledby="uploadTab">
                                     <form id="formuploadcomics.<?php echo $comicsID; ?>" class="formuploadcomics" action="addnewchapter.php" method='POST' class='up' enctype='multipart/form-data'>
                                       <input type="file" name="chapterFile" form="formuploadcomics.<?php echo $comicsID; ?>">
@@ -114,6 +117,7 @@
                                             if(mysqli_num_rows($result)>0){
                                                 while($chapRow = mysqli_fetch_row($result)){
                                                       $currentChapNo = $chapRow[0];
+
                                           ?>
                                                       Chapter No: <input type='text' name="chapterNoFor" value="<?php echo $currentChapNo+1; ?>"><br><br>
                                             <?php }
@@ -124,9 +128,22 @@
                                     </form>
                                 </div>
 
-                                <div class="tab-pane fade" id="edit" role="tabpanel" aria-labelledby="editTab">
-                                  Chapter No: <input type='text' name="chapterNo"><br><br>
-                                  Title: <br><input type='text' name="chapterTitle">
+                                <!-- EDIT TAB -->
+                                <div class="tab-pane fade" id="editFor<?php echo $comicsID; ?>" role="tabpanel" aria-labelledby="editTab">
+                                  <?php
+                                    $getChapNo = "SELECT count(*),chapterTitle FROM trychaptertable WHERE seriesID = $comicsID";
+                                    $result = mysqli_query($conn, $getChapNo);
+
+                                    if(mysqli_num_rows($result)>0){
+                                        while($chapRow = mysqli_fetch_row($result)){
+                                              $currentChapNo = $chapRow[0];
+                                              $chapTitle = $chapRow[1];
+                                  ?>
+                                  Chapter No: <input type='text' name="chapterNo" value="<?php echo $currentChapNo; ?>" ><br><br>
+                                  Title: <br><input type='text' name="chapterTitle" value ="<?php echo $chapTitle ?>">
+                                <?php }
+                              }
+                              ?>
                                 </div>
                             </div>
 
@@ -160,26 +177,22 @@
 
 
 <script type="text/javascript">
-function edit(series, chapNo){
-
-  var thisSeriesID = series;
-  var thisChapNo = chapNo;
-
   $(document).ready(function(){
     $("#ucomics").addClass("active");
+
     //show EDIT TAB THEN HIDE THE UPLOAD TAB
     $("#chap").click(function(){
-      //$("#editTab").show();
-      $("#editTab1").trigger("click");
-      $("#editTab1").show();
-      $("#uploadTab1").hide();
+      $("#editTab").trigger("click");
+      $("#editTab").show();
+      $("#uploadTab").hide();
     })
+    //SHOW UPLAD WHEN SERIES IS CLICKED
     $("#seriesTab").click(function(){
       $("#editTab").hide();
       $("#uploadTab").show();
     });
   })
-}
+
   </script>
 
 <script>
