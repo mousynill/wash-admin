@@ -11,19 +11,23 @@
 
   <!--Upload Form -->
   <form name ="myComic"action="uploadcomicsfunction.php" method="POST" class="up" enctype="multipart/form-data" onsubmit="return validateForm()" >
-    <div class="input-file">
+
+      <div class="input-file">
       <input type="file" name="comicsFile">
-      <p>Upload the cover photo of the series here.</p>
-    </input>
-    <button type="submit" name="submitButton">Upload</button>
-    </div>
-    <div class="author">
-      Title: <input type="text" name="comicsTitle"placeholder="Enter title here">
-      <br><br><br>Author: <input type="text" name="comicsAuthor" placeholder="Enter author here">
-    </div>
-    <div class="desc">
-        Description:<br><textarea name="comicsDescription"rows="8" cols="36" placeholder="Enter the description here"></textarea>
-    </div>
+        <p>Upload the cover photo of the series here.</p>
+      </input>
+      <button type="submit" name="submitButton">Upload</button>
+      </div>
+
+      <div class="author">
+        Title: <input type="text" name="comicsTitle"placeholder="Enter title here">
+        <br><br><br>Author: <input type="text" name="comicsAuthor" placeholder="Enter author here">
+      </div>
+
+      <div class="desc">
+          Description:<br><textarea name="comicsDescription"rows="8" cols="36" placeholder="Enter the description here"></textarea>
+      </div>
+
   </form>
   <!--End of description form-->
   <!--for active link -->

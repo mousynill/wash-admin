@@ -27,7 +27,7 @@
     </div>
 
     <div class="author">
-      Title: <input type="text" name="videoTitle"placeholder="Enter title here">
+      Title: <input type="text" name="videoTitle" placeholder="Enter title here">
       <br><br><br>Author: <input type="text" name="videoAuthor" placeholder="Enter author here">
     </div>
     <div class="desc">
@@ -79,8 +79,10 @@
 
         source.setAttribute("src", src);
         video.style.display="block";
-        document.getElementById("txt").style.lineHeight = "45px"; //change the line-height of the paragraph when a video uploaded
-        document.getElementById("txt").style.height = '13.3%';
+        
+        document.getElementById("txt").style.lineHeight = "45px"; //changes the line-height of the paragraph when a video uploaded
+        document.getElementById("txt").style.height = "13.5%";
+
         video.load();
 
 

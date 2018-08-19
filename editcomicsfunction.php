@@ -9,9 +9,9 @@
     $row = mysqli_fetch_array($res);
   }*/
 
-  if(isset($_POST['submitBtn'])){
+  if(isset($_POST['submitEdit'])){
 
-    $id =  $_POST['submitBtn'];
+    $id =  $_POST['submitEdit'];
     $comicsTitle = $_POST['title'];
     $comicsAuthor =$_POST['author'];
     $comicsDesc = $_POST['desc'];
