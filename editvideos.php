@@ -4,7 +4,7 @@
 ?>
 <head>
   <title>Edit Videos</title>
-  <link rel="stylesheet" type="text/css" href="tryerror.css"> <!--pinalitan ko yung stylesheet-->
+  <link rel="stylesheet" type="text/css" href="editvideos.css"> <!--pinalitan ko yung stylesheet-->
 </head>
 <body>
   <div class="edit">
