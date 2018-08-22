@@ -57,14 +57,15 @@ $app->get('/api/{path}', function (Request $request, Response $response, array $
 
 });
 
-$app->get('/api/comics/{path}', function (Request $request, Response $response, array $args){
+// $app->get('/api/comics/{path}', function (Request $request, Response $response, array $args){
+//
+//         $name = $args['path'];
+//
+//         echo "hi ".$name;
+//
+//
+// });
 
-        $name = $args['path'];
-
-        echo "hi ".$name;
-
-
-});
-
+require_once('../src/routes/login.php');
 
 $app->run();
