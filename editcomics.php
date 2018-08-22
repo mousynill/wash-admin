@@ -8,7 +8,7 @@
 </head>
 
 <body>
-  <div class="edit">
+  <div id="wee"class="edit">
     <?php
       $getComicsQuery = "SELECT ComicTitle, ComicThumbnailPath, ComicAuthor, ComicDescription, SeriesID FROM comicstable";
 
@@ -59,13 +59,13 @@
                         <div class='modal-body'>
                             <ul class="nav nav-tabs" id="myTab" role="tablist">
                                 <li class="nav-item">
-                                  <a class="nav-link active" id="seriesTab" data-toggle="tab" href="#seriesTabFor<?php echo $comicsID; ?>" role="tab" aria-controls="series" aria-selected="true">Series</a>
+                                  <a class="nav-link active" id="<?php echo $comicsID; ?>" data-toggle="tab" href="#seriesTabFor<?php echo $comicsID; ?>" role="tab" aria-controls="series" aria-selected="true" onclick="upload(this.id)" >Series</a>
                                 </li>
                                 <li class="nav-item">
-                                  <a class="nav-link" id="uploadTab" data-toggle="tab" href="#uploadForSeries<?php echo $comicsID; ?>" role="tab" aria-controls="upload" aria-selected="false">Upload Chapter</a>
+                                  <a class="nav-link" id="uploadTab<?php echo $comicsID; ?>" value="<?php echo $comicsID;?>" data-toggle="tab" href="#uploadForSeries<?php echo $comicsID; ?>" role="tab" aria-controls="upload" aria-selected="false">Upload Chapter</a>
                                 </li>
                                 <li class="nav-item">
-                                  <a class="nav-link" id="editTab"  style="display:none;"data-toggle="tab" href="#editFor<?php echo $comicsID; ?>" role="tab" aria-controls="edit" aria-selected="false">Edit Chapter</a>
+                                  <a class="nav-link" id="editTab<?php echo $comicsID; ?>" value="<?php echo $comicsID;?>" data-toggle="tab" href="#editFor<?php echo $comicsID; ?>" role="tab" aria-controls="edit" aria-selected="false">Edit Chapter</a>
                                 </li>
                             </ul>
 
@@ -83,6 +83,7 @@
                                       </form>
                                       <!-- second column of the modal   -->
                                     <div class='second-column'>
+
                                         <!-- row container of the second column of the modal -->
                                       <?php
                                         $getChapterQuery = "SELECT * FROM trychaptertable WHERE seriesID = $comicsID";
@@ -95,7 +96,7 @@
                                       ?>
 
                                             <div class="table-row">
-                                              <button class="myrowbutton" type="button" id="chap" value="<?php echo $comicsID; ?>" name="<?php echo $chapterNo; ?>"><?php echo "Chapter $chapterNo: $chapterTitle"?>
+                                              <button class="myrowbutton" type="button" value="<?php echo $comicsID; ?>" id="<?php echo $comicsID.$chapterNo; ?>"  name="<?php echo $chapterNo; ?>" onclick="edit(this.value,this.id)" ><?php echo "Chapter $chapterNo: $chapterTitle"?>
                                               </button>
                                               <button type="button" name="deleteBtn" value="<?php echo $comicsID; ?>" id="<?php echo $chapterNo; ?>" onclick="validation(this.value,this.id)">X</button>
 
@@ -133,22 +134,24 @@
                                 </div>
 
                                 <!-- EDIT TAB -->
-                                <div class="tab-pane fade" id="editFor<?php echo $comicsID; ?>" role="tabpanel" aria-labelledby="editTab">
-                                  <?php
-                                    $getChapNo = "SELECT count(*),chapterTitle FROM trychaptertable WHERE seriesID = $comicsID";
-                                    $result = mysqli_query($conn, $getChapNo);
+                                <?php
+                                $getChapNo = "SELECT chapterNo,chapterTitle FROM trychaptertable WHERE seriesID = $comicsID";
+                                $result = mysqli_query($conn, $getChapNo);
 
-                                    if(mysqli_num_rows($result)>0){
-                                        while($chapRow = mysqli_fetch_row($result)){
-                                              $currentChapNo = $chapRow[0];
-                                              $chapTitle = $chapRow[1];
-                                  ?>
-                                  Chapter No: <input type='text' name="chapterNo" value="<?php echo $currentChapNo; ?>" ><br><br>
-                                  Title: <br><input type='text' name="chapterTitle" value ="<?php echo $chapTitle ?>">
+                                if(mysqli_num_rows($result)>0){
+                                  while($chapRow = mysqli_fetch_row($result)){
+                                    $currentChapNo = $chapRow[0];
+                                    $chapTitle = $chapRow[1];
+                                    ?>
+                                <div class="tab-pane fade" id="editFor<?php echo $comicsID; ?>" role="tabpanel" aria-labelledby="editTab">
+                                    <form action="editchapterfunction.php" method="POST" id="formeditchapter.<?php echo $currentChapNo;?>">
+                                      Chapter No: <a name="chapterNo" value="<?php echo $currentChapNo; ?>" ><?php echo $currentChapNo; ?></a><br><br>
+                                      Title: <br><input type='text' id="<?php $currentChapNo ?>" name="chapterTitle" value ="<?php echo $chapTitle ?>">
+                                    </form>
+                                  </div>
                                 <?php }
                               }
                               ?>
-                                </div>
                             </div>
 
                           </div>
@@ -157,6 +160,7 @@
                           <div class='modal-footer'>
                               <button type='submit' id=<?php echo $comicsID; ?> name='addChapter' form="formuploadcomics.<?php echo $comicsID; ?>">Upload</button>
                               <button class='save'id=<?php echo $comicsID; ?> type='submit' name='submitEdit' value=<?php echo $comicsID; ?> style="cursor:pointer;" form="form.<?php echo $comicsID; ?>">Submit</button>
+                              <button type="submit" id="<?php echo $currentChapNo; ?>" name="editChap" form="formeditchapter.<?php echo $currentChapNo; ?>" value="<?php echo$currentChapNo; ?>">Update</button>
                           </div>
 
                       </div>
@@ -178,10 +182,12 @@
     ?>
   </div>
 
+  <iframe id="myIframe"  name="myIframe" src="text.php"></iframe>
+</div>
 <!--End of description form-->
 
 
-<script type="text/javascript">
+<!--<script type="text/javascript">
   $(document).ready(function(){
     $("#ucomics").addClass("active");
 
@@ -198,7 +204,48 @@
     });
   })
 
-  </script>
+</script>-->
+<script>
+
+
+//var iframecontent = $('#myIframe').contents();
+var content = $("#wee myIframe").contents().find(".what").html();
+alert(content);
+console.log(content);
+
+
+
+
+function edit(series, chapNo){
+  var result { };
+  var thisSeriesID = series;
+  var thisChapNo = chapNo;
+  //var joined = thisSeriesID.concat(thisChapNo);
+
+      //show EDIT TAB THEN HIDE THE UPLOAD TAB
+      $("#editTab".concat(thisSeriesID)).trigger("click");
+      $("#editTab".concat(thisSeriesID)).show();
+      $("#uploadTab".concat(thisSeriesID)).hide();
+
+      $.each($('formeditchapter'.concat(thisChapNo).serializeArray(), function(){
+          result[this.]
+      }))
+
+
+
+  console.log(thisSeriesID);
+
+}
+function upload(series){
+  var thisSeriesID = series;
+    //SHOW UPLAD WHEN SERIES IS CLICKED
+
+    $("#editTab".concat(thisSeriesID)).hide();
+    $("#uploadTab".concat(thisSeriesID)).show();
+    console.log(thisSeriesID);
+
+}
+</script>
 
 <script>
     function openModal(e)
@@ -206,9 +253,7 @@
 
           var container = 'modal.'.concat(e);
           document.getElementById(container).style.display="block";
-          if(e.keyCode == 27){
-            document.getElementById(container).style.display="block";
-          }
+
     }
     function exitModal(e)
     {

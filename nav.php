@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 <title> Welcome to Wash App Kids! </title>
   <link rel="stylesheet" type="text/css" href="bootstrap.min.css">
-  <link rel="stylesheet" type="text/css" href="home1.css">
+  <link rel="stylesheet" type="text/css" href="nav.css">
   <link href="https://fonts.googleapis.com/css?family=Quicksand:500" rel="stylesheet">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"></script>
   <script src="jquery-3.3.1.min.js"></script>
@@ -39,7 +39,6 @@
             </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                 <a class="dropdown-item" href="uploadcomics.php">Add Series</a>
-                <a class="dropdown-item" href="uploadchapter.php">Upload Chapter</a>
                 <a class="dropdown-item" href="editcomics.php">Edit Comics</a>
               </div>
           </li>
@@ -51,7 +50,7 @@
              Admin
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="#">Change Password</a>
+              <a class="dropdown-item" href="changepassword.php">Change Password</a>
               <a class="dropdown-item" href="register.php">Registration</a>
               <a class="dropdown-item" href="#">Sign out</a>
             </div>

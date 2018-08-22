@@ -1,9 +1,11 @@
 <?php
+  include 'nav.php';
   include_once 'includes/dbh.inc.php';
 ?>
 
 <head>
   <link rel="stylesheet" type="text/css" href="changepassword.css">
+  <link rel
 </head>
 <body>
   <div class="cp-modal" id="changepasswordmodal" >

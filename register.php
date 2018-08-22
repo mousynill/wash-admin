@@ -1,5 +1,6 @@
 <head>
   <link rel="stylesheet" type="text/css" href="register.css">
+  <link href="https://fonts.googleapis.com/css?family=Quicksand:500" rel="stylesheet">
   <title>Registration</title>
 </head>
 
