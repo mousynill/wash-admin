@@ -40,7 +40,7 @@
           }
       } else {
           echo "<script type='text/javascript'>
-            var result = alert('The video you input must be a jpg file!');
+            var result = alert('The file you input must be a jpg file!');
             if (result) {
               window.location.href = 'uploadcomics.php';
             } else {

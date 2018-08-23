@@ -7,7 +7,7 @@
 <body>
   <div class="regi-form">
 
-    <form name ="myRegi"class="regi" method="post" onsubmit="return validateForm()">
+    <form name ="myRegi" action="registerfunction.php" class="regi" method="post" onsubmit="return validateForm()">
       <h1>Registration</h1>
       First Name:<br>
       <input type="text" name="Firstname" placeholder="Enter First Name here">

@@ -32,10 +32,16 @@ form button:hover{
 }
 form p{
   width: 100%;
-  height: 100%;
+  height: 65%;
   text-align: center;
-  line-height: 298px;
+  line-height: 225px;
   color: #000000;
+}
+form>.input-file img {
+  margin-left: 265px;
+  margin-right: auto;
+  margin-bottom: -80px;
+  margin-top: 85px;
 
 }
 form>.input-file {

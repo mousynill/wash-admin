@@ -14,6 +14,7 @@
 
       <div class="input-file">
       <input type="file" name="comicsFile">
+      <img src="images/upload.png" height="100"width="125" alt="upload logo"></img>
         <p>Upload the cover photo of the series here.</p>
       </input>
       <button type="submit" name="submitButton">Upload</button>
@@ -63,7 +64,7 @@
     <script>
     $(document).ready(function(){
       $('form input').change(function () {
-        $('form p').text(this.files.length + " file(s) selected");
+        $('form p').text(this.files[0].name + " file is selected");
       });
     });
     </script>

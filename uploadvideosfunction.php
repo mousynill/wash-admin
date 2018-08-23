@@ -54,7 +54,7 @@
       } else {
         echo "
         <script type='text/javascript'>
-          var result = alert('The video you input must be an jpg file!');
+          var result = alert('The video you input must be an mp4 file!');
           if (result) {
             window.location.href = 'upload.php';
           } else {

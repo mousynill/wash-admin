@@ -13,7 +13,7 @@ body {
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
     z-index: 1; /* Sit on top */
-    padding-top: 100px; /* Location of the box */
+    padding-top: 30px; /* Location of the box */
     left: 0;
     top: 0;
     width: 100%; /* Full width */
@@ -26,7 +26,6 @@ body {
 /* Modal Content */
 .modal-content {
     position: relative;
-    f
     background-color: #fefefe;
     margin: auto;
     padding: 0;
@@ -42,6 +41,15 @@ body {
   padding-top: 5px;
   padding-bottom: 5px;
   margin-top: 10px;
+
+
+}
+.modal-body video {
+
+  right: 50%;
+  left: -20%;
+  margin-left: -16px;
+  margin-top: -15px;
 }
 
 .modal-body input {
@@ -114,7 +122,7 @@ body {
     color: white;
 }
 
-.modal-body {padding: 2px 16px;}
+
 
 .modal-footer {
     padding: 2px 20px 7px 16px;

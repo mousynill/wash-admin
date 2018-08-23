@@ -9,7 +9,7 @@
 <body>
   <div class="edit">
     <?php
-      $getVideosQuery = "SELECT VideoTitle, thumbnailPath, VideoAuthor, VideoDescription, IdNo FROM videostable";
+      $getVideosQuery = "SELECT VideoTitle, thumbnailPath, VideoAuthor, VideoDescription, IdNo, VideoPath FROM videostable";
 
       if($getVideos = mysqli_query($conn, $getVideosQuery)){
 
@@ -19,6 +19,7 @@
           $videoAuthor = $getVideosRow[2];
           $videoDescription = $getVideosRow[3];
           $videoID = $getVideosRow[4];
+          $videoPath = $getVideosRow[5];
             ?>
       <div style="display: flex; flex-direction: row;">
 
@@ -49,10 +50,13 @@
                        </div>
 
                        <div class='modal-body'>
-                       Title:
+                       <video height="250" width="537" controls>
+                         <source src="<?php echo $videoPath; ?>" type="video/mp4">
+                       </video><br>
+                       <br>Title:
                        <input type='text' name='title' value='<?php echo $videoTitle ?>'><br><br>
                        Author: <input type='text' name='author'style='width:253px;' value='<?php echo $videoAuthor?>'><br><br>
-                       Description:<br><textarea name='desc'rows='8' cols='36'><?php echo $videoDescription ?></textarea>
+                       Description:<br><textarea name='desc'rows='8' cols='50'><?php echo $videoDescription ?></textarea>
                        </div>
 
                        <div class='modal-footer'>
@@ -74,6 +78,11 @@
 
   </div>
 
+<script type="text/javascript">
+    $(document).ready(function(){
+      $("#uvideos").addClass("active");
+    })
+</script>
   <script>
   function openModal(e)
   {

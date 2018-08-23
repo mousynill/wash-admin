@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 <title> Welcome to Wash App Kids! </title>
+  <link rel="icon" href="favicon.ico">
   <link rel="stylesheet" type="text/css" href="bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="nav.css">
   <link href="https://fonts.googleapis.com/css?family=Quicksand:500" rel="stylesheet">

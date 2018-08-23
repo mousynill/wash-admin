@@ -59,13 +59,13 @@
                         <div class='modal-body'>
                             <ul class="nav nav-tabs" id="myTab" role="tablist">
                                 <li class="nav-item">
-                                  <a class="nav-link active" id="<?php echo $comicsID; ?>" data-toggle="tab" href="#seriesTabFor<?php echo $comicsID; ?>" role="tab" aria-controls="series" aria-selected="true" onclick="upload(this.id)" >Series</a>
+                                  <a class="nav-link active" id="<?php echo $comicsID; ?>" data-toggle="tab" href="#seriesTabFor<?php echo $comicsID; ?>" role="tab" aria-controls="series" aria-selected="true" onclick="series(this.id)" >Series</a>
                                 </li>
                                 <li class="nav-item">
                                   <a class="nav-link" id="uploadTab<?php echo $comicsID; ?>" value="<?php echo $comicsID;?>" data-toggle="tab" href="#uploadForSeries<?php echo $comicsID; ?>" role="tab" aria-controls="upload" aria-selected="false">Upload Chapter</a>
                                 </li>
                                 <li class="nav-item">
-                                  <a class="nav-link" id="editTab<?php echo $comicsID; ?>" value="<?php echo $comicsID;?>" data-toggle="tab" href="#editFor<?php echo $comicsID; ?>" role="tab" aria-controls="edit" aria-selected="false">Edit Chapter</a>
+                                  <a class="nav-link" id="editTab<?php echo $comicsID; ?>" style="display: none" value="<?php echo $comicsID;?>" data-toggle="tab" href="#editFor<?php echo $comicsID; ?>" role="tab" aria-controls="edit" aria-selected="false">Edit Chapter</a>
                                 </li>
                             </ul>
 
@@ -76,10 +76,10 @@
                                     <!-- first column of the modal + other attached columns -->
                                     <div class='first-column'>
                                       <form id='form.<?php echo $comicsID; ?>' action='editcomicsfunction.php' method='POST' class='up' enctype='multipart/form-data'>
-                                        <br>Title: <input type='text' name='title' value=<?php echo $comicsTitle; ?>><br><br>
+                                        <br>Title: <input type='text' name='title' value="<?php echo $comicsTitle; ?>"><br><br></input>
 
-                                        Author: <input type='text' name='author'style='width:253px;' value=<?php echo $comicsAuthor; ?>><br><br>
-                                        Description:<br><textarea name='desc'rows='8' cols='36'><?php echo $comicsDesc; ?></textarea>
+                                        Author: <input type='text' name='author'style='width:253px;' value="<?php echo $comicsAuthor; ?>"><br><br></input>
+                                        Description:<br><textarea name='desc'rows='8' cols='40'><?php echo $comicsDesc; ?></textarea>
                                       </form>
                                       <!-- second column of the modal   -->
                                     <div class='second-column'>
@@ -158,9 +158,9 @@
 
                           <!-- this is the footer -->
                           <div class='modal-footer'>
-                              <button type='submit' id=<?php echo $comicsID; ?> name='addChapter' form="formuploadcomics.<?php echo $comicsID; ?>">Upload</button>
-                              <button class='save'id=<?php echo $comicsID; ?> type='submit' name='submitEdit' value=<?php echo $comicsID; ?> style="cursor:pointer;" form="form.<?php echo $comicsID; ?>">Submit</button>
-                              <button type="submit" id="<?php echo $currentChapNo; ?>" name="editChap" form="formeditchapter.<?php echo $currentChapNo; ?>" value="<?php echo$currentChapNo; ?>">Update</button>
+                              <button class='save'id="btnSubmit<?php echo $comicsID; ?>" type='submit' name='submitEdit' value=<?php echo $comicsID; ?> style="cursor:pointer;" form="form.<?php echo $comicsID; ?>">Submit</button>
+                              <button type='submit' id="btnUpload<?php echo $comicsID; ?>" name='addChapter' form="formuploadcomics.<?php echo $comicsID; ?>" style="cursor:pointer;">Upload</button>
+                              <button type="submit" id="btnUpdate<?php echo $currentChapNo; ?>" name="editChap" form="formeditchapter.<?php echo $currentChapNo; ?>" value="<?php echo$currentChapNo; ?>" style="cursor:pointer;">Update</button>
                           </div>
 
                       </div>
@@ -182,17 +182,17 @@
     ?>
   </div>
 
-  <iframe id="myIframe"  name="myIframe" src="text.php"></iframe>
+<!--  <iframe id="myIframe"  name="myIframe" src="text.php"></iframe>-->
 </div>
 <!--End of description form-->
 
 
-<!--<script type="text/javascript">
+<script type="text/javascript">
   $(document).ready(function(){
     $("#ucomics").addClass("active");
 
     //show EDIT TAB THEN HIDE THE UPLOAD TAB
-    $("#chap").click(function(){
+/*   $("#chap").click(function(){
       $("#editTab").trigger("click");
       $("#editTab").show();
       $("#uploadTab").hide();
@@ -201,23 +201,23 @@
     $("#seriesTab").click(function(){
       $("#editTab").hide();
       $("#uploadTab").show();
-    });
+    });*/
   })
 
-</script>-->
+</script>
 <script>
 
 
 //var iframecontent = $('#myIframe').contents();
-var content = $("#wee myIframe").contents().find(".what").html();
-alert(content);
-console.log(content);
+//var content = $("#wee myIframe").contents().find(".what").html();
+//alert(content);
+//console.log(content);
 
 
 
 
 function edit(series, chapNo){
-  var result { };
+  //var result { };
   var thisSeriesID = series;
   var thisChapNo = chapNo;
   //var joined = thisSeriesID.concat(thisChapNo);
@@ -225,26 +225,34 @@ function edit(series, chapNo){
       //show EDIT TAB THEN HIDE THE UPLOAD TAB
       $("#editTab".concat(thisSeriesID)).trigger("click");
       $("#editTab".concat(thisSeriesID)).show();
+    //  document.getElementById("#btnUpdate".concat(thisChapNo)).style.display = "block";
       $("#uploadTab".concat(thisSeriesID)).hide();
+    //  document.getElementById("#btnSubmit".concat(thisSeriesID)).style.display = "none";
+    //  document.getElementById("#btnUpload").concat(thisSeriesID).style.display = "none";
 
-      $.each($('formeditchapter'.concat(thisChapNo).serializeArray(), function(){
-          result[this.]
-      }))
-
-
+      //$.each($('formeditchapter'.concat(thisChapNo).serializeArray(), function(){
+      //    result[this.]
+      //}))
 
   console.log(thisSeriesID);
 
 }
-function upload(series){
+function series(series){
   var thisSeriesID = series;
-    //SHOW UPLAD WHEN SERIES IS CLICKED
 
+    //SHOW UPLAD WHEN SERIES IS CLICKED
     $("#editTab".concat(thisSeriesID)).hide();
+    //$("#btnUpdate".concat(thisChapNo)).style.display = "none";
+    //$("#btnUpload").style.display = "none";
     $("#uploadTab".concat(thisSeriesID)).show();
+  //  document.getElementById("#btnSubmit".concat(thisSeriesID)).style.display = "block";
     console.log(thisSeriesID);
 
+
 }
+
+
+
 </script>
 
 <script>
@@ -263,25 +271,6 @@ function upload(series){
     }
 </script>
 
-  <style>
-      .myrowbutton{
-          border-radius: 2px;
-          cursor: pointer;
-          line-height: 1.8;
-          color: black;
-          padding: 12px;
-          margin-bottom: 12px;
-          border: solid 1px #000;
-          transition: 0.05s;
-          font-size: 68%;
-          align-items: center;
-          justify-content: center;
-          text-align: center;
-      }
-      a, a:hover {
-        text-decoration: none;
-      }
-  </style>
 
   <!--script for deleting chapters-->
   <script>
