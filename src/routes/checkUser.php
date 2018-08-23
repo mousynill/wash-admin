@@ -1,15 +1,13 @@
 <?php
+use \Psr\Http\Message\ServerRequestInterface as Request;
+use \Psr\Http\Message\ResponseInterface as Response;
 
-$app->post('/login', function($request, $response){
+$app->post('/checkUser', function(Request $request, Response $response){
 require_once('../src/config/db.php');
 
-  $username = "1";
-  $password = "2";
-
   $username = $_POST['username'];
-  $password = $_POST['password'];
 
-  $searchUser = "SELECT * FROM appusers WHERE username = '$username' and password = '$password'";
+  $searchUser = "SELECT * FROM appusers WHERE username = '$username'";
 
   try{
     //get dbobject
@@ -23,9 +21,9 @@ require_once('../src/config/db.php');
     $db = null;
 
     if(!$userExists){
-      return die(json_encode('{"connection":"failed"}'));
+      return('{"userExists":"false"}');
     }else{
-      return json_encode('{"connection":"connected"}');
+      return('{"userExists":"true"}');
     }
 
   }catch(PDOException $e){
@@ -33,4 +31,5 @@ require_once('../src/config/db.php');
   };
 
 });
+
 ?>
