@@ -60,5 +60,6 @@ $app->get('/api/{path}', function (Request $request, Response $response, array $
 require_once('../src/routes/login.php');
 require_once('../src/routes/checkUser.php');
 require_once('../src/routes/Register.php');
+require_once('../src/routes/specificSeries.php');
 
 $app->run();
