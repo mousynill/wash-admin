@@ -63,5 +63,6 @@ require_once('../src/routes/Register.php');
 require_once('../src/routes/specificSeries.php');
 require_once('../src/routes/addView.php');
 require_once('../src/routes/likeVideo.php');
+require_once('../src/routes/checkVideoUserRelation.php');
 
 $app->run();
