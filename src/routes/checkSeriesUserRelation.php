@@ -1,14 +1,14 @@
 <?php
 
-$app->post('/checkVideoUser', function($request, $response){
+$app->post('/checkSeriesUser', function($request, $response){
 require_once('../src/config/db.php');
 
   $userID = $_POST['userID'];
-  $videoID = $_POST['videoID'];
+  $seriesID = $_POST['seriesID'];
 
-  $checkRelation = "SELECT * FROM uservideos WHERE userID = $userID and videoID = $videoID";
+  $checkRelation = "SELECT * FROM userscomics WHERE userID = $userID and seriesID = $seriesID";
   //if the query returns no row, then use INSERT instead of UPDATE
-  
+
   try{
     //get dbobject
     $db = new db();

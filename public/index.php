@@ -64,5 +64,7 @@ require_once('../src/routes/specificSeries.php');
 require_once('../src/routes/addView.php');
 require_once('../src/routes/likeVideo.php');
 require_once('../src/routes/checkVideoUserRelation.php');
+require_once('../src/routes/likeSeries.php');
+require_once('../src/routes/checkSeriesUserRelation.php');
 
 $app->run();
