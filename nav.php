@@ -25,6 +25,9 @@
 
         <div class="collapse navbar-collapse style" id="navbarTogglerDemo02">
         <ul class="navbar-nav mr-auto ">
+            <li class="nav-item">
+              <a class="nav-link" id="dashBoard"href="dashboard.php">Dashboard</a>
+            </li>
             <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="uvideos" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
              Videos

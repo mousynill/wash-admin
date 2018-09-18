@@ -54,7 +54,7 @@
 
       //checking
       if(mysqli_num_rows($result)==1){
-        header("Location: upload.php");
+        header("Location: dashboard.php");
         exit();
       } else if(empty($uname) || empty($pass)) {
         echo "<script type='text/javascript'>alert('Please input username and password first');
