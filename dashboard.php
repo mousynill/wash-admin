@@ -15,6 +15,7 @@
         <div class="card-body">
           <div class="d-flex no-block">
 
+            <img src="images/user.png" height="60" width="60" style="align-content: center;">
             <div class="m-l-10 align-self-center">
               <h4 class="m-b-0">
                 <?php
@@ -41,10 +42,10 @@
         <div class="card">
           <div class="card-body">
             <div class="d-flex no-block">
-
+              <img src="images/active-icon.png" height="60" width="60">
               <div class="m-l-10 align-self-center">
-                <h4 class="m-b-0">370</h3>
-                <h6 class="text-muted m-b-0">Active Users</h5></div>
+                <h4 class="m-b-0">1</h3>
+                <h6 class="text-muted m-b-0">Active User(s)</h5></div>
             </div>
           </div>
         </div>
@@ -56,11 +57,12 @@
             <div class="d-flex no-block">
 
               <div class="m-l-10 align-self-center">
-                <h4 class="m-b-0">
+                <h4 class="m-b-0">Maymay
                   <?php
-                      include 'includes/dbh.inc.php'
+                      include 'includes/dbh.inc.php';
 
-                    
+                      $getViewQuery = "SELECT VideoTitle, viewCount FROM videostable";
+                      $result = mysqli_query($conn, $getViewQuery);
 
                   ?>
                 </h3>
@@ -77,14 +79,14 @@
 
               <div class="m-l-10 align-self-center">
                 <h4 class="m-b-0">Robot ni Tatay</h3>
-                <h6 class="text-muted m-b-0">Most Viewed Comics</h5></div>
+                <h6 class="text-muted m-b-0">Most Liked Comics</h5></div>
             </div>
           </div>
         </div>
       </div>
   </div>
 
-
+<br><br>
       <div class="row">
         <div class="col-lg-6 col-sm-6">
           <div class="card">

@@ -18,7 +18,7 @@
 
   <!--Navbar-->
       <nav class="navbar navbar-expand-lg navbar-dark title" style="background-color: #278BCF;"> <!--2F98E2 -->
-        <a class="navbar-brand" href="upload.php">Wash App Kids</a>
+        <a class="navbar-brand" href="dashboard.php">Wash App Kids</a>
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
