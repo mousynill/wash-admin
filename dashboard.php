@@ -45,7 +45,7 @@
               <img src="images/active-icon.png" height="60" width="60">
               <div class="m-l-10 align-self-center">
                 <h4 class="m-b-0">1</h3>
-                <h6 class="text-muted m-b-0">Active User(s)</h5></div>
+                <h6 class="text-muted m-b-0">Active User(s) </h5></div>
             </div>
           </div>
         </div>
@@ -55,7 +55,7 @@
         <div class="card">
           <div class="card-body">
             <div class="d-flex no-block">
-
+              <img src="images/video-icon1.png" height="60" width="60">
               <div class="m-l-10 align-self-center">
                 <h4 class="m-b-0">Maymay
                   <?php
@@ -76,7 +76,7 @@
         <div class="card">
           <div class="card-body">
             <div class="d-flex no-block">
-
+              <img src="images/comic-icon.png" height="60" width="60">
               <div class="m-l-10 align-self-center">
                 <h4 class="m-b-0">Robot ni Tatay</h3>
                 <h6 class="text-muted m-b-0">Most Liked Comics</h5></div>
@@ -86,7 +86,7 @@
       </div>
   </div>
 
-<br><br>
+<br>
       <div class="row">
         <div class="col-lg-6 col-sm-6">
           <div class="card">
