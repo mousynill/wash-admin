@@ -21,7 +21,7 @@
         <source id="source" type="video/mp4">
         </video>
 
-        <img src="images/upload.png" height="100"width="125" alt="upload logo">
+        <img id="upload" src="images/upload.png" height="100"width="125" alt="upload logo">
         <p id="txt">Drag your files here or click in this area.</p>
 
       <button type="submit" name="SubmitButton">Upload</button>
@@ -83,7 +83,7 @@
 
         document.getElementById("txt").style.lineHeight = "45px"; //changes the line-height of the paragraph when a video uploaded
         document.getElementById("txt").style.height = "13.5%";
-
+        document.getElementById("upload").style.display = "none";
         video.load();
 
 

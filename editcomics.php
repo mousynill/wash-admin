@@ -40,7 +40,7 @@
               border-radius: 10px;
               cursor:pointer;'>
 
-              <div style='padding-top: 100%;'><?php echo $comicsTitle; ?></div>
+              <div style='padding-top: 100%;'><span style="background-color:white;"><?php echo $comicsTitle; ?></span></div>
 
             </button>
 

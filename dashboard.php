@@ -5,6 +5,8 @@
 <head>
   <link rel="stylesheet" type="text/css" href="dashboard.css">
   <link href="https://fonts.googleapis.com/css?family=Quicksand:500" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+
   <title>Dashboard</title>
 </head>
 <body>
@@ -94,6 +96,10 @@
               <h6 class="card-title m-b-0"><div class="float-right checkbox"><input type="checkbox">Show only active users</div>List of Users</h6>
               <table class="table">
                 <thead class="thead-dark">
+                  <?php
+                    include 'includes/dbh.inc.php';
+                    $getUsersQuery
+                  ?>
                   <tr>
                     <th>#</th>
                     <th>Firstname</th>
@@ -123,10 +129,23 @@
                     <td>julyaug</td>
                   </tr>
               </tbody>
+            </table>
             </div>
           </div>
         </div>
+        <div class="col-md-6 col-lg-6 col-sm-12 col-xs-12">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title"><small class="float-right text-danger"><i class="fa fa-sort-desc"></i> 18% less then last month</small>Active Users</h5>
+
+                </div>
+
+                  <canvas id="myChart" style="height:17px; width:51px;"></canvas>
+                </div>
+            </div>
+        </div>
       </div>
+
 
 
 </div>
@@ -135,5 +154,37 @@
 <script type="text/javascript">
   $(document).ready(function(){
     $("#dashBoard").addClass("active");
+
+    var ctx = document.getElementById('myChart').getContext('2d');
+    var chart = new Chart(ctx, {
+    // The type of chart we want to create
+    type: 'line',
+
+    // The data for our dataset
+    data: {
+        labels: ["January", "February", "March", "April", "May", "June", "July"],
+        datasets: [{
+              backgroundColor: 'rgb(254, 234, 228)',
+            borderColor: 'rgb(253, 204, 190)',
+            data: [0, 15, 10, 15, 12, 25, 7],
+            defaultFontStyle: 'Quicksand',
+            lineTension: 0,
+        }]
+    },
+
+    // Configuration options go here
+    options: {
+      legend: {
+          display: false
+      },
+      tooltips: {
+          callbacks: {
+             label: function(tooltipItem) {
+                    return tooltipItem.yLabel;
+             }
+          }
+      }
+    }
+});
   })
 </script>
