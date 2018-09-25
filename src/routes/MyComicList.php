@@ -5,9 +5,9 @@ require_once('../src/config/db.php');
   $userID = $_POST['userID'];
 
   $getMyComics = "SELECT CT.SeriesID, CT.ComicFileName, CT.ComicTitle, CT.ComicAuthor, CT.ComicDescription, CT.ComicThumbnailPath
-  FROM appusers AS AU
-  JOIN userscomics AS UC ON AU.userID = UC.userID
-  JOIN comicstable AS CT ON UC.seriesID = CT.SeriesID
+  FROM comicstable AS CT
+  JOIN userscomics AS UC ON UC.seriesID = CT.SeriesID
+  JOIN appusers AS AU ON AU.userID = UC.userID
   WHERE AU.userID = $userID AND UC.isLiked = 1";
 
   try{
