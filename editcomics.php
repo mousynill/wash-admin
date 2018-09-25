@@ -279,16 +279,23 @@ function series(series){
     var thisSeriesID = series;
     var thisChapNo = chapNo;
 
-    if(confirm('Are you sure you want to delete this chapter?')){
-      //PHP COMMAND TO DELETE THE CHAPTER
-
-
-          window.location.href = "deletechapter.php?thisSeriesID=" +thisSeriesID+"&thisChapNo="+thisChapNo;
-
-
-    }else {
-      return false;
-    }
+    swal({
+      title: "Are you sure?",
+      text: "Once deleted, you will not be able to recover this imaginary file!",
+      icon: "warning",
+      buttons: true,
+      dangerMode: true,
+    })
+    .then((willDelete) => {
+      if (willDelete) {
+        window.location.href = "deletechapter.php?thisSeriesID=" +thisSeriesID+"&thisChapNo="+thisChapNo;
+        swal("Poof! Your imaginary file has been deleted!", {
+          icon: "success",
+        });
+      } else {
+        swal("Your file is safe!");
+      }
+    })
   }
 
 

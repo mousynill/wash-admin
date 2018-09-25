@@ -52,10 +52,10 @@
       var allow = "<?php echo $allowed?>";
 
       if (vid == "") {
-        alert("You must upload upload a video first!");
+        swal("", "You must upload upload a video first!", "error");
         return false;
       } else if (title == "") {
-        alert("You must input a title first!");
+        swal("","You must input a title first!", "error");
         return false;
       } else if (author == "") {
         alert("You must input an author first!");

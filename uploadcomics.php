@@ -47,16 +47,16 @@
         var cDesc = document.forms["myComic"]["comicsDescription"].value;
 
         if (comic == "") {
-          alert("You must upload a comic first!");
+          swal("", "You must upload upload a cover first!", "error");
           return false;
         } else if (cTitle == "") {
-          alert("You must input a title first!");
+          swal("","You must input a title first!", "error");
           return false;
         } else if (cAuthor == "") {
-          alert("You must input an author first!");
+          aswal("","You must input an author first!", "error");
           return false;
         } else if (cDesc == "") {
-          alert("You must input a description first!");
+          swal("","You must input a description first!", "error");
           return false;
         }
       }
