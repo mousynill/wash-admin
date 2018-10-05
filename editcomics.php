@@ -5,6 +5,8 @@
 <head>
   <title>Edit Comics</title>
   <link rel="stylesheet" type="text/css" href="editcomics.css"> <!--pinalitan ko yung stylesheet-->
+  <link rel="stylesheet" type="text/css" href="addchap.css">
+  <script src="includes/ckeditor/ckeditor.js"> </script>
 </head>
 
 <body>
@@ -40,7 +42,7 @@
               border-radius: 10px;
               cursor:pointer;'>
 
-              <div style='padding-top: 100%;'><span style="background-color:white;"><?php echo $comicsTitle; ?></span></div>
+              <div style='padding-top: 100%;'><h6 style="background-color:white;"><?php echo $comicsTitle; ?></h6></div>
 
             </button>
 
@@ -67,6 +69,9 @@
                                 <li class="nav-item">
                                   <a class="nav-link" id="editTab<?php echo $comicsID; ?>" style="display: none" value="<?php echo $comicsID;?>" data-toggle="tab" href="#editFor<?php echo $comicsID; ?>" role="tab" aria-controls="edit" aria-selected="false">Edit Chapter</a>
                                 </li>
+                                <li class="nav-item">
+                                  <a class="nav-link" data-toggle="tab" href="#add"role="tab" >Add Chapter</a>
+                                </a>
                             </ul>
 
 
@@ -152,6 +157,18 @@
                                 <?php }
                               }
                               ?>
+
+                              <!--///////// ADD CHAPTER TAB //////////-->
+                              <div id="add" class="tab-pane fade">
+                                <div class="document-editor">
+                                    <div id="toolbar-container"></div>
+                                    <div class="document-editor__editable-container">
+                                      <div id="editor">
+                                          This is the shit
+                                      </div>
+                                  </div>
+                                </div>
+                              </div>
                             </div>
 
                           </div>
@@ -205,6 +222,22 @@
   })
 
 </script>
+
+<!--//////////// SCRIPT FOR TEXT EDITOR -->
+<script>
+DecoupledEditor
+          .create( document.querySelector( '#editor' ) )
+          .then( editor => {
+              const toolbarContainer = document.querySelector( '#toolbar-container' );
+
+              toolbarContainer.appendChild( editor.ui.view.toolbar.element );
+              window.editor = editor;
+          } )
+          .catch( error => {
+              console.error( error );
+          } );
+</script>
+
 <script>
 
 

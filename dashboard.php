@@ -111,19 +111,31 @@
                 <tbody>
                   <tr>
                     <td>1</td>
-                    <td>John</td>
-                    <td>Doe</td>
-                    <td>johnjohn</td>
+                    <td>Allan</td>
+                    <td>Luartes</td>
+                    <td>lanluartes@yahoo.com</td>
                     <td>active</td>
                   </tr>
                   <tr>
                     <td>2</td>
-                    <td>Mary</td>
-                    <td>Moe</td>
-                    <td>mary_</td>
+                    <td>Allan</td>
+                    <td>Michael</td>
+                    <td>lanmichael@yahoo.com</td>
                   </tr>
                   <tr>
                     <td>3</td>
+                    <td>July</td>
+                    <td>Dooley</td>
+                    <td>julyaug</td>
+                  </tr>
+                  <tr>
+                    <td>4</td>
+                    <td>July</td>
+                    <td>Dooley</td>
+                    <td>julyaug</td>
+                  </tr>
+                  <tr>
+                    <td>5</td>
                     <td>July</td>
                     <td>Dooley</td>
                     <td>julyaug</td>
@@ -133,14 +145,14 @@
             </div>
           </div>
         </div>
-        <div class="col-md-6 col-lg-6 col-sm-12 col-xs-12">
+        <div class="col-md-6 col-lg-6 col-sm-6 col-xs-12">
             <div class="card">
                 <div class="card-body">
-                    <h5 class="card-title"><small class="float-right text-danger"><i class="fa fa-sort-desc"></i> 18% less then last month</small>Active Users</h5>
+                    <h5 class="card-title"><small class="float-right text-danger"><i class="fa fa-sort-desc"></i> 63% average active users</small>Active Users</h5>
 
                 </div>
 
-                  <canvas id="myChart" style="height:17px; width:51px;"></canvas>
+                  <canvas id="myChart" style="height:19px; width: 39px;"></canvas>
                 </div>
             </div>
         </div>
