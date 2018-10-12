@@ -7,7 +7,7 @@
   <link href="https://fonts.googleapis.com/css?family=Quicksand:500" rel="stylesheet">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
 
-  <title>Dashboard</title>
+  <title>Welcome to Wash App Kids!</title>
 </head>
 <body>
 <div style="margin:30px;">
@@ -19,22 +19,9 @@
 
             <img src="images/user.png" height="60" width="60" style="align-content: center;">
             <div class="m-l-10 align-self-center">
-              <h4 class="m-b-0">
-                <?php
-                  include 'includes/dbh.inc.php';
-
-                  $getUsersQuery = "SELECT COUNT(*) FROM appusers";
-                  $result = mysqli_query($conn, $getUsersQuery);
-                  if(mysqli_num_rows($result)>0){
-                    while($userRow = mysqli_fetch_row($result)){
-                        $count = $userRow[0];
-
-                        echo $count;
-                    }
-
-                  }
-
-                  ?></h3>
+              <?php
+                include './getAllUsers.php';
+              ?>
               <h6 class="text-muted m-b-0">Total Users</h5></div>
             </div>
           </div>
@@ -46,7 +33,9 @@
             <div class="d-flex no-block">
               <img src="images/active-icon.png" height="60" width="60">
               <div class="m-l-10 align-self-center">
-                <h4 class="m-b-0">1</h3>
+                  <?php
+                    include './getActiveUsers.php';
+                  ?>
                 <h6 class="text-muted m-b-0">Active User(s) </h5></div>
             </div>
           </div>
@@ -94,54 +83,7 @@
           <div class="card">
             <div class="card-body">
               <h6 class="card-title m-b-0"><div class="float-right checkbox"><input type="checkbox">Show only active users</div>List of Users</h6>
-              <table class="table">
-                <thead class="thead-dark">
-                  <?php
-                    include 'includes/dbh.inc.php';
-                    $getUsersQuery
-                  ?>
-                  <tr>
-                    <th>#</th>
-                    <th>Firstname</th>
-                    <th>Lastname</th>
-                    <th>Username</th>
-                    <th></th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>1</td>
-                    <td>Allan</td>
-                    <td>Luartes</td>
-                    <td>lanluartes@yahoo.com</td>
-                    <td>active</td>
-                  </tr>
-                  <tr>
-                    <td>2</td>
-                    <td>Allan</td>
-                    <td>Michael</td>
-                    <td>lanmichael@yahoo.com</td>
-                  </tr>
-                  <tr>
-                    <td>3</td>
-                    <td>July</td>
-                    <td>Dooley</td>
-                    <td>julyaug</td>
-                  </tr>
-                  <tr>
-                    <td>4</td>
-                    <td>July</td>
-                    <td>Dooley</td>
-                    <td>julyaug</td>
-                  </tr>
-                  <tr>
-                    <td>5</td>
-                    <td>July</td>
-                    <td>Dooley</td>
-                    <td>julyaug</td>
-                  </tr>
-              </tbody>
-            </table>
+              
             </div>
           </div>
         </div>

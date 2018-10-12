@@ -69,9 +69,7 @@
                                 <li class="nav-item">
                                   <a class="nav-link" id="editTab<?php echo $comicsID; ?>" style="display: none" value="<?php echo $comicsID;?>" data-toggle="tab" href="#editFor<?php echo $comicsID; ?>" role="tab" aria-controls="edit" aria-selected="false">Edit Chapter</a>
                                 </li>
-                                <li class="nav-item">
-                                  <a class="nav-link" data-toggle="tab" href="#add"role="tab" >Add Chapter</a>
-                                </a>
+                                
                             </ul>
 
 
@@ -158,17 +156,7 @@
                               }
                               ?>
 
-                              <!--///////// ADD CHAPTER TAB //////////-->
-                              <div id="add" class="tab-pane fade">
-                                <div class="document-editor">
-                                    <div id="toolbar-container"></div>
-                                    <div class="document-editor__editable-container">
-                                      <div id="editor">
-                                          This is the shit
-                                      </div>
-                                  </div>
-                                </div>
-                              </div>
+
                             </div>
 
                           </div>
@@ -208,17 +196,6 @@
   $(document).ready(function(){
     $("#ucomics").addClass("active");
 
-    //show EDIT TAB THEN HIDE THE UPLOAD TAB
-/*   $("#chap").click(function(){
-      $("#editTab").trigger("click");
-      $("#editTab").show();
-      $("#uploadTab").hide();
-    })
-    //SHOW UPLAD WHEN SERIES IS CLICKED
-    $("#seriesTab").click(function(){
-      $("#editTab").hide();
-      $("#uploadTab").show();
-    });*/
   })
 
 </script>
