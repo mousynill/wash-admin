@@ -48,15 +48,9 @@
             <div class="d-flex no-block">
               <img src="images/video-icon1.png" height="60" width="60">
               <div class="m-l-10 align-self-center">
-                <h4 class="m-b-0">Maymay
-                  <?php
-                      include 'includes/dbh.inc.php';
-
-                      $getViewQuery = "SELECT VideoTitle, viewCount FROM videostable";
-                      $result = mysqli_query($conn, $getViewQuery);
-
-                  ?>
-                </h3>
+                <?php
+                  include './mostViewedVideo.php';
+                ?>
                 <h6 class="text-muted m-b-0">Most Viewed Video</h5></div>
             </div>
           </div>
@@ -69,7 +63,9 @@
             <div class="d-flex no-block">
               <img src="images/comic-icon.png" height="60" width="60">
               <div class="m-l-10 align-self-center">
-                <h4 class="m-b-0">Robot ni Tatay</h3>
+                <?php
+                include './mostLikedComics.php'
+                ?>
                 <h6 class="text-muted m-b-0">Most Liked Comics</h5></div>
             </div>
           </div>
@@ -83,7 +79,7 @@
           <div class="card">
             <div class="card-body">
               <h6 class="card-title m-b-0"><div class="float-right checkbox"><input type="checkbox">Show only active users</div>List of Users</h6>
-              
+
             </div>
           </div>
         </div>

@@ -22,10 +22,10 @@ require_once('../src/config/db.php');
     if($relation == 'false'){
         return json_encode('{"relation":"unbought"}');
       }else{
-        if($relationExists->isLiked == 0){
+        if($relationExists->isBought == 0){
           return json_encode('{"relation":"unbought"}');
           //must return unliked relation
-        }else if($relationExists->isLiked == 1){
+        }else if($relationExists->isBought == 1){
           return json_encode('{"relation":"bought"}');
           //must return liked relation
         }else{
