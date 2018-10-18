@@ -5,11 +5,11 @@
 
 <head>
   <link rel="stylesheet" type="text/css" href="changepassword.css">
-  <link rel
+
 </head>
 <body>
   <div class="cp-modal" id="changepasswordmodal" >
-    <form method="POST" action="">
+    <form method="POST" action="changepasswordfunction.php">
 
       <div class="cp-modal-content">
 
