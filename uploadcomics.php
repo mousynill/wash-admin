@@ -23,7 +23,8 @@
 
       <div class="author">
         Title: <input type="text" name="comicsTitle"placeholder="Enter title here">
-        <br><br><br>Author: <input type="text" name="comicsAuthor" placeholder="Enter author here">
+        <br>Author: <input type="text" name="comicsAuthor" placeholder="Enter author here">
+        <br>Price:  <input type="number" name="comicPrice" placeholder="Enter price here">
       </div>
 
       <div class="desc">

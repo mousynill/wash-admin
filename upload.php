@@ -28,8 +28,9 @@
     </div>
 
     <div class="author">
-      Title: <input type="text" name="videoTitle" placeholder="Enter title here">
-      <br><br><br>Author: <input type="text" name="videoAuthor" placeholder="Enter author here">
+      Title:  <input type="text" name="videoTitle" placeholder="Enter title here">
+      <br>Author:   <input type="text" name="videoAuthor" placeholder="Enter author here">
+      <br>Price:  <input type="number" name="videoPrice" placeholder="Enter price here">
     </div>
     <div class="desc">
         Description:<br><textarea name="videoDescription"rows="8" cols="36" placeholder="Enter the description here"></textarea>

@@ -50,7 +50,7 @@
                        </div>
 
                        <div class='modal-body'>
-                       <video height="250" width="537" controls>
+                       <video height="auto" width="100%" controls>
                          <source src="<?php echo $videoPath; ?>" type="video/mp4">
                        </video><br>
                        <br>Title:
@@ -60,7 +60,7 @@
                        </div>
 
                        <div class='modal-footer'>
-                       <button id='<?php echo $videoID ?>' type='submit' name='submitBtn' value='<?php echo $videoID ?>' style='cursor:pointer;'>Submit</button>
+                         <button id='<?php echo $videoID ?>' type='submit' name='submitBtn' value='<?php echo $videoID ?>' style='cursor:pointer;'>Submit</button>
                        </div>
 
                        </div>

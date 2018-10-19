@@ -69,5 +69,9 @@ require_once('../src/routes/checkSeriesUserRelation.php');
 require_once('../src/routes/MyVideoList.php');
 require_once('../src/routes/MyComicList.php');
 require_once('../src/routes/checkIfBought.php');
+require_once('../src/routes/buyVideo.php');
+require_once('../src/routes/getMyPoints.php');
+
+
 
 $app->run();

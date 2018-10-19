@@ -10,12 +10,14 @@
       $fileTitle = $_POST['videoTitle'];
       $fileAuthor = $_POST['videoAuthor'];
       $fileDescription = $_POST['videoDescription'];
+      $filePrice = $_POST['videoPrice'];
 
       $fileName = $_FILES['videoFile']['name'];
       $fileTmpName = $_FILES['videoFile']['tmp_name'];
       $fileSize = $_FILES['videoFile']['size'];
       $fileError = $_FILES['videoFile']['error'];
       $fileType = $_FILES['videoFile']['type'];
+
 
       $fileExt =  explode('.', $fileName);
       $fileActualExt = strtolower(end($fileExt));
@@ -29,7 +31,7 @@
             $fileDestination = 'uploads/videos/'.$fileNameNew;
             move_uploaded_file($fileTmpName,$fileDestination);
 
-            $sql = "INSERT INTO videostable(VideoFileName, VideoTitle, VideoAuthor, VideoDescription, VideoPath, VideoSize) VALUES ('$fileName', '$fileTitle', '$fileAuthor', '$fileDescription', '$fileDestination', '$fileSize')";
+            $sql = "INSERT INTO videostable(VideoFileName, VideoTitle, VideoAuthor, VideoDescription, VideoPath, VideoSize, VideoPrice) VALUES ('$fileName', '$fileTitle', '$fileAuthor', '$fileDescription', '$fileDestination', '$fileSize', $filePrice)";
             mysqli_query($conn, $sql);
 
           $query = "SELECT IdNo FROM videostable WHERE VideoPath = '$fileDestination'";
