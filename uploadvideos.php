@@ -6,20 +6,24 @@
   <title>Upload Comics</title>
   <link rel="stylesheet" type="text/css" href="uploadvideos.css">
   <link href="https://fonts.googleapis.com/css?family=Quicksand:500" rel="stylesheet">
+
+  <style type="text/css">
+    #second-2, #second-3, #second-4, #second-5{
+      display:none;
+    }
+  </style>
 </head>
 
 <body>
-  <div id="">
-    <div id="progressBar" class="progress-bar bg-danger">
-      <b id="progressText" class="lead">
-        Upload Video
-      </b>
+  <div class="progress mb-3" style="height:30px">
+    <div id="progressBar" class="progress-bar bg-danger" style="width:35%;">
+      <b id="progressText" class="lead">Upload Video</b>
     </div>
   </div>
 
   <!--Upload Form -->
   <form name ="myComic" method="POST" class="up" enctype="multipart/form-data" onsubmit="return validateForm()">
-    <div class="first" id="first">
+    <div class="first" id="first" style="display:none; ">
       <div class="input-file">
       <input type="file" accept="video/mp4,video/*" name="videoFile" onchange="preview(this);">
       <img src="images/upload.png" height="100"width="125" alt="upload logo"></img>
@@ -39,15 +43,94 @@
       </div>
     </div>
 
-    <div class="first" id="second">
-      <div class="progress" style="height:40px">
+    <div class="row justify-content-center">
+    <div class="col-lg-8 mt-5 bg-light"id="second">
+      <div class="progress mb-3" style="height:40px">
         <div class="progress-bar bg-danger" role="progressbar" style="width:20%" id="progressBar2">
           <b class="lead" id="progressText2"> Question 1 </b>
         </div>
       </div>
-    </div>
+      <div class="p-2 bg-light" id="second-1">
+        <div class="col-sm-6 col-xs-2">
+          <input type="text" class="form-control form-control-lg"name="question" placeholder="Enter your first question here"><br>
+        </div>
+        <div class="col-sm-6 col-xs-2">
+          <input type="text" class="form-control" placeholder="Enter the first choice here">
+          <input type="text" class="form-control" placeholder="Enter the second choice here">
+          <input type="text" class="form-control" placeholder="Enter the third choice here">
+          <input type="text" class="form-control" placeholder="Enter the fourth choice here">
+        </div>
+        <div class="form-group mt-3">
+          <a href="#" class="btn btn-danger" id="next-1">Next</a>
+        </div>
+      </div>
 
+      <div class=" p-2 bg-light" id="second-2">
+        <div class="col-sm-6 col-xs-2">
+          <input type="text" class="form-control form-control-lg"name="question" placeholder="Enter your second question here"><br>
+        </div>
+        <div class="col-sm-6 col-xs-2">
+          <input type="text" class="form-control" placeholder="Enter the first choice here">
+          <input type="text" class="form-control" placeholder="Enter the second choice here">
+          <input type="text" class="form-control" placeholder="Enter the third choice here">
+          <input type="text" class="form-control" placeholder="Enter the fourth choice here">
+        </div>
+        <div class="form-group mt-3">
+          <a href="#" class="btn btn-danger" id="prev-2">Previous</a>
+          <a href="#" class="btn btn-danger" id="next-2">Next</a>
+        </div>
+      </div>
+
+      <div class=" p-2 bg-light" id="second-3">
+        <div class="col-sm-6 col-xs-2">
+          <input type="text" class="form-control form-control-lg"name="question" placeholder="Enter your third question here"><br>
+        </div>
+        <div class="col-sm-6 col-xs-2">
+          <input type="text" class="form-control" placeholder="Enter the first choice here">
+          <input type="text" class="form-control" placeholder="Enter the second choice here">
+          <input type="text" class="form-control" placeholder="Enter the third choice here">
+          <input type="text" class="form-control" placeholder="Enter the fourth choice here">
+        </div>
+        <div class="form-group mt-3">
+          <a href="#" class="btn btn-danger" id="prev-3">Previous</a>
+          <a href="#" class="btn btn-danger" id="next-3">Next</a>
+        </div>
+      </div>
+
+      <div class=" p-2 bg-light" id="second-4">
+        <div class="col-sm-6 col-xs-2">
+          <input type="text" class="form-control form-control-lg"name="question" placeholder="Enter your fourth question here"><br>
+        </div>
+        <div class="col-sm-6 col-xs-2">
+          <input type="text" class="form-control" placeholder="Enter the first choice here">
+          <input type="text" class="form-control" placeholder="Enter the second choice here">
+          <input type="text" class="form-control" placeholder="Enter the third choice here">
+          <input type="text" class="form-control" placeholder="Enter the fourth choice here">
+        </div>
+        <div class="form-group mt-3">
+          <a href="#" class="btn btn-danger" id="prev-4">Previous</a>
+          <a href="#" class="btn btn-danger" id="next-4">Next</a>
+        </div>
+      </div>
+
+      <div class=" p-2 bg-light" id="second-5">
+        <div class="col-sm-6 col-xs-2">
+          <input type="text" class="form-control form-control-lg"name="question" placeholder="Enter your fifth question here"><br>
+        </div>
+        <div class="col-sm-6 col-xs-2">
+          <input type="text" class="form-control" placeholder="Enter the first choice here">
+          <input type="text" class="form-control" placeholder="Enter the second choice here">
+          <input type="text" class="form-control" placeholder="Enter the third choice here">
+          <input type="text" class="form-control" placeholder="Enter the fourth choice here">
+        </div>
+        <div class="form-group mt-3">
+          <a href="#" class="btn btn-danger" id="prev-5">Previous</a>
+          <a href="#" class="btn btn-success" id="next-5">Finish</a>
+        </div>
+      </div>
     </div>
+  </div>
+
 
 
   </form>
@@ -57,6 +140,59 @@
   <script type="text/javascript">
     $(document).ready(function(){
       $("#ucomics").addClass("active");
+
+      $("#first").click(function(){
+        $("#first").hide();
+        $("#second").show();
+      });
+      $("#next-1").click(function(){
+        $("#second-1").hide();
+        $("#second-2").show();
+        $("#progressBar2").css("width", "40%");
+        $("#progressText2").html("Question 2");
+      });
+      $("#next-2").click(function(){
+        $("#second-2").hide();
+        $("#second-3").show();
+        $("#progressBar2").css("width", "60%");
+        $("#progressText2").html("Question 3");
+      });
+      $("#next-3").click(function(){
+        $("#second-3").hide();
+        $("#second-4").show();
+        $("#progressBar2").css("width", "80%");
+        $("#progressText2").html("Question 4");
+      });
+      $("#next-4").click(function(){
+        $("#second-4").hide();
+        $("#second-5").show();
+        $("#progressBar2").css("width", "100%");
+        $("#progressText2").html("Question 5");
+      });
+      $("#prev-2").click(function(){
+        $("#second-2").hide();
+        $("#second-1").show();
+        $("#progressBar2").css("width", "20%");
+        $("#progressText2").html("Question 1");
+      });
+      $("#prev-3").click(function(){
+        $("#second-3").hide();
+        $("#second-2").show();
+        $("#progressBar2").css("width", "40%");
+        $("#progressText2").html("Question 2");
+      });
+      $("#prev-4").click(function(){
+        $("#second-4").hide();
+        $("#second-3").show();
+        $("#progressBar2").css("width", "60%");
+        $("#progressText2").html("Question 3");
+      });
+      $("#prev-5").click(function(){
+        $("#second-5").hide();
+        $("#second-4").show();
+        $("#progressBar2").css("width", "80%");
+        $("#progressText2").html("Question 4");
+      });
 
     })
   </script>

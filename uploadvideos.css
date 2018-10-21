@@ -13,6 +13,9 @@ body {
   margin-top: -220px;
   margin-left: -520px;
   padding: 0;
+  -webkit-box-shadow: -1px 5px 17px -1px rgba(209,209,209,1);
+  -moz-box-shadow: -1px 5px 17px -1px rgba(209,209,209,1);
+  box-shadow: -1px 5px 17px -1px rgba(209,209,209,1);
 }
 .first button{
   color: #fff;
