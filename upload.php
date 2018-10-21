@@ -11,31 +11,58 @@
 <body>
   <!-- nill wag mo kalimutan pag-isahin yung form. Saka isame mo yung name sa TITLE, AUTHOR, DESCRIPTION. (refer to uploadvideosfunction.php)  -->
 
+  <div id="progressBar" class="progress-bar bg-danger">
+    <b id="progressText" class="lead">
+      Upload Video
+    </b>
+  </div>
+
   <!--Upload Form -->
+<div class="body">
   <form name="myForm" action="uploadvideosfunction.php" method="POST" class="up" enctype="multipart/form-data" onsubmit="return validateForm()">
-    <div class="input-file">
-        <input type="file" accept="video/mp4,video/*" name="videoFile" onchange="preview(this);">
-        </input>
 
-        <video id="video" style="display:none;"height="260"width="650" controls >
-        <source id="source" type="video/mp4">
-        </video>
+  <div id="first">
 
-        <img id="upload" src="images/upload.png" height="100"width="125" alt="upload logo">
-        <p id="txt">Drag your files here or click in this area.</p>
+    <div class="first-col">
 
-      <button type="submit" name="SubmitButton">Upload</button>
+        <div class="input-file">
+            <input type="file" accept="video/mp4,video/*" name="videoFile" onchange="preview(this);">
+            </input>
+
+            <video id="video" style="display:none;"height="260"width="650" controls>
+              <source id="source" type="video/mp4">
+            </video>
+
+            <img id="upload" src="images/upload.png" height="100"width="125" alt="upload logo">
+            <p id="txt">Drag your files here or click in this area.</p>
+        </div>
+
+        <div class="upload-button">
+          <button type="submit" name="SubmitButton">Upload</button>
+        </div>
+
     </div>
 
-    <div class="author">
-      Title:  <input type="text" name="videoTitle" placeholder="Enter title here">
-      <br>Author:   <input type="text" name="videoAuthor" placeholder="Enter author here">
-      <br>Price:  <input type="number" name="videoPrice" placeholder="Enter price here">
+      <div class="author">
+        Title:  <input type="text" name="videoTitle" placeholder="Enter title here">
+        <br>Author:   <input type="text" name="videoAuthor" placeholder="Enter author here">
+        <br>Price:  <input type="number" name="videoPrice" placeholder="Enter price here">
+      </div>
+      <div class="desc">
+          Description:<br><textarea name="videoDescription"rows="8" cols="36" placeholder="Enter the description here"></textarea>
+      </div>
     </div>
-    <div class="desc">
-        Description:<br><textarea name="videoDescription"rows="8" cols="36" placeholder="Enter the description here"></textarea>
+
+  <!-- <div id="second">
+    <div class="form-group">
+
     </div>
+  </div> -->
   </form>
+</div>
+
+
+
   <!--End of description form-->
   <script type="text/javascript">
     $(document).ready(function(){
