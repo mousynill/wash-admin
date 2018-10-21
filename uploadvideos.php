@@ -4,15 +4,22 @@
 
 <head>
   <title>Upload Comics</title>
-  <link rel="stylesheet" type="text/css" href="uploadcomics.css">
+  <link rel="stylesheet" type="text/css" href="uploadvideos.css">
   <link href="https://fonts.googleapis.com/css?family=Quicksand:500" rel="stylesheet">
 </head>
 
 <body>
+  <div id="">
+    <div id="progressBar" class="progress-bar bg-danger">
+      <b id="progressText" class="lead">
+        Upload Video
+      </b>
+    </div>
+  </div>
 
   <!--Upload Form -->
-  <form name ="myComic" method="POST" class="up" enctype="multipart/form-data" onsubmit="return validateForm()" >
-
+  <form name ="myComic" method="POST" class="up" enctype="multipart/form-data" onsubmit="return validateForm()">
+    <div class="first" id="first">
       <div class="input-file">
       <input type="file" accept="video/mp4,video/*" name="videoFile" onchange="preview(this);">
       <img src="images/upload.png" height="100"width="125" alt="upload logo"></img>
@@ -23,19 +30,34 @@
 
       <div class="author">
         Title: <input type="text" name="comicsTitle"placeholder="Enter title here">
-        <br><br><br>Author: <input type="text" name="videoAuthor" placeholder="Enter author here">
+        <br>Author: <input type="text" name="videoAuthor" placeholder="Enter author here">
+        <br>Price:  <input type="number" name="videoPrice" placeholder="Enter price here">
       </div>
 
       <div class="desc">
           Description:<br><textarea name="videoDescription"rows="8" cols="36" placeholder="Enter the description here"></textarea>
       </div>
+    </div>
+
+    <div class="first" id="second">
+      <div class="progress" style="height:40px">
+        <div class="progress-bar bg-danger" role="progressbar" style="width:20%" id="progressBar2">
+          <b class="lead" id="progressText2"> Question 1 </b>
+        </div>
+      </div>
+    </div>
+
+    </div>
+
 
   </form>
+
   <!--End of description form-->
   <!--for active link -->
   <script type="text/javascript">
     $(document).ready(function(){
       $("#ucomics").addClass("active");
+
     })
   </script>
 

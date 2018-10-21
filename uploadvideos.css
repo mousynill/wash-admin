@@ -3,7 +3,7 @@ body {
 
 }
 
-form {
+.first {
   width: 985px;
   height: 345px;
   background-color: #edf1f5;
@@ -14,7 +14,7 @@ form {
   margin-left: -520px;
   padding: 0;
 }
-form button{
+.first button{
   color: #fff;
   background: #278BCF;
   border: none;
@@ -30,21 +30,21 @@ form button:hover{
   background: #3EA2E5;
 
 }
-form p{
+.first p{
   width: 100%;
   height: 65%;
   text-align: center;
   line-height: 225px;
   color: #000000;
 }
-form>.input-file img {
+.first>.input-file img {
   margin-left: 265px;
   margin-right: auto;
   margin-bottom: -80px;
   margin-top: 85px;
 
 }
-form>.input-file {
+.first>.input-file {
   background-color: #fff;
   height: 300px;
   width: 650px;
@@ -54,7 +54,7 @@ form>.input-file {
   margin-bottom: 0;
 }
 
-form>.input-file input {
+.first>.input-file input {
   position: absolute;
   margin: 0;
   padding: 0;
@@ -64,7 +64,7 @@ form>.input-file input {
   opacity: 0;
 }
 
-form>.author {
+.first>.author {
   width: 320px;
   height: 130px;
   margin-top: -300px;
@@ -78,7 +78,7 @@ form>.author {
   font-size: 13px;
 
 }
-form>.author input {
+.first>.author input {
   border: 2px solid #aaa;
   border-radius: 4px;
   padding: 3px;
@@ -87,11 +87,11 @@ form>.author input {
   transition: .5s;
   width: 250px;
 }
-form>.author input:focus {
+.first>.author input:focus {
   border-color: dodgerBlue;
   box-shadow: 0 0 5px 0 dodgerBlue;
 }
-form>.desc {
+.first>.desc {
   width: 320px;
   height: 202px;
   margin-top: 18px;
