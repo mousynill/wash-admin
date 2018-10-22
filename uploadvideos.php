@@ -8,7 +8,8 @@
   <link href="https://fonts.googleapis.com/css?family=Quicksand:500" rel="stylesheet">
 
   <style type="text/css">
-    #second-2, #second-3, #second-4, #second-5{
+    #second-2, #second-3, #second-4, #second-5, #third, #third-2, #third-3,
+    #third-4, #third-5{
       display:none;
     }
   </style>
@@ -16,8 +17,8 @@
 
 <body>
   <div class="progress mb-3" style="height:30px">
-    <div id="progressBar" class="progress-bar bg-danger" style="width:35%;">
-      <b id="progressText" class="lead">Upload Video</b>
+    <div id="progressBar" class="progress-bar bg-danger" style="width:70%;">
+      <b id="progressText" class="lead">Create Questions</b>
     </div>
   </div>
 
@@ -131,6 +132,124 @@
     </div>
   </div>
 
+  <div class="row justify-content-center">
+    <div class="col-lg-8 mt-5 bg-light"id="third">
+      <div class="progress mb-3" style="height:40px">
+        <div class="progress-bar bg-danger" role="progressbar" style="width:20%" id="progressBar3">
+          <b class="lead" id="progressText3"> Answer Question 1 </b>
+        </div>
+      </div>
+      <div class="p-2 bg-light" id="third-1">
+        <div class="col-sm-6 col-xs-2">
+          Question 1 here<br><br>
+        </div>
+        <div class="radio">
+          <label><input type="radio" name="optradio">Option 1</label>
+        </div>
+        <div class="radio">
+          <label><input type="radio" name="optradio">Option 2</label>
+        </div>
+        <div class="radio">
+          <label><input type="radio" name="optradio">Option 3</label>
+        </div>
+        <div class="radio">
+          <label><input type="radio" name="optradio">Option 4</label>
+        </div>
+        <div class="form-group mt-3">
+          <a href="#" class="btn btn-danger" id="next2-1">Next</a>
+        </div>
+      </div>
+
+      <div class="p-2 bg-light" id="third-2">
+        <div class="col-sm-6 col-xs-2">
+          Question 2 here<br><br>
+        </div>
+        <div class="radio">
+          <label><input type="radio" name="optradio">Option 1</label>
+        </div>
+        <div class="radio">
+          <label><input type="radio" name="optradio">Option 2</label>
+        </div>
+        <div class="radio">
+          <label><input type="radio" name="optradio">Option 3</label>
+        </div>
+        <div class="radio">
+          <label><input type="radio" name="optradio">Option 4</label>
+        </div>
+        <div class="form-group mt-3">
+          <a href="#" class="btn btn-danger" id="prev2-2">Previous</a>
+          <a href="#" class="btn btn-danger" id="next2-2">Next</a>
+        </div>
+      </div>
+
+      <div class="p-2 bg-light" id="third-3">
+        <div class="col-sm-6 col-xs-2">
+          Question 3 here<br><br>
+        </div>
+        <div class="radio">
+          <label><input type="radio" name="optradio">Option 1</label>
+        </div>
+        <div class="radio">
+          <label><input type="radio" name="optradio">Option 2</label>
+        </div>
+        <div class="radio">
+          <label><input type="radio" name="optradio">Option 3</label>
+        </div>
+        <div class="radio">
+          <label><input type="radio" name="optradio">Option 4</label>
+        </div>
+        <div class="form-group mt-3">
+          <a href="#" class="btn btn-danger" id="prev2-3">Previous</a>
+          <a href="#" class="btn btn-danger" id="next2-3">Next</a>
+        </div>
+      </div>
+
+      <div class="p-2 bg-light" id="third-4">
+        <div class="col-sm-6 col-xs-2">
+          Question 4 here<br><br>
+        </div>
+        <div class="radio">
+          <label><input type="radio" name="optradio">Option 1</label>
+        </div>
+        <div class="radio">
+          <label><input type="radio" name="optradio">Option 2</label>
+        </div>
+        <div class="radio">
+          <label><input type="radio" name="optradio">Option 3</label>
+        </div>
+        <div class="radio">
+          <label><input type="radio" name="optradio">Option 4</label>
+        </div>
+        <div class="form-group mt-3">
+          <a href="#" class="btn btn-danger" id="prev2-4">Previous</a>
+          <a href="#" class="btn btn-danger" id="next2-4">Next</a>
+        </div>
+      </div>
+
+      <div class="p-2 bg-light" id="third-5">
+        <div class="col-sm-6 col-xs-2">
+          Question 5 here<br><br>
+        </div>
+        <div class="radio">
+          <label><input type="radio" name="optradio">Option 1</label>
+        </div>
+        <div class="radio">
+          <label><input type="radio" name="optradio">Option 2</label>
+        </div>
+        <div class="radio">
+          <label><input type="radio" name="optradio">Option 3</label>
+        </div>
+        <div class="radio">
+          <label><input type="radio" name="optradio">Option 4</label>
+        </div>
+        <div class="form-group mt-3">
+          <a href="#" class="btn btn-danger" id="prev2-5">Previous</a>
+          <a href="#" class="btn btn-success" id="next2-5">Finish</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
 
 
   </form>
@@ -169,6 +288,13 @@
         $("#progressBar2").css("width", "100%");
         $("#progressText2").html("Question 5");
       });
+      $("#next-5").click(function(){
+        $("#second").hide();
+        $("#third").show();
+        $("#third-1").show();
+        $("#progressBar").css("width", "100%");
+        $("#progressBar").html("Define answer");
+      });
       $("#prev-2").click(function(){
         $("#second-2").hide();
         $("#second-1").show();
@@ -192,6 +318,56 @@
         $("#second-4").show();
         $("#progressBar2").css("width", "80%");
         $("#progressText2").html("Question 4");
+      });
+
+      //------THIRD PROGRESS BAR --------
+      $("#next2-1").click(function(){
+        $("#third-1").hide();
+        $("#third-2").show();
+        $("#progressBar3").css("width", "40%");
+        $("#progressText3").html("Answer Question 2");
+      });
+      $("#next2-2").click(function(){
+        $("#third-2").hide();
+        $("#third-3").show();
+        $("#progressBar3").css("width", "60%");
+        $("#progressText3").html("Answer Question 3");
+      });
+      $("#next2-3").click(function(){
+        $("#third-3").hide();
+        $("#third-4").show();
+        $("#progressBar3").css("width", "80%");
+        $("#progressText3").html("Answer Question 4");
+      });
+      $("#next2-4").click(function(){
+        $("#third-4").hide();
+        $("#third-5").show();
+        $("#progressBar3").css("width", "100%");
+        $("#progressText3").html("Answer Question 5");
+      });
+      $("#prev2-2").click(function(){
+        $("#third-2").hide();
+        $("#third-1").show();
+        $("#progressBar3").css("width", "20%");
+        $("#progressText3").html("Answer Question 1");
+      });
+      $("#prev2-3").click(function(){
+        $("#third-3").hide();
+        $("#third-2").show();
+        $("#progressBar3").css("width", "40%");
+        $("#progressText3").html("Answer Question 2");
+      });
+      $("#prev2-4").click(function(){
+        $("#third-4").hide();
+        $("#third-3").show();
+        $("#progressBar3").css("width", "60%");
+        $("#progressText3").html("Answer Question 3");
+      });
+      $("#prev2-5").click(function(){
+        $("#third-5").hide();
+        $("#third-4").show();
+        $("#progressBar3").css("width", "80%");
+        $("#progressText3").html("Answer Question 4");
       });
 
     })
