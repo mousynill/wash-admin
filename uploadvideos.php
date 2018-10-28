@@ -8,7 +8,7 @@
   <link href="https://fonts.googleapis.com/css?family=Quicksand:500" rel="stylesheet">
 
   <style type="text/css">
-    #second-2, #second-3, #second-4, #second-5, #third, #third-2, #third-3,
+    #second, #second-2, #second-3, #second-4, #second-5, #third, #third-2, #third-3,
     #third-4, #third-5{
       display:none;
     }
@@ -24,13 +24,14 @@
 
   <!--Upload Form -->
   <form name ="myComic" method="POST" class="up" enctype="multipart/form-data" onsubmit="return validateForm()">
-    <div class="first" id="first" style="display:none; ">
+    <div class="first" id="first" >
       <div class="input-file">
       <input type="file" accept="video/mp4,video/*" name="videoFile" onchange="preview(this);">
       <img src="images/upload.png" height="100"width="125" alt="upload logo"></img>
         <p>Drag your files here or click in this area.</p>
       </input>
-      <button type="submit" name="submitButton">Upload</button>
+      <a href="#" class="btn btn-success btn-block" id="next">Next</a>
+      <!--<button type="submit" name="submitButton">Upload</button>-->
       </div>
 
       <div class="author">
@@ -244,7 +245,7 @@
         </div>
         <div class="form-group mt-3">
           <a href="#" class="btn btn-danger" id="prev2-5">Previous</a>
-          <a href="#" class="btn btn-success" id="next2-5">Finish</a>
+          <button type="submit" name="submitButton" class="btn btn-success" id="next2-5">Finish</a>
         </div>
       </div>
     </div>
@@ -260,7 +261,7 @@
     $(document).ready(function(){
       $("#ucomics").addClass("active");
 
-      $("#first").click(function(){
+      $("#next").click(function(){
         $("#first").hide();
         $("#second").show();
       });
