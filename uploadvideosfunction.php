@@ -18,6 +18,26 @@
       $fileError = $_FILES['videoFile']['error'];
       $fileType = $_FILES['videoFile']['type'];
 
+      $question1 = $_POST['question1'];
+      $ans1A = $_POST['ans1A'];
+      $ans1B = $_POST['ans1B'];
+      $ans1C = $_POST['ans1C'];
+      $question2 = $_POST['question2'];
+      $ans2A = $_POST['ans2A'];
+      $ans2B = $_POST['ans2B'];
+      $ans2C = $_POST['ans2C'];
+      $question3 = $_POST['question3'];
+      $ans3A = $_POST['ans3A'];
+      $ans3B = $_POST['ans3B'];
+      $ans3C = $_POST['ans3C'];
+      $question4 = $_POST['question4'];
+      $ans4A = $_POST['ans4A'];
+      $ans4B = $_POST['ans4B'];
+      $ans4C = $_POST['ans4C'];
+      $question5 = $_POST['question5'];
+      $ans5A = $_POST['ans5A'];
+      $ans5B = $_POST['ans5B'];
+      $ans5C = $_POST['ans5C'];
 
       $fileExt =  explode('.', $fileName);
       $fileActualExt = strtolower(end($fileExt));
