@@ -2,7 +2,7 @@
 
   include_once 'includes/dbh.inc.php';
 
-    if(isset($_POST['SubmitButton'])){ /*<--should be the name of the button*/
+    //if(isset($_POST['SubmitButton'])){ /*<--should be the name of the button*/
 
       $file = $_FILES['videoFile']; /*<-- should be the name of the input*/
 
@@ -54,6 +54,7 @@
             $sql = "INSERT INTO videostable(VideoFileName, VideoTitle, VideoAuthor, VideoDescription, VideoPath, VideoSize, VideoPrice) VALUES ('$fileName', '$fileTitle', '$fileAuthor', '$fileDescription', '$fileDestination', '$fileSize', $filePrice)";
             mysqli_query($conn, $sql);
 
+
           $query = "SELECT IdNo FROM videostable WHERE VideoPath = '$fileDestination'";
           $getIdNo = mysqli_query($conn, $query);
           $row = mysqli_fetch_row($getIdNo);
@@ -69,7 +70,20 @@
           $insertThumbnailQuery = "UPDATE videostable SET thumbnailPath='thumbnails/$imageFile' WHERE IdNo = '$rowNum'";
           mysqli_query($conn, $insertThumbnailQuery);
 
-          header("Location: upload.php?uploadsuccess?");
+          for ($i=1; $i < 6; $i++) {
+            // code...
+            $question = $_POST['question'.$i];
+            $choice1 = $_POST['ans'.$i.'A'];
+            $choice2 = $_POST['ans'.$i.'B'];
+            $choice3 = $_POST['ans'.$i.'C'];
+            $answer = $_POST['optradio'.$i];
+
+
+            $sql1 = "INSERT INTO videoquestions(questionContent, choiceOne, choiceTwo, choiceThree, correctAnswer, videoID) VALUES ('$question', '$choice1','$choice2','$choice3','A', '$rowNum')"
+            mysqli_query($conn, $sql1);
+          }
+          print_r($_POST);
+          //header("Location: upload.php?uploadsuccess?");
           } else {
             echo "There was an error uploading your file.";
           }
@@ -86,5 +100,3 @@
         </script>";
 
       }
-
-    }

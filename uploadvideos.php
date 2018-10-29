@@ -23,14 +23,16 @@
   </div>
 
   <!--Upload Form -->
-  <form id="myVideo" name ="myVideo" method="POST" class="up" enctype="multipart/form-data" onsubmit="return validateForm()">
+  <form id="myVideo" name ="myVideo" method="POST" class="up" enctype="multipart/form-data">
     <div class="first" id="first" >
       <div class="input-file">
-      <input type="file" accept="video/mp4,video/*" name="videoFile" onchange="preview(this);">
-      <img src="images/upload.png" height="100"width="125" alt="upload logo"></img>
-        <p>Drag your files here or click in this area.</p>
-      </input>
-      <a href="#" class="btn btn-success btn-block" id="next">Next</a>
+        <input type="file" accept="video/mp4,video/*" name="videoFile" onchange="preview(this);">
+        <img src="images/upload.png" height="100"width="125" alt="upload logo"></img>
+          <p>Drag your files here or click in this area.</p>
+
+        <div class="form-group mt-3">
+          <a href="#" class="btn btn-success btn-block" id="next">Next</a>
+        </div>
       <!--<button type="submit" name="submitButton">Upload</button>-->
       </div>
 
@@ -140,15 +142,15 @@
           <p id="ansQuestion1">Question 1 here</p><br>
         </div>
         <div class="radio">
-          <input type="radio" name="optradio" id="opt1A">
+          <input type="radio" value="Option1" name="optradio1" id="opt1A">
           <label for="opt1A" id="lbl1A" >Option 1</label>
         </div>
         <div class="radio">
-          <input type="radio" name="optradio" id="opt1B">
+          <input type="radio" value="" name="optradio1" id="opt1B">
           <label for="opt1B" id="lbl1B" >Option 1</label>
         </div>
         <div class="radio">
-          <input type="radio" name="optradio" id="opt1C">
+          <input type="radio" value="" name="optradio1" id="opt1C">
           <label for="opt1C" id="lbl1C" >Option 1</label>
         </div>
         <div class="form-group mt-3">
@@ -161,15 +163,15 @@
           <p id="ansQuestion2">Question2 here</p><br>
         </div>
         <div class="radio">
-          <input type="radio" name="optradio" id="opt2A">
+          <input type="radio" value="" name="optradio2" id="opt2A">
           <label for="opt2A" id="lbl2A" >Option 1</label>
         </div>
         <div class="radio">
-          <input type="radio" name="optradio" id="opt2B">
+          <input type="radio" value="" name="optradio2" id="opt2B">
           <label for="opt2B" id="lbl2B" >Option 1</label>
         </div>
         <div class="radio">
-          <input type="radio" name="optradio" id="opt2C">
+          <input type="radio" value="" name="optradio2" id="opt2C">
           <label for="opt2C" id="lbl2C" >Option 1</label>
         </div>
         <div class="form-group mt-3">
@@ -183,15 +185,15 @@
           <p id="ansQuestion3">Question 3 here</p><br>
         </div>
         <div class="radio">
-          <input type="radio" name="optradio" id="opt3A">
+          <input type="radio" value="" name="optradio3" id="opt3A">
           <label for="opt3A" id="lbl3A" >Option 1</label>
         </div>
         <div class="radio">
-          <input type="radio" name="optradio" id="opt3B">
+          <input type="radio" value="" name="optradio3" id="opt3B">
           <label for="opt3B" id="lbl3B" >Option 1</label>
         </div>
         <div class="radio">
-          <input type="radio" name="optradio" id="opt3C">
+          <input type="radio" value="" name="optradio3" id="opt3C">
           <label for="opt3C" id="lbl3C" >Option 1</label>
         </div>
         <div class="form-group mt-3">
@@ -205,15 +207,15 @@
           <p id="ansQuestion4">Question 4 here</p><br>
         </div>
         <div class="radio">
-          <input type="radio" name="optradio" id="opt4A">
+          <input type="radio" value="" name="optradio4" id="opt4A">
           <label for="opt4A" id="lbl4A" >Option 1</label>
         </div>
         <div class="radio">
-          <input type="radio" name="optradio" id="opt4B">
+          <input type="radio" value="" name="optradio4" id="opt4B">
           <label for="opt4B" id="lbl4B" >Option 1</label>
         </div>
         <div class="radio">
-          <input type="radio" name="optradio" id="opt4C">
+          <input type="radio" value="" name="optradio4" id="opt4C">
           <label for="opt4C" id="lbl4C" >Option 1</label>
         </div>
         <div class="form-group mt-3">
@@ -227,20 +229,20 @@
           <p id="ansQuestion5">Question 5 here</p><br>
         </div>
         <div class="radio">
-          <input type="radio" name="optradio" id="opt5A">
+          <input type="radio" value="" name="optradio5" id="opt5A">
           <label for="opt5A" id="lbl5A" >Option 1</label>
         </div>
         <div class="radio">
-          <input type="radio" name="optradio" id="opt5B">
+          <input type="radio" value="" name="optradio5" id="opt5B">
           <label for="opt5B" id="lbl5B" >Option 1</label>
         </div>
         <div class="radio">
-          <input type="radio" name="optradio" id="opt5C">
+          <input type="radio" value="" name="optradio5" id="opt5C">
           <label for="opt5C" id="lbl5C" >Option 1</label>
         </div>
         <div class="form-group mt-3">
           <a href="#" class="btn btn-danger" id="prev2-5">Previous</a>
-          <a href="#" class="btn btn-success" id="next2-5">Finish</a>
+          <input type="submit" class="btn btn-success" id="next2-5">
         </div>
       </div>
     </div>
@@ -261,7 +263,7 @@
         $("#second").show();
         $("#progressBar").css("width","60%");
         $("#progressBar").html("Create Questions");
-      });
+        });
 
       $("#next-1").click(function(e){
       /*  e.preventDefault();
@@ -348,10 +350,12 @@
           return false;
         } else{
         }*/
+                console.log("hello");
         $("#second-4").hide();
         $("#second-5").show();
         $("#progressBar2").css("width", "100%");
         $("#progressText2").html("Question 5");
+
       });
       $("#next-5").click(function(){
         /*e.preventDefault();
@@ -377,27 +381,50 @@
         $("#progressBar").css("width", "100%");
         $("#progressBar").html("Define answer");
 
-
+        //-----ARRANGEMENT BY NUMBER------
+        //----ASSIGN VALUE OF QUEstion TO PARAGRAPH tag
+        //----ASSIGN LABEL OF RADIO button
+        //----ASSIGN VALUE OF RADIO BUTTON
         document.getElementById("ansQuestion1").innerHTML = document.getElementById("question1").value;
         document.getElementById("lbl1A").innerHTML = document.getElementById("ans1A").value;
+        document.getElementById("opt1A").value = document.getElementById("ans1A").value;
         document.getElementById("lbl1B").innerHTML = document.getElementById("ans1B").value;
+        document.getElementById("opt1B").value = document.getElementById("ans1B").value;
         document.getElementById("lbl1C").innerHTML = document.getElementById("ans1C").value;
+        document.getElementById("opt1C").value = document.getElementById("ans1C").value;
+
         document.getElementById("ansQuestion2").innerHTML = document.getElementById("question2").value;
         document.getElementById("lbl2A").innerHTML = document.getElementById("ans2A").value;
+        document.getElementById("opt2A").value = document.getElementById("ans2A").value;
         document.getElementById("lbl2B").innerHTML = document.getElementById("ans2B").value;
+        document.getElementById("opt2B").value = document.getElementById("ans2B").value;
         document.getElementById("lbl2C").innerHTML = document.getElementById("ans2C").value;
+        document.getElementById("opt2C").value = document.getElementById("ans2C").value;
+
         document.getElementById("ansQuestion3").innerHTML = document.getElementById("question3").value;
         document.getElementById("lbl3A").innerHTML = document.getElementById("ans3A").value;
+        document.getElementById("opt3A").value = document.getElementById("ans3A").value;
         document.getElementById("lbl3B").innerHTML = document.getElementById("ans3B").value;
+        document.getElementById("opt3B").value = document.getElementById("ans3B").value;
         document.getElementById("lbl3C").innerHTML = document.getElementById("ans3C").value;
+        document.getElementById("opt3C").value = document.getElementById("ans3C").value;
+
         document.getElementById("ansQuestion4").innerHTML = document.getElementById("question4").value;
         document.getElementById("lbl4A").innerHTML = document.getElementById("ans4A").value;
+        document.getElementById("opt4A").value = document.getElementById("ans4A").value;
         document.getElementById("lbl4B").innerHTML = document.getElementById("ans4B").value;
+        document.getElementById("opt4B").value = document.getElementById("ans4B").value;
         document.getElementById("lbl4C").innerHTML = document.getElementById("ans4C").value;
+        document.getElementById("opt4C").value = document.getElementById("ans4C").value;
+
         document.getElementById("ansQuestion5").innerHTML = document.getElementById("question5").value;
         document.getElementById("lbl5A").innerHTML = document.getElementById("ans5A").value;
+        document.getElementById("opt5A").value = document.getElementById("ans5A").value;
         document.getElementById("lbl5B").innerHTML = document.getElementById("ans5B").value;
+        document.getElementById("opt5B").value = document.getElementById("ans5B").value;
         document.getElementById("lbl5C").innerHTML = document.getElementById("ans5C").value;
+        document.getElementById("opt5C").value = document.getElementById("ans5C").value;
+
 
       });
       $("#prev-2").click(function(){
@@ -452,15 +479,15 @@
         $("#progressText3").html("Answer Question 5");
       });
       $("#next2-5").click(function(){
-      /*  $.ajax({
+        $.ajax({
           url:'uploadvideosfunction.php',
-          method:'post',
-          data:$("#myVideo").serialize();
+          method:'POST',
+          data:$("#myVideo").serialize(),
           success:function(response){
             swal("", "The Videos and Questions are succesfully uploaded!", "success");
             $("#myVideo")[0].reset();
           }
-        });*/
+        });
       });
       $("#prev2-2").click(function(){
         $("#third-2").hide();
@@ -491,7 +518,7 @@
   </script>
 
   <!--script for validation -->
-    <script>
+    <!--<script>
       function validateForm() {
         var comic = document.forms["myComic"]["comicsFile"].value;
         var cTitle = document.forms["myComic"]["comicsTitle"].value;
@@ -511,7 +538,7 @@
           swal("","You must input a description first!", "error");
           return false;
         }
-      }
+      }-->
     </script>
     <script>
     $(document).ready(function(){
