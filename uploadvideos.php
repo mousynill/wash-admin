@@ -68,7 +68,7 @@
 
       <div class=" p-2 bg-light" id="second-2">
         <div class="col-sm-6 col-xs-2">
-          <input type="text" class="form-control form-control-lg" name="question2" placeholder="Enter your second question here"><br>
+          <input type="text" class="form-control form-control-lg" name="question2" id="question2" placeholder="Enter your second question here"><br>
         </div>
         <div class="col-sm-6 col-xs-2">
           <input type="text" class="form-control mb-2" name="ans2A" id="ans2A" placeholder="Enter the first choice here">
@@ -83,7 +83,7 @@
 
       <div class=" p-2 bg-light" id="second-3">
         <div class="col-sm-6 col-xs-2">
-          <input type="text" class="form-control form-control-lg" name="question3" placeholder="Enter your third question here"><br>
+          <input type="text" class="form-control form-control-lg" name="question3" id="question3" placeholder="Enter your third question here"><br>
         </div>
         <div class="col-sm-6 col-xs-2">
           <input type="text" class="form-control mb-2" name="ans3A" id="ans3A" placeholder="Enter the first choice here">
@@ -98,7 +98,7 @@
 
       <div class=" p-2 bg-light" id="second-4">
         <div class="col-sm-6 col-xs-2">
-          <input type="text" class="form-control form-control-lg" name="question4" placeholder="Enter your fourth question here"><br>
+          <input type="text" class="form-control form-control-lg" name="question4" id="question4" placeholder="Enter your fourth question here"><br>
         </div>
         <div class="col-sm-6 col-xs-2">
           <input type="text" class="form-control mb-2" name="ans4A" id="ans4A" placeholder="Enter the first choice here">
@@ -113,7 +113,7 @@
 
       <div class=" p-2 bg-light" id="second-5">
         <div class="col-sm-6 col-xs-2">
-          <input type="text" class="form-control form-control-lg "name="question5" placeholder="Enter your fifth question here"><br>
+          <input type="text" class="form-control form-control-lg "name="question5" id="question5"placeholder="Enter your fifth question here"><br>
         </div>
         <div class="col-sm-6 col-xs-2">
           <input type="text" class="form-control mb-2" name="ans5A" id="ans5A" placeholder="Enter the first choice here">
@@ -378,26 +378,26 @@
         $("#progressBar").html("Define answer");
 
 
-        //document.getElementById("ansQuestion1").innerHTML = document.getElementById("question1").value;
-        //document.getElementById("ansQuestion3").innerHTML = document.getElementById("question3").value;
+        document.getElementById("ansQuestion1").innerHTML = document.getElementById("question1").value;
         document.getElementById("lbl1A").innerHTML = document.getElementById("ans1A").value;
         document.getElementById("lbl1B").innerHTML = document.getElementById("ans1B").value;
         document.getElementById("lbl1C").innerHTML = document.getElementById("ans1C").value;
+        document.getElementById("ansQuestion2").innerHTML = document.getElementById("question2").value;
         document.getElementById("lbl2A").innerHTML = document.getElementById("ans2A").value;
         document.getElementById("lbl2B").innerHTML = document.getElementById("ans2B").value;
         document.getElementById("lbl2C").innerHTML = document.getElementById("ans2C").value;
+        document.getElementById("ansQuestion3").innerHTML = document.getElementById("question3").value;
         document.getElementById("lbl3A").innerHTML = document.getElementById("ans3A").value;
         document.getElementById("lbl3B").innerHTML = document.getElementById("ans3B").value;
         document.getElementById("lbl3C").innerHTML = document.getElementById("ans3C").value;
-        //document.getElementById("ansQuestion4").innerHTML = document.getElementById("question4").value;
+        document.getElementById("ansQuestion4").innerHTML = document.getElementById("question4").value;
         document.getElementById("lbl4A").innerHTML = document.getElementById("ans4A").value;
         document.getElementById("lbl4B").innerHTML = document.getElementById("ans4B").value;
         document.getElementById("lbl4C").innerHTML = document.getElementById("ans4C").value;
-        //document.getElementById("ansQuestion5").innerHTML = document.getElementById("question5").value;
+        document.getElementById("ansQuestion5").innerHTML = document.getElementById("question5").value;
         document.getElementById("lbl5A").innerHTML = document.getElementById("ans5A").value;
         document.getElementById("lbl5B").innerHTML = document.getElementById("ans5B").value;
         document.getElementById("lbl5C").innerHTML = document.getElementById("ans5C").value;
-        //document.getElementById("ansQuestion2").innerHTML = document.getElementById("question2").value;        
 
       });
       $("#prev-2").click(function(){
