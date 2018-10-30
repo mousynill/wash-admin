@@ -473,6 +473,7 @@
         $("#progressText3").html("Answer Question 4");
       });
       $("#next2-4").click(function(){
+        console.log('putangina');
         $("#third-4").hide();
         $("#third-5").show();
         $("#progressBar3").css("width", "100%");
@@ -482,11 +483,11 @@
         $.ajax({
           url:'uploadvideosfunction.php',
           method:'POST',
-          data:$("#myVideo").serialize(),
-          success:function(response){
-            swal("", "The Videos and Questions are succesfully uploaded!", "success");
-            $("#myVideo")[0].reset();
-          }
+          data:$("#myVideo").serialize()
+          // success:function(response){
+          //   swal("", "The Videos and Questions are succesfully uploaded!", "success");
+          //   //$("#myVideo")[0].reset();
+          // }
         });
       });
       $("#prev2-2").click(function(){

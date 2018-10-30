@@ -71,6 +71,8 @@ require_once('../src/routes/MyComicList.php');
 require_once('../src/routes/checkIfBought.php');
 require_once('../src/routes/buyVideo.php');
 require_once('../src/routes/getMyPoints.php');
+require_once('../src/routes/addMoney.php');
+
 
 
 

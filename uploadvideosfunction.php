@@ -79,10 +79,10 @@
             $answer = $_POST['optradio'.$i];
 
 
-            $sql1 = "INSERT INTO videoquestions(questionContent, choiceOne, choiceTwo, choiceThree, correctAnswer, videoID) VALUES ('$question', '$choice1','$choice2','$choice3','A', '$rowNum')"
+            $sql1 = "INSERT INTO videoquestions(questionContent, choiceOne, choiceTwo, choiceThree, correctAnswer, videoID) VALUES ('$question', '$choice1','$choice2','$choice3','A', '$rowNum')";
             mysqli_query($conn, $sql1);
           }
-          print_r($_POST);
+
           //header("Location: upload.php?uploadsuccess?");
           } else {
             echo "There was an error uploading your file.";
