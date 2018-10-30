@@ -488,13 +488,12 @@
       $("#next2-5").click(function(e){
         e.preventDefault();
         $.ajax({
-          url:'function.php',
+          url:'uploadvideosfunction.php',
           method:'POST',
           data:$("#myVideo").serialize(),
            success:function(response){
            swal("", "The Videos and Questions are succesfully uploaded!", "success");
            $("#result").html(response);
-
           }
         });
       });
