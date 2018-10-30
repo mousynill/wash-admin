@@ -4,10 +4,16 @@
 
   for ($i=1; $i < 6; $i++) {
     // code...
-  echo $_POST['question'.$i].'<br>';
-    echo $_POST['ans'.$i.'A'].'<br>';
-    echo $_POST['ans'.$i.'B'].'<br>';
-    echo  $_POST['ans'.$i.'C'].'<br>';
-    echo  $_POST['optradio'.$i].'<br>';
+    $question = $_POST['question'.$i];
+    $choice1 = $_POST['ans'.$i.'A'];
+    $choice2 = $_POST['ans'.$i.'B'];
+    $choice3 = $_POST['ans'.$i.'C'];
+    $answer = $_POST['optradio'.$i];
+
+
+    $sql1 = "INSERT INTO videoquestions(questionContent, choiceOne, choiceTwo, choiceThree, correctAnswer) VALUES ('$question', '$choice1','$choice2','$choice3','$answer')";
+    mysqli_query($conn, $sql1);
+    error_reporting(E_ALL);
+ini_set('display_errors', 1);
   }
 ?>
