@@ -3,7 +3,7 @@
 ?>
 
 <head>
-  <title>Upload Comics</title>
+  <title>Upload Videos</title>
   <link rel="stylesheet" type="text/css" href="uploadvideos.css">
   <link href="https://fonts.googleapis.com/css?family=Quicksand:500" rel="stylesheet">
 
@@ -16,19 +16,24 @@
 </head>
 
 <body>
-  <div class="progress mb-3" style="height:30px">
+  <div class="progress" style="height:30px">
     <div id="progressBar" class="progress-bar bg-danger" style="width:33%;">
       <b id="progressText" class="lead">Upload Videos</b>
     </div>
   </div>
-
+<div class="col-md-6 bg-light rounded">
+  <h4 class="text-center text-light bg-success mb-2 p-2 rounded lead" id="result">Eyy</h5>
+</div>
   <!--Upload Form -->
   <form id="myVideo" name ="myVideo" method="POST" class="up" enctype="multipart/form-data">
     <div class="first" id="first" >
       <div class="input-file">
         <input type="file" accept="video/mp4,video/*" name="videoFile" onchange="preview(this);">
-        <img src="images/upload.png" height="100"width="125" alt="upload logo"></img>
-          <p>Drag your files here or click in this area.</p>
+        <video id="video" style="display:none;"height="260"width="650" controls>
+          <source id="source" type="video/mp4">
+        </video>
+        <img id="upload" src="images/upload.png" height="100"width="125" alt="upload logo">
+        <p id="txt">Drag your files here or click in this area.</p>
 
         <div class="form-group mt-3">
           <a href="#" class="btn btn-success btn-block" id="next">Next</a>
@@ -37,7 +42,7 @@
       </div>
 
       <div class="author">
-        Title: <input type="text" name="comicsTitle"placeholder="Enter title here">
+        Title: <input type="text" name="videoTitle"placeholder="Enter title here">
         <br>Author: <input type="text" name="videoAuthor" placeholder="Enter author here">
         <br>Price:  <input type="number" name="videoPrice" placeholder="Enter price here">
       </div>
@@ -258,7 +263,8 @@
     $(document).ready(function(){
       $("#ucomics").addClass("active");
 
-      $("#next").click(function(){
+      $("#next").click(function(e){
+        e.preventDefault();
         $("#first").hide();
         $("#second").show();
         $("#progressBar").css("width","60%");
@@ -266,9 +272,9 @@
         });
 
       $("#next-1").click(function(e){
-      /*  e.preventDefault();
+        e.preventDefault();
 
-        if($("#question1").val() == ''){
+        /*if($("#question1").val() == ''){
           swal("", "Please input a question first!", "error");
           return false;
         } else if($("#ans1A").val() == ''){
@@ -289,10 +295,10 @@
         $("#progressText2").html("Question 2");
 
       });
-      $("#next-2").click(function(){
-      /*  e.preventDefault();
+      $("#next-2").click(function(e){
+        e.preventDefault();
 
-        if($("#question2").val() == ''){
+        /*if($("#question2").val() == ''){
           swal("", "Please input a question first!", "error");
           return false;
         } else if($("#ans1A").val() == ''){
@@ -311,10 +317,10 @@
         $("#progressBar2").css("width", "60%");
         $("#progressText2").html("Question 3");
       });
-      $("#next-3").click(function(){
-      /*  e.preventDefault();
+      $("#next-3").click(function(e){
+        e.preventDefault();
 
-        if($("#question3").val() == ''){
+        /*if($("#question3").val() == ''){
           swal("", "Please input a question first!", "error");
           return false;
         } else if($("#ans3A").val() == ''){
@@ -333,10 +339,10 @@
         $("#progressBar2").css("width", "80%");
         $("#progressText2").html("Question 4");
       });
-      $("#next-4").click(function(){
-        /*e.preventDefault();
+      $("#next-4").click(function(e){
+        e.preventDefault();
 
-        if($("#question4").val() == ''){
+        /*if($("#question4").val() == ''){
           swal("", "Please input a question first!", "error");
           return false;
         } else if($("#ans4A").val() == ''){
@@ -357,10 +363,10 @@
         $("#progressText2").html("Question 5");
 
       });
-      $("#next-5").click(function(){
-        /*e.preventDefault();
+      $("#next-5").click(function(e){
+        e.preventDefault();
 
-        if($("#question5").val() == ''){
+        /*if($("#question5").val() == ''){
           swal("", "Please input a question first!", "error");
           return false;
         } else if($("#ans5A").val() == ''){
@@ -453,41 +459,43 @@
       });
 
       //------THIRD PROGRESS BAR --------
-      $("#next2-1").click(function(){
+      $("#next2-1").click(function(e){
         $("#third-1").hide();
         $("#third-2").show();
         $("#progressBar3").css("width", "40%");
         $("#progressText3").html("Answer Question 2");
       });
-      $("#next2-2").click(function(){
+      $("#next2-2").click(function(e){
         $("#third-2").hide();
         $("#third-3").show();
         $("#progressBar3").css("width", "60%");
         $("#progressText3").html("Answer Question 3");
 
       });
-      $("#next2-3").click(function(){
+      $("#next2-3").click(function(e){
         $("#third-3").hide();
         $("#third-4").show();
         $("#progressBar3").css("width", "80%");
         $("#progressText3").html("Answer Question 4");
       });
-      $("#next2-4").click(function(){
+      $("#next2-4").click(function(e){
         console.log('putangina');
         $("#third-4").hide();
         $("#third-5").show();
         $("#progressBar3").css("width", "100%");
         $("#progressText3").html("Answer Question 5");
       });
-      $("#next2-5").click(function(){
+      $("#next2-5").click(function(e){
+        e.preventDefault();
         $.ajax({
-          url:'uploadvideosfunction.php',
+          url:'function.php',
           method:'POST',
-          data:$("#myVideo").serialize()
-          // success:function(response){
-          //   swal("", "The Videos and Questions are succesfully uploaded!", "success");
-          //   //$("#myVideo")[0].reset();
-          // }
+          data:$("#myVideo").serialize(),
+           success:function(response){
+           swal("", "The Videos and Questions are succesfully uploaded!", "success");
+           $("#result").html(response);
+
+          }
         });
       });
       $("#prev2-2").click(function(){
@@ -542,11 +550,27 @@
       }-->
     </script>
     <script>
-    $(document).ready(function(){
-      $('form input').change(function () {
-        $('form p').text(this.files[0].name + " file is selected");
-      });
-    });
+    function preview(self){
+      var file = self.files[0];
+      var reader = new FileReader();
+
+      reader.onload = function(e) {
+        var src = e.target.result;
+        var video = document.getElementById("video");
+        var source = document.getElementById("source");
+
+        source.setAttribute("src", src);
+        video.style.display="block";
+
+        document.getElementById("txt").style.lineHeight = "45px"; //changes the line-height of the paragraph when a video uploaded
+        document.getElementById("txt").style.height = "13.5%";
+        document.getElementById("upload").style.display = "none";
+        video.load();
+
+
+      };
+      reader.readAsDataURL(file);
+    }
     </script>
 
 
