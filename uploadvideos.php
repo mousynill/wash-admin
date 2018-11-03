@@ -28,7 +28,7 @@
   <form id="myVideo" name ="myVideo" method="POST" class="up" enctype="multipart/form-data">
     <div class="first" id="first" >
       <div class="input-file">
-        <input type="file" accept="video/mp4,video/*" name="videoFile" onchange="preview(this);">
+        <input type="file" accept="video/mp4,video/*" id="videoFile" onchange="preview(this);">
         <video id="video" style="display:none;"height="260"width="650" controls>
           <source id="source" type="video/mp4">
         </video>
@@ -42,13 +42,13 @@
       </div>
 
       <div class="author">
-        Title: <input type="text" name="videoTitle"placeholder="Enter title here">
+        Title: <input type="text" name="videoTitle" placeholder="Enter title here">
         <br>Author: <input type="text" name="videoAuthor" placeholder="Enter author here">
         <br>Price:  <input type="number" name="videoPrice" placeholder="Enter price here">
       </div>
 
       <div class="desc">
-          Description:<br><textarea name="videoDescription"rows="8" cols="36" placeholder="Enter the description here"></textarea>
+          Description:<br><textarea name="videoDescription" rows="8" cols="36" placeholder="Enter the description here"></textarea>
       </div>
     </div>
 
@@ -269,6 +269,21 @@
         $("#second").show();
         $("#progressBar").css("width","60%");
         $("#progressBar").html("Create Questions");
+
+        var form = document.getElementById('myVideo');
+        var formData = new FormData(form);
+
+        var inputFile = document.getElementById('videoFile');
+        var file = inputFile.files[0];
+
+        formData.append('file', file);
+        console.log(file);
+
+        for (var pair of formData.entries()) {
+            console.log(pair[0]+ ', ' + pair[1]);
+        }
+
+
         });
 
       $("#next-1").click(function(e){
@@ -293,6 +308,8 @@
         $("#second-2").show();
         $("#progressBar2").css("width", "40%");
         $("#progressText2").html("Question 2");
+
+        console.log(document.getElementById("videoTitle").value);
 
       });
       $("#next-2").click(function(e){
@@ -356,7 +373,6 @@
           return false;
         } else{
         }*/
-                console.log("hello");
         $("#second-4").hide();
         $("#second-5").show();
         $("#progressBar2").css("width", "100%");
@@ -415,6 +431,7 @@
         document.getElementById("lbl3C").innerHTML = document.getElementById("ans3C").value;
         document.getElementById("opt3C").value = document.getElementById("ans3C").value;
 
+
         document.getElementById("ansQuestion4").innerHTML = document.getElementById("question4").value;
         document.getElementById("lbl4A").innerHTML = document.getElementById("ans4A").value;
         document.getElementById("opt4A").value = document.getElementById("ans4A").value;
@@ -438,6 +455,7 @@
         $("#second-1").show();
         $("#progressBar2").css("width", "20%");
         $("#progressText2").html("Question 1");
+
       });
       $("#prev-3").click(function(){
         $("#second-3").hide();
@@ -479,11 +497,11 @@
         $("#progressText3").html("Answer Question 4");
       });
       $("#next2-4").click(function(e){
-        console.log('putangina');
         $("#third-4").hide();
         $("#third-5").show();
         $("#progressBar3").css("width", "100%");
         $("#progressText3").html("Answer Question 5");
+
       });
       $("#next2-5").click(function(e){
         e.preventDefault();
@@ -493,7 +511,7 @@
           data:$("#myVideo").serialize(),
            success:function(response){
            swal("", "The Videos and Questions are succesfully uploaded!", "success");
-           $("#result").html(response);
+           console.log(response);
           }
         });
       });
