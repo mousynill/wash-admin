@@ -525,6 +525,7 @@
       // Add any event handlers here...
       xhr.open('POST', 'uploadvideosfunction.php', true);
       xhr.send(formData);
+      swal("", "The videos and questions have been uploaded!", 'success');
 
       });
       $("#prev2-2").click(function(){
