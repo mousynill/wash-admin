@@ -28,7 +28,7 @@
   <form id="myVideo" name ="myVideo" method="POST" class="up" enctype="multipart/form-data">
     <div class="first" id="first" >
       <div class="input-file">
-        <input type="file" accept="video/mp4,video/*" id="videoFile" onchange="preview(this);">
+        <input type="file" accept="video/mp4,video/*" name="videoFile" onchange="preview(this);">
         <video id="video" style="display:none;"height="260"width="650" controls>
           <source id="source" type="video/mp4">
         </video>
@@ -270,18 +270,17 @@
         $("#progressBar").css("width","60%");
         $("#progressBar").html("Create Questions");
 
-        var form = document.getElementById('myVideo');
-        var formData = new FormData(form);
 
-        var inputFile = document.getElementById('videoFile');
-        var file = inputFile.files[0];
 
-        formData.append('file', file);
-        console.log(file);
+        // var inputFile = document.getElementById('videoFile');
+        // var file = inputFile.files[0];
+        //
+        // formData.append('file', file);
+        // console.log(file);
 
-        for (var pair of formData.entries()) {
-            console.log(pair[0]+ ', ' + pair[1]);
-        }
+        // for (var pair of formData.entries()) {
+        //     console.log(pair[0]+ ', ' + pair[1]);
+        // }
 
 
         });
@@ -309,7 +308,7 @@
         $("#progressBar2").css("width", "40%");
         $("#progressText2").html("Question 2");
 
-        console.log(document.getElementById("videoTitle").value);
+        //console.log(document.getElementById("videoTitle").value);
 
       });
       $("#next-2").click(function(e){
@@ -505,15 +504,28 @@
       });
       $("#next2-5").click(function(e){
         e.preventDefault();
-        $.ajax({
-          url:'uploadvideosfunction.php',
-          method:'POST',
-          data:$("#myVideo").serialize(),
-           success:function(response){
-           swal("", "The Videos and Questions are succesfully uploaded!", "success");
-           console.log(response);
-          }
-        });
+        // $.ajax({
+        //   url:'uploadvideosfunction.php',
+        //   method:'POST',
+        //   data:$("#myVideo").serialize(),
+        //    success:function(response){
+        //    swal("", "The Videos and Questions are succesfully uploaded!", "success");
+        //    console.log(response);
+        //   }
+        // });
+
+        var form = document.getElementById('myVideo');
+        var formData = new FormData(form);
+
+        for (var pair of formData.entries()) {
+            console.log(pair[0]+ ', ' + pair[1]);
+        }
+
+        var xhr = new XMLHttpRequest();
+      // Add any event handlers here...
+      xhr.open('POST', 'uploadvideosfunction.php', true);
+      xhr.send(formData);
+
       });
       $("#prev2-2").click(function(){
         $("#third-2").hide();

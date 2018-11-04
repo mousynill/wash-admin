@@ -64,7 +64,7 @@
           $answer = $_POST['optradio'.$i];
 
 
-          $insertquery = "INSERT INTO videoquestions(questionContent, choiceOne, choiceTwo, choiceThree, correctAnswer, videoID) VALUES ('$question', '$choice1','$choice2','$choice3','A', 5)"; //substitute last parameter for $rowNum
+          $insertquery = "INSERT INTO videoquestions(questionContent, choiceOne, choiceTwo, choiceThree, correctAnswer, videoID) VALUES ('$question', '$choice1','$choice2','$choice3','$answer', '$rowNum')"; //substitute last parameter for $rowNum
           $resulta = mysqli_query($conn, $insertquery);
 
 
