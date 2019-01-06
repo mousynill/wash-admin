@@ -73,7 +73,8 @@ require_once('../src/routes/buyVideo.php');
 require_once('../src/routes/getMyPoints.php');
 require_once('../src/routes/addMoney.php');
 require_once('../src/routes/getQuestions.php');
-
+require_once('../src/routes/checkIfAnswered.php');
+require_once('../src/routes/setAnswered.php');
 
 
 
