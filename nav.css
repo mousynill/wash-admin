@@ -1,8 +1,5 @@
 body {
   background-color: #edf1f5;
-  font-family: 'Quicksand';
-  text-decoration: none;
-
 }
 .style {
   padding-right: 40px;
@@ -12,25 +9,6 @@ body {
   padding-left: 30px;
 }
 
-/*canvas {
-  width: 1000px !important;
-  height: 400px !important;
-  margin-left: 100px !important;
-  margin-top: 20px;
-}*/
-
-/*.chart-container {
-  position: relative;
-  left: 20%;
-  margin-top: 33px;
-  background-color: #f1f1;
-  width: 60vw;
-
-}*/
-
-form.parasite {
-  margin-left: 40px;
-  width: 30px;
-  height: 30px;
-  text-align: center;
+.navTitle{
+  font-family: 'Quicksand';
 }

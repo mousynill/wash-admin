@@ -20,12 +20,12 @@
 
   <!--Navbar-->
       <nav class="navbar navbar-expand-lg navbar-dark title" style="background-color: #278BCF;"> <!--2F98E2 -->
-        <a class="navbar-brand" href="dashboard.php">Wash App Kids</a>
+        <a class="navbar-brand navTitle"  href="dashboard.php">Wash App Kids</a>
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
 
-        <div class="collapse navbar-collapse style" id="navbarTogglerDemo02">
+        <div class="collapse navbar-collapse style navTitle" id="navbarTogglerDemo02">
         <ul class="navbar-nav mr-auto ">
             <li class="nav-item">
               <a class="nav-link" id="dashBoard"href="dashboard.php">Dashboard</a>
@@ -60,12 +60,7 @@
               <a class="dropdown-item" href="register.php">Registration</a>
               <a class="dropdown-item" href="#">Sign out</a>
             </div>
+          </li>
         </ul>
         </div>
       </nav>
-<!--
-      <script type="text/javascript">
-        $(document).ready(function(){
-          $("#admin").addClass("active");
-        })
-      </script> -->

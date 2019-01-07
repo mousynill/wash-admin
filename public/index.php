@@ -76,7 +76,4 @@ require_once('../src/routes/getQuestions.php');
 require_once('../src/routes/checkIfAnswered.php');
 require_once('../src/routes/setAnswered.php');
 
-
-
-
 $app->run();

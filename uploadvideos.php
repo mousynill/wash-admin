@@ -21,9 +21,7 @@
       <b id="progressText" class="lead">Upload Videos</b>
     </div>
   </div>
-<div class="col-md-6 bg-light rounded">
-  <h4 class="text-center text-light bg-success mb-2 p-2 rounded lead" id="result">Eyy</h5>
-</div>
+
   <!--Upload Form -->
   <form id="myVideo" name ="myVideo" method="POST" class="up" enctype="multipart/form-data">
     <div class="first" id="first" >

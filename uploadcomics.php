@@ -4,14 +4,14 @@
 
 <head>
   <title>Upload Comics</title>
-  <link rel="stylesheet" type="text/css" href="uploadcomics.css">
+  <link rel="stylesheet" type="text/css" href="UploaCcomics.css">
   <link href="https://fonts.googleapis.com/css?family=Quicksand:500" rel="stylesheet">
 </head>
 
 <body>
 
   <!--Upload Form -->
-  <form name ="myComic"action="uploadcomicsfunction.php" method="POST" class="up" enctype="multipart/form-data" onsubmit="return validateForm()" >
+  <form name ="myComic" action="uploadcomicsfunction.php" method="POST" class="up" enctype="multipart/form-data" onsubmit="return validateForm()" >
 
       <div class="input-file">
       <input type="file" name="comicsFile">
