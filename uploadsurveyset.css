@@ -4,8 +4,9 @@
   width: 1000px;
   align-items: center;
   justify-content: center;
-  margin-top: 30px;
   border-radius: 5px;
+
+  padding-top: 30px;
 }
 
 .card{
@@ -29,13 +30,15 @@
   border-color: #278bcf;
 }
 
+.rebutton:hover{
+  background-color: #c5c3c6;
+}
 
 .rebutton-right{
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
   border-width: 2px 2px 2px 3px;
   border-left-style: dashed;
-  /* border-left-color: grey; */
 }
 
 .rebutton-left{
@@ -43,10 +46,8 @@
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
   border-right-style: dashed;
-  /* border-right-color: grey; */
 }
 
-@keyframes refill {
-  from{width: 100%;}
-  to{width: 0%;}
+.desc{
+  display: none;
 }
