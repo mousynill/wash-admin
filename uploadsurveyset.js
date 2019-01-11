@@ -15,7 +15,7 @@ $(document).ready(function(){
       $("#makeset").hide();
       $("xlsx-desc").show();
       $("#close").css("display", "flex");
-
+      document.getElementById("1").style.alignItems = "stretch"; //placed in top center
       $("#1").off('mouseleave'); //this disables the hover effect.
   });
 
@@ -33,7 +33,7 @@ $(document).ready(function(){
       $("#xlsx").hide();
       $("makeset-desc").show();
       $("#close2").css("display", "flex");
-
+      document.getElementById("2").style.alignItems = "stretch";
       $("#2").off('mouseleave');
 
   });
