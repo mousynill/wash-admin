@@ -86,6 +86,7 @@ form>.author input {
   outline: none;
   transition: .5s;
   width: 250px;
+  margin-bottom: 7px;
 }
 form>.author input:focus {
   border-color: dodgerBlue;

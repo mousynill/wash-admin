@@ -4,7 +4,7 @@
 
 <head>
   <title>Upload Comics</title>
-  <link rel="stylesheet" type="text/css" href="UploaCcomics.css">
+  <link rel="stylesheet" type="text/css" href="Uploadcomics.css">
   <link href="https://fonts.googleapis.com/css?family=Quicksand:500" rel="stylesheet">
 </head>
 

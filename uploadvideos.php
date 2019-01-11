@@ -6,6 +6,8 @@
   <title>Upload Videos</title>
   <link rel="stylesheet" type="text/css" href="uploadvideos.css">
   <link href="https://fonts.googleapis.com/css?family=Quicksand:500" rel="stylesheet">
+  	<!--<link rel="stylesheet" href="css/2cols.css" media="all">
+    <link rel="stylesheet" href="css/col.css" media="all">-->
 
   <style type="text/css">
     #second, #second-2, #second-3, #second-4, #second-5, #third, #third-2, #third-3,
@@ -23,7 +25,9 @@
   </div>
 
   <!--Upload Form -->
+
   <form id="myVideo" name ="myVideo" method="POST" class="up" enctype="multipart/form-data">
+
     <div class="first" id="first" >
       <div class="input-file">
         <input type="file" accept="video/mp4,video/*" name="videoFile" onchange="preview(this);">
@@ -39,17 +43,19 @@
       <!--<button type="submit" name="submitButton">Upload</button>-->
       </div>
 
+
+
       <div class="author">
-        Title: <input type="text" name="videoTitle" placeholder="Enter title here">
+        Title: &nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="videoTitle" placeholder="Enter title here">
         <br>Author: <input type="text" name="videoAuthor" placeholder="Enter author here">
-        <br>Price:  <input type="number" name="videoPrice" placeholder="Enter price here">
+        <br>Price:&nbsp;&nbsp;&nbsp;  <input type="number" name="videoPrice" placeholder="Enter price here">
       </div>
 
       <div class="desc">
           Description:<br><textarea name="videoDescription" rows="8" cols="36" placeholder="Enter the description here"></textarea>
       </div>
-    </div>
 
+  </div>
     <div class="row justify-content-center">
     <div class="col-lg-8 mt-5 bg-light"id="second">
       <div class="progress mb-3" style="height:40px">
@@ -259,7 +265,7 @@
   <!--for active link -->
   <script type="text/javascript">
     $(document).ready(function(){
-      $("#ucomics").addClass("active");
+      $("#uvideos").addClass("active");
 
       $("#next").click(function(e){
         e.preventDefault();
