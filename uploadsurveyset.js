@@ -14,7 +14,7 @@ $(document).ready(function(){
   $("#1").click(function(){
       $("#makeset").hide();
       $("xlsx-desc").show();
-      $("#close").css("display", "flex");  
+      $("#close").css("display", "flex");
 
       $("#1").off('mouseleave'); //this disables the hover effect.
   });
@@ -32,7 +32,12 @@ $(document).ready(function(){
   $("#2").click(function(){
       $("#xlsx").hide();
       $("makeset-desc").show();
+      $("#close2").css("display", "flex");
+
       $("#2").off('mouseleave');
+
   });
+
+
 
 })

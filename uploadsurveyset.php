@@ -20,9 +20,9 @@
             <button type="button" class="closeButton">X</button>
           </div>
 
-          <div class="mainContainer takeWhole">
+          <div class="mainContainer takeWhole" id="1">
 
-            <button class="mainButton" type="button" name="mainButton" id="1">Upload by xlsx
+            <button class="mainButton" type="button" name="mainButton" >Upload by xlsx
               <div class="desc" id="xlsx-desc">
                 sample
               </div>
@@ -33,7 +33,34 @@
         </div>
       </div>
 
-      <div class="col-xl flexmine" id="makeset">
+      <div class="col-xl flexmine choice-container" id="makeset">
+        <div class="fixFlex rebutton rebutton-right">
+
+          <div class="closeContainer takeWhole" id="close2">
+            <button type="button" class="closeButton">X</button>
+          </div>
+
+          <div class="mainContainer takeWhole" id="2">
+
+            <button class="mainButton" type="button" name="mainButton" >Make a set here
+              <div class="desc" id="makeset-desc">
+                sample
+              </div>
+            </button>
+
+           </div>
+
+        </div>
+      </div>
+
+      <!-- <div class="col-xl flexmine" id="makeset">
+
+        <div class="closeContainer takeWhole" id="close2">
+          <button type="button" class="closeButton">X</button>
+        </div>
+
+        <div class="mainContainer takeWhole" id="1">
+
           <button class="rebutton rebutton-right" type="button" id="2">Make a set here
           <div class="desc" id="makeset-desc">
               sample
@@ -41,6 +68,6 @@
         </button>
       </div>
 
-  </div>
+  </div> -->
 </div>
 </body>
