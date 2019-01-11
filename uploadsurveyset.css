@@ -65,6 +65,12 @@
   color: white;
 }
 
+.alignOL{
+  text-align: left;
+  align-items: center;
+  justify-content: center;
+}
+
 .natureOfFlow{
   flex-direction: column;
 }
@@ -85,4 +91,13 @@
 
 .desc{
   display: none;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.center-desc{
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

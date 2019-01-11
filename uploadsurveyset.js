@@ -14,7 +14,7 @@ $(document).ready(function(){
   $("#1").click(function(){
       $("#makeset").hide();
       $("xlsx-desc").show();
-      $("#close").css("display", "flex");
+      $("#close-xlsx").css("display", "flex");
       document.getElementById("1").style.alignItems = "stretch"; //placed in top center
       $("#1").off('mouseleave'); //this disables the hover effect.
   });
@@ -32,12 +32,15 @@ $(document).ready(function(){
   $("#2").click(function(){
       $("#xlsx").hide();
       $("makeset-desc").show();
-      $("#close2").css("display", "flex");
+      $("#close-makeset").css("display", "flex");
       document.getElementById("2").style.alignItems = "stretch";
       $("#2").off('mouseleave');
 
   });
 
+  $("#close-xlsx").click(function(){
+
+  });
 
 
 })
