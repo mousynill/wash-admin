@@ -2,51 +2,58 @@
   display: flex;
   height: 500px;
   width: 1000px;
-  align-items: center;
-  justify-content: center;
   border-radius: 5px;
-
   padding-top: 30px;
 }
 
-.card{
-  height: inherit;
-  width: inherit;
-  flex-direction: row;
-  border-radius: 5px;
-}
-
-.goingDown{
-  flex-direction: row;
-}
-
-.choice-container{
+.fixFlex{
+  display: flex;
   flex-grow: 1;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: flex-start;
+  border-style: solid;
+  border-width: 2px;
+}
+
+.fixFlex button{
+  background-color: transparent;
+  border-style: none;
+}
+
+.takeWhole{
+  width: 100%;
+}
+
+.closeContainer{
+  display: none;
+  flex-grow: 1;
+  justify-content: flex-end;
+  align-items: center;
+  padding-right: 10px;
+}
+
+.mainContainer{
+  display: flex;
+  flex-grow: 10;
   justify-content: center;
   align-items: center;
 }
 
-.clickedContainer{
-  flex-direction: row;
-}
 
 .rebutton{
-  height: 100%;
-  width: 100%;
+  display: flex;
+  flex: 1;
   background: #FFFFFF;
   border-style: solid;
   border-color: #278bcf;
 }
 
-.mainContainer{
-  display:flex;
-  flex: 1;
-}
 
 .mainButton{
   height: 100%;
   width: 100%;
-
 }
 
 .closeButton{
@@ -55,10 +62,6 @@
 
 .natureOfFlow{
   flex-direction: column;
-}
-
-.rebutton:hover{
-  background-color: #c5c3c6;
 }
 
 .rebutton-right{
@@ -76,9 +79,5 @@
 }
 
 .desc{
-  display: none;
-}
-
-.close{
   display: none;
 }

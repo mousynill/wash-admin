@@ -14,8 +14,7 @@ $(document).ready(function(){
   $("#1").click(function(){
       $("#makeset").hide();
       $("xlsx-desc").show();
-
-      
+      $("#close").css("display", "flex");  
 
       $("#1").off('mouseleave'); //this disables the hover effect.
   });
