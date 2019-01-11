@@ -14,12 +14,23 @@
   <div class="row no-gutters">
 
       <div class="col-xl flexmine" id="xlsx">
+        <div class="clickedContainer rebutton rebutton-left natureOfFlow">
 
-          <button class="rebutton rebutton-left" type="button" id="1">Upload by xlsx
-          <div class="desc" id="xlsx-desc">
-              sample
-          </div>
-        </button>
+          <!-- <div class="closeContainer">
+            <button type="button" name="closeButton">X</button>
+          </div> -->
+
+          <div class="mainContainer">
+
+            <button class="mainButton" type="button" name="mainButton" id="1">Upload by xlsx
+              <div class="desc" id="xlsx-desc">
+                sample
+              </div>
+            </button>
+
+           </div>
+
+        </div>
       </div>
 
       <div class="col-xl flexmine" id="makeset">

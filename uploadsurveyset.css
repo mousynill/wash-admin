@@ -16,18 +16,45 @@
   border-radius: 5px;
 }
 
+.goingDown{
+  flex-direction: row;
+}
+
 .choice-container{
   flex-grow: 1;
   justify-content: center;
   align-items: center;
 }
 
+.clickedContainer{
+  flex-direction: row;
+}
+
 .rebutton{
   height: 100%;
   width: 100%;
   background: #FFFFFF;
-  border-style:solid;
+  border-style: solid;
   border-color: #278bcf;
+}
+
+.mainContainer{
+  display:flex;
+  flex: 1;
+}
+
+.mainButton{
+  height: 100%;
+  width: 100%;
+
+}
+
+.closeButton{
+  background-color: blue;
+}
+
+.natureOfFlow{
+  flex-direction: column;
 }
 
 .rebutton:hover{
@@ -49,5 +76,9 @@
 }
 
 .desc{
+  display: none;
+}
+
+.close{
   display: none;
 }
