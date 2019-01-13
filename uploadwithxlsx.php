@@ -18,14 +18,20 @@ include_once 'includes/dbh.inc.php';
 
     $extension = pathinfo($fileType, PATHINFO_EXTENSION);
 
-    if(!in_array($extension, $allowed)){
+    if ($fileError === 0) {
+      if(!in_array($extension, $allowed)){
 
+      }else{
+        echo "
+        <script type='text/javascript'>
+            alert('We doe not support the filetype you just entered. We only accept ".$fixedForPrint.".');
+        </script>";
+      }
     }else{
       echo "
       <script type='text/javascript'>
           alert('We doe not support the filetype you just entered. We only accept ".$fixedForPrint.".');
       </script>";
     }
-
 
   }

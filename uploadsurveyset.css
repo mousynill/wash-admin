@@ -17,7 +17,12 @@
   border-width: 2px;
 }
 
-.fixFlex button{
+.fixFlex button {
+  background-color: transparent;
+  border-style: none;
+}
+
+.invi{
   background-color: transparent;
   border-style: none;
 }
@@ -34,13 +39,6 @@
   padding-right: 10px;
 }
 
-.mainContainer{
-  display: flex;
-  flex-grow: 10;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
 
 .rebutton{
   display: flex;
@@ -50,10 +48,19 @@
   border-color: #278bcf;
 }
 
+.mainContainer{
+  display: flex;
+  flex-grow: 10;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
 
 .mainButton{
   height: 100%;
   width: 100%;
+  align-items: center;
+  justify-content: center;
 }
 
 .closeButton:hover{
@@ -95,4 +102,14 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.inputButton{
+  display: none;
+  align-items: center;
+}
+
+
+.special-title{
+  font-size: large;
 }

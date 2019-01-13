@@ -17,6 +17,8 @@ $(document).ready(function(){
       $("#close-xlsx").css("display", "flex");
       document.getElementById("1").style.alignItems = "stretch"; //placed in top center
       $("#1").off('mouseleave'); //this disables the hover effect.
+
+      $("#inputFile").css("display", "flex");
   });
 
   $("#close-xlsx").on('click', function(){
@@ -59,5 +61,10 @@ $(document).ready(function(){
       })
   });
 
-  
+
+  // $('form input').change(function () {
+  //   $('form p').text(this.files.length + " file(s) selected");
+  // });
+
+
 })

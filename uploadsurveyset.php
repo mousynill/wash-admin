@@ -12,7 +12,7 @@
 
 <div class="container-fluid">
 
-  <div class="row no-gutters">
+    <form class="row no-gutters" method="post">
 
       <div class="col-xl flexmine choice-container" id="xlsx">
         <div class="fixFlex rebutton rebutton-left">
@@ -26,28 +26,29 @@
           </div>
 
           <div class="mainContainer takeWhole" id="1">
-            <input type="file" name="xlsx-file">
-                <button class="mainButton" type="button" name="mainButton">
-                <!-- this is the xlsx icon from fontawesome -->
-                    <div style="font-size: 5em;">
-                        <i class="far fa-file-excel"></i>
+
+                    <div class="mainButton invi fixFlex" type="button" name="mainButton">
+                    <!-- this is the xlsx icon from fontawesome -->
+                        <div style="font-size: 5em; align-self: center;">
+                              <i class="far fa-file-excel"></i>
+                        </div>
+
+                        <div class="special-title">
+                          Upload by xlsx
+                        </div>
+
+                      <div class="desc" id="xlsx-desc">
+                        <div class="center-desc">
+                          <ol class="alignOL">
+                            <li>Download our spreadsheet <a href="#">template</a>.</li>
+                            <li>Fillout out each row(worst to best answer).</li>
+                            <li>Drag and drop the file in this tray or click <input type="file" name="xlsx-file" class="inputButton" id="inputFile">here</input> to open the file explorer.</li>
+                            <li>Once the upload is done, click okay to finalize.</li>
+                          </ol>
+                        </div>
+                      </div>
+
                     </div>
-
-                  Upload by xlsx
-
-                  <div class="desc" id="xlsx-desc">
-                    <div class="center-desc">
-                      <ol class="alignOL">
-                        <li>Download our spreadsheet <a href="#">template</a>.</li>
-                        <li>Fillout out each row(worst to best answer).</li>
-                        <li>Drag and drop the file in this tray or click <a href="#">here</a> to open the file explorer.</li>
-                        <li>Once the upload is done, click okay to finalize.</li>
-                      </ol>
-                    </div>
-                  </div>
-                </button>
-
-            </input>
           </div>
 
         </div>
@@ -70,7 +71,10 @@
               <div style="font-size: 5em;">
                   <i class="far fa-edit"></i>
               </div>
-            Make a set here
+
+            <div class="special-title">
+              Make a set here
+            </div>
 
               <div class="desc" id="makeset-desc">
                 <div class="center-desc">
@@ -85,6 +89,5 @@
 
         </div>
       </div>
-
-</div>
+    </form>
 </body>
