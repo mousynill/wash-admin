@@ -17,8 +17,8 @@
       <div class="col-xl flexmine choice-container" id="xlsx">
         <div class="fixFlex rebutton rebutton-left">
 
-          <div class="closeContainer takeWhole" id="close-xlsx">
-            <button type="button" class="closeButton">
+          <div class="closeContainer takeWhole">
+            <button type="button" class="closeButton" id="close-xlsx">
               <span style="font-size: 1.5em;">
                 <i class="far fa-times-circle" id="close-icon-xlsx"></i>
               </span>
@@ -27,7 +27,7 @@
 
           <div class="mainContainer takeWhole" id="1">
 
-                    <div class="mainButton invi fixFlex" type="button" name="mainButton">
+                    <div class="mainButton invi fixFlex" name="mainButton">
                     <!-- this is the xlsx icon from fontawesome -->
                         <div style="font-size: 5em; align-self: center;">
                               <i class="far fa-file-excel"></i>

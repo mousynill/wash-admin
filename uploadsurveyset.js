@@ -14,17 +14,16 @@ $(document).ready(function(){
   $("#1").click(function(){
       $("#makeset").hide();
       $("xlsx-desc").show();
-      $("#close-xlsx").css("display", "flex");
+      $("#close-xlsx").css("visibility", "visible");
       document.getElementById("1").style.alignItems = "stretch"; //placed in top center
-      $("#1").off('mouseleave'); //this disables the hover effect.
-
+      $("#1").off('mouseleave'); //this disables the hover effect
       $("#inputFile").css("display", "flex");
   });
 
   $("#close-xlsx").on('click', function(){
       $("#xlsx").animate({flexGrow: "1"}, "fast");
       $("#makeset").show(); //this shows the makeset panel
-      $("#close-xlsx").css("display", "none"); //this hides the close button for xlsx
+      $("#close-xlsx").css("visibility", "hidden"); //this hides the close button for xlsx
       $("#xlsx-desc").fadeOut("fast");
       $("#1").on('mouseleave', function(){
         $("#xlsx").animate({flexGrow: "1"}, "fast");
