@@ -1,5 +1,6 @@
 
 $(document).ready(function(){
+  $("#inputFile").hide();
 
   $("#1").on('mouseenter',function(){
     $("#xlsx").animate({flexGrow: "5"}, "fast");
@@ -18,12 +19,14 @@ $(document).ready(function(){
       document.getElementById("1").style.alignItems = "stretch"; //placed in top center
       $("#1").off('mouseleave'); //this disables the hover effect
       // $("#inputFile").css("display", "flex");
+      $("#inputFile").show();
 
   });
 
   $("#close-xlsx").on('click', function(){
       $("#xlsx").animate({flexGrow: "1"}, "fast");
       $("#makeset").show(); //this shows the makeset panel
+      $("#inputFile").hide();
       $("#close-xlsx").css("visibility", "hidden"); //this hides the close button for xlsx
       $("#xlsx-desc").fadeOut("fast");
       $("#1").on('mouseleave', function(){
@@ -45,7 +48,7 @@ $(document).ready(function(){
   $("#2").click(function(){
       $("#xlsx").hide();
       $("makeset-desc").show();
-      $("#close-makeset").css("display", "flex");
+      $("#close-makeset").css("visibility", "visible");
       document.getElementById("2").style.alignItems = "stretch";
       $("#2").off('mouseleave');
   });
@@ -53,7 +56,7 @@ $(document).ready(function(){
   $("#close-makeset").on('click', function(){
       $("#makeset").animate({flexGrow: "1"}, "fast");
       $("#xlsx").show(); //this shows the makeset panel
-      $("#close-makeset").css("display", "none"); //this hides the close button for xlsx
+      $("#close-makeset").css("visibility", "hidden"); //this hides the close button for xlsx
       $("#makeset-desc").fadeOut("fast");
       $("#2").on('mouseleave', function(){
         $("#makeset").animate({flexGrow: "1"}, "fast");

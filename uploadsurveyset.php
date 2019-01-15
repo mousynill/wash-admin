@@ -57,8 +57,8 @@
       <div class="col-xl flexmine choice-container" id="makeset">
         <div class="fixFlex rebutton rebutton-right">
 
-          <div class="closeContainer takeWhole" id="close-makeset">
-            <button type="button" class="closeButton">
+          <div class="closeContainer takeWhole" >
+            <button type="button" class="closeButton" id="close-makeset">
               <span style="font-size: 1.5em;">
                 <i class="far fa-times-circle" id="close-icon-makeset"></i>
               </span>
