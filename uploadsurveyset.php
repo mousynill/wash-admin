@@ -26,8 +26,8 @@
           </div>
 
           <div class="mainContainer takeWhole" id="1">
-
                     <div class="mainButton invi fixFlex" name="mainButton">
+                      <input type="file" name="xlsx-file" class="inputButton" id="inputFile"></input>
                     <!-- this is the xlsx icon from fontawesome -->
                         <div style="font-size: 5em; align-self: center;">
                               <i class="far fa-file-excel"></i>
@@ -42,7 +42,7 @@
                           <ol class="alignOL">
                             <li>Download our spreadsheet <a href="#">template</a>.</li>
                             <li>Fillout out each row(worst to best answer).</li>
-                            <li>Drag and drop the file in this tray or click <input type="file" name="xlsx-file" class="inputButton" id="inputFile">here</input> to open the file explorer.</li>
+                            <li>Drag and drop the file in this tray or click here to open the file explorer.</li>
                             <li>Once the upload is done, click okay to finalize.</li>
                           </ol>
                         </div>
