@@ -12,7 +12,7 @@
 
 <div class="container-fluid">
 
-    <form class="row no-gutters" method="post">
+    <form class="row no-gutters" method="post" id="formFile ">
 
       <div class="col-xl flexmine choice-container" id="xlsx">
         <div class="fixFlex rebutton rebutton-left">
@@ -26,9 +26,10 @@
           </div>
 
           <div class="mainContainer takeWhole" id="1">
-                    <div class="mainButton invi fixFlex" name="mainButton">
+          <div class="mainButton invi fixFlex" name="mainButton">
                       <input type="file" name="xlsx-file" class="inputButton" id="inputFile"></input>
                     <!-- this is the xlsx icon from fontawesome -->
+
                         <div style="font-size: 5em; align-self: center;">
                               <i class="far fa-file-excel"></i>
                         </div>
@@ -38,7 +39,7 @@
                         </div>
 
                       <div class="desc" id="xlsx-desc">
-                        <div class="center-desc">
+                        <div class="center-desc" id="the-desc-xlsx">
                           <ol class="alignOL">
                             <li>Download our spreadsheet <a href="#">template</a>.</li>
                             <li>Fillout out each row(worst to best answer).</li>
@@ -46,20 +47,32 @@
                             <li>Once the upload is done, click okay to finalize.</li>
                           </ol>
                         </div>
-                      </div>
 
-                    </div>
+                        <div class="sendButton" id="flyButton">
+
+                            <span style="font-size: 4em; align-self: center;">
+                              <i class="fas fa-paper-plane"></i>
+                            </span>
+
+                            <div class="sendText">
+                              File is ready, let it fly!
+                            </div>
+
+                        </div>
+
+                      </div>
           </div>
 
         </div>
       </div>
+    </div>
 
       <div class="col-xl flexmine choice-container" id="makeset">
         <div class="fixFlex rebutton rebutton-right">
 
           <div class="closeContainer takeWhole" >
             <button type="button" class="closeButton" id="close-makeset">
-              <span style="font-size: 1.5em;">
+              <span style="font-size: 1.5em; color: black;">
                 <i class="far fa-times-circle" id="close-icon-makeset"></i>
               </span>
             </button>
@@ -68,17 +81,17 @@
           <div class="mainContainer takeWhole" id="2">
 
             <button class="mainButton" type="button" name="mainButton" >
-              <div style="font-size: 5em;">
+              <div style="font-size: 5em; color: #212529;">
                   <i class="far fa-edit"></i>
               </div>
 
-            <div class="special-title">
+            <div class="special-title" style="color: black;">
               Make a set here
             </div>
 
               <div class="desc" id="makeset-desc">
                 <div class="center-desc">
-                    <span>
+                    <span style="color: black;">
                       You can create survey questions using our system, just click <a id="make-new-set"> here</a>.
                     </span>
                 </div>

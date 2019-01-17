@@ -70,4 +70,29 @@ $(document).ready(function(){
   // });
 
 
+$('#inputFile').on('change',function(){
+      if($('#inputFile').val() != ""){
+          //this means the input has a file now
+
+          $("#the-desc-xlsx").css("display", "none");
+          $("#flyButton").css("display","flex");
+
+
+      }else{
+        alert("No file uploaded");
+      }
+});
+
+$('#sendFile').click(function(){
+  $.ajax({
+    url: './uploadwithxlsx.php',
+    type: 'post',
+    dataType: 'json',
+    data: $('#formFile').serialize(),
+    success: function(data){
+      console.log(data);
+    }
+  })
+});
+
 })

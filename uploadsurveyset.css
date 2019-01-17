@@ -123,3 +123,10 @@
 .special-title{
   font-size: large;
 }
+
+.sendButton{
+  display: none;
+  flex: 1;
+  justify-content: center;
+  align-items: flex-start;
+}
