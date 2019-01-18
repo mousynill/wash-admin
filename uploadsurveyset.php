@@ -3,9 +3,10 @@
 ?>
 
 <!--
-TO DO BY RNILL:
+TO DOs:
 [✓] Drag and drop for xlsx file
 [+] Ajax functionality when "fly" button is clicked (send to localhost/wash-admin/private/uploadwithxlsx.php)
+[+] Add a "change file" button for xlsx upload.
 [x] Design for panel when a file is hovered, and when a file is entered.
 [x] Design for "fly" button to distinguish that it is a buton.
 
@@ -15,7 +16,8 @@ LEGEND FOR TO DO:
   [✓] - Accomplished
 
 REMARKS:
-  Find a way to template clickable.
+  -> Find a way to make template link clickable.
+
  -->
 
 <title>Upload Survey Set</title>

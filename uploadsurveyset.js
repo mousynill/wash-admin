@@ -80,6 +80,7 @@ $('#inputFile').on('change',function(){
           $('#xlsx-title').hide();
           $('#xlsx-logo').hide();
 
+          $('#inputFile').css('z-index', '-1');
           $("#inputFile").prop("disabled", true); //this disables the input - set to not clickable
       }else{
         alert("No file uploaded");
@@ -88,7 +89,6 @@ $('#inputFile').on('change',function(){
 
 $('#flyButton').on('click', function(){
   console.log("hello im working");
-  console.log($("#formFile"));
   // $.ajax({
   //   url: './uploadwithxlsx.php',
   //   type: 'post',
