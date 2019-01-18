@@ -33,6 +33,7 @@ $(document).ready(function(){
         $("#xlsx").animate({flexGrow: "1"}, "fast");
         $("#xlsx-desc").fadeOut("fast");
       })
+      $("#inputFile").val(null); //this resets the input.
   });
 
   $("#2").on('mouseenter',function(){
@@ -78,23 +79,25 @@ $('#inputFile').on('change',function(){
           $("#flyButton").css("display","flex");
           $('#xlsx-title').hide();
           $('#xlsx-logo').hide();
+
+          $("#inputFile").prop("disabled", true); //this disables the input - set to not clickable
       }else{
-
         alert("No file uploaded");
-
       }
 });
 
-$('#sendFile').click(function(){
-  $.ajax({
-    url: './uploadwithxlsx.php',
-    type: 'post',
-    dataType: 'json',
-    data: $('#formFile').serialize(),
-    success: function(data){
-      console.log(data);
-    }
-  })
+$('#flyButton').on('click', function(){
+  console.log("hello im working");
+  console.log($("#formFile"));
+  // $ajax({
+  //   url: './uploadwithxlsx.php',
+  //   type: 'post',
+  //   dataType: 'json',
+  //   data: $('#formFile').serialize(),
+  //   success: function(data){
+  //     console.log(data);
+  //   }
+  // })
 });
 
 })

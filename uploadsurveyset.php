@@ -12,7 +12,7 @@
 
 <div class="container-fluid">
 
-    <form class="row no-gutters" method="post" id="formFile ">
+    <form class="row no-gutters" method="post" id="formFile" name="formFile">
 
       <div class="col-xl flexmine choice-container" id="xlsx">
         <div class="fixFlex rebutton rebutton-left">
@@ -50,9 +50,9 @@
 
                         <div class="sendButton" id="flyButton">
 
-                            <span style="font-size: 4em; align-self: center;">
-                              <i class="fas fa-paper-plane"></i>
-                            </span>
+                              <span style="font-size: 4em; align-self: center; background-color: blue; border-radius: 10px;">
+                                <i class="fas fa-paper-plane"></i>
+                              </span>
 
                             <div class="sendText">
                               File is ready, let it fly!
