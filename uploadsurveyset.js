@@ -95,6 +95,7 @@ $('#flyButton').on('click', function(){
   //   dataType: 'json',
   //   data: $("#formFile").serialize(),
   //   success: function(data){
+  //     swal("", "The file is succesfully uploaded!", "success");
   //     console.log(data);
   //   }
   // })

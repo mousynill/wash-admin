@@ -131,3 +131,7 @@
   align-items: flex-start;
   flex-direction: column;
 }
+.flies:hover{
+  color: blue;
+  cursor: pointer;
+}

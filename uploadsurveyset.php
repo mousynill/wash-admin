@@ -7,8 +7,8 @@ TO DOs:
 [✓] Drag and drop for xlsx file
 [+] Ajax functionality when "fly" button is clicked (send to localhost/wash-admin/private/uploadwithxlsx.php)
 [+] Add a "change file" button for xlsx upload.
-[x] Design for panel when a file is hovered, and when a file is entered.
-[x] Design for "fly" button to distinguish that it is a buton.
+[+] Design for panel when a file is hovered, and when a file is entered.
+[✓] Design for "fly" button to distinguish that it is a buton.
 
 LEGEND FOR TO DO:
   [+] - Add
@@ -66,14 +66,16 @@ REMARKS:
                         </div>
 
                         <div class="sendButton" id="flyButton">
-
-                              <span style="font-size: 4em; align-self: center; color: blue; border-radius: 10px;">
-                                <i class="fas fa-paper-plane"></i>
+                              <button type="button" class="flies" style="align-self: center;">
+                              <span style="font-size: 4em; border-radius: 10px;">
+                                <i class="fas fa-paper-plane" ></i>
                               </span>
+                            </button>
 
                             <div class="sendText">
                               File is ready, let it fly!
                             </div>
+
 
                         </div>
 
