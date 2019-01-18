@@ -1,7 +1,16 @@
 <?php
   include 'nav.php';
 ?>
+<!--
+TO DO BY RNILL:
+[-] Drag and drop for xlsx file
+[-] Ajax functionality when "fly" button is clicked
+[X] Background for "fly" button to distinguish that it is a buton.
 
+ORIGIN FOR TO DO:
+  [X] - Modify
+  [-] - Add
+ -->
 
 <title>Upload Survey Set</title>
 <link rel="stylesheet" type="text/css" href="uploadsurveyset.css">
