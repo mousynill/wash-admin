@@ -65,7 +65,7 @@ REMARKS:
 
                         <div class="sendButton" id="flyButton">
 
-                              <span style="font-size: 4em; align-self: center; background-color: blue; border-radius: 10px;">
+                              <span style="font-size: 4em; align-self: center; color: blue; border-radius: 10px;">
                                 <i class="fas fa-paper-plane"></i>
                               </span>
 

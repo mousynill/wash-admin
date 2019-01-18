@@ -89,11 +89,11 @@ $('#inputFile').on('change',function(){
 $('#flyButton').on('click', function(){
   console.log("hello im working");
   console.log($("#formFile"));
-  // $ajax({
+  // $.ajax({
   //   url: './uploadwithxlsx.php',
   //   type: 'post',
   //   dataType: 'json',
-  //   data: $('#formFile').serialize(),
+  //   data: $("#formFile").serialize(),
   //   success: function(data){
   //     console.log(data);
   //   }
