@@ -76,10 +76,12 @@ $('#inputFile').on('change',function(){
 
           $("#the-desc-xlsx").css("display", "none");
           $("#flyButton").css("display","flex");
-
-
+          $('#xlsx-title').hide();
+          $('#xlsx-logo').hide();
       }else{
+
         alert("No file uploaded");
+
       }
 });
 

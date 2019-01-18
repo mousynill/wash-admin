@@ -27,14 +27,14 @@
 
           <div class="mainContainer takeWhole" id="1">
           <div class="mainButton invi fixFlex" name="mainButton">
-                      <input type="file" name="xlsx-file" class="inputButton" id="inputFile"></input>
+                      <input type="file" name="xlsx-file" class="inputButton" id="inputFile">
                     <!-- this is the xlsx icon from fontawesome -->
 
-                        <div style="font-size: 5em; align-self: center;">
+                        <div style="font-size: 5em; align-self: center;" id="xlsx-logo">
                               <i class="far fa-file-excel"></i>
                         </div>
 
-                        <div class="special-title">
+                        <div class="special-title" id="xlsx-title">
                           Upload by xlsx
                         </div>
 
