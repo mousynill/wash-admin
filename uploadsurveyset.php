@@ -4,13 +4,14 @@
 
 <!--
 TO DO BY RNILL:
-[-] Drag and drop for xlsx file
-[-] Ajax functionality when "fly" button is clicked
-[X] Background for "fly" button to distinguish that it is a buton.
+[+] Drag and drop for xlsx file
+[+] Ajax functionality when "fly" button is clicked
+[+]
+[x] Background for "fly" button to distinguish that it is a buton.
 
 LEGEND FOR TO DO:
-  [X] - Modify
-  [-] - Add
+  [x] - Modify
+  [+] - Add
   [✓] - Accomplished
  -->
 
