@@ -75,5 +75,6 @@ require_once('../src/routes/addMoney.php');
 require_once('../src/routes/getQuestions.php');
 require_once('../src/routes/checkIfAnswered.php');
 require_once('../src/routes/setAnswered.php');
+require_once('../src/routes/xlsxDownloadLink.php');
 
 $app->run();

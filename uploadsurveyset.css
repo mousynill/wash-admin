@@ -39,6 +39,9 @@
   padding-right: 10px;
 }
 
+.download-link{
+  z-index: 12;
+}
 
 .rebutton{
   display: flex;
@@ -95,6 +98,10 @@
   border-right-style: dashed;
 }
 
+.bring-to-front{
+  z-index: 12;
+}
+
 .desc{
   display: none;
   justify-content: center;
@@ -117,6 +124,7 @@
   height: 83%;
   outline: none;
   opacity: 0;
+  z-index: 10;
 }
 
 
@@ -131,6 +139,15 @@
   align-items: flex-start;
   flex-direction: column;
 }
+
+.sendText{
+    align-self: center;
+}
+
+.file-name{
+    align-self: center;
+}
+
 .flies:hover{
   color: blue;
   cursor: pointer;

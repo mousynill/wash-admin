@@ -5,10 +5,12 @@
 <!--
 TO DOs:
 [✓] Drag and drop for xlsx file
-[+] Ajax functionality when "fly" button is clicked (send to localhost/wash-admin/private/uploadwithxlsx.php)
-[+] Add a "change file" button for xlsx upload.
-[+] Design for panel when a file is hovered, and when a file is entered.
 [✓] Design for "fly" button to distinguish that it is a buton.
+[✓] Add a "change file" button for xlsx upload. <- Not needed because it's automatic.
+[✓] Add a filename to know what the user entered.
+[✓] Make template link clickable for xlsx-format download.
+[+] Ajax functionality when "fly" button is clicked (send to localhost/wash-admin/private/uploadwithxlsx.php)
+[+] Design for panel when a file is hovered, and when a file is entered.
 
 LEGEND FOR TO DO:
   [+] - Add
@@ -44,29 +46,29 @@ REMARKS:
 
           <div class="mainContainer takeWhole" id="1">
           <div class="mainButton invi fixFlex" name="mainButton">
-                      <input type="file" name="xlsx-file" class="inputButton" id="inputFile">
+            <input type="file" name="xlsx-file" class="inputButton" id="inputFile">
                     <!-- this is the xlsx icon from fontawesome -->
 
                         <div style="font-size: 5em; align-self: center;" id="xlsx-logo">
                               <i class="far fa-file-excel"></i>
                         </div>
 
-                        <div class="special-title" id="xlsx-title">
+                        <div class="special-title bring-to-front" id="xlsx-title">
                           Upload by xlsx
                         </div>
 
-                      <div class="desc" id="xlsx-desc">
+                      <div class="desc bring-to-front" id="xlsx-desc">
                         <div class="center-desc" id="the-desc-xlsx">
                           <ol class="alignOL">
-                            <li>Download our spreadsheet <a href="#">template</a>.</li>
+                            <li>Download our spreadsheet <a href="public/downloadxlsx" class="download-link" download>template</a>.</li>
                             <li>Fillout out each row(worst to best answer).</li>
                             <li>Drag and drop the file in this tray or click here to open the file explorer.</li>
-                            <li>Once the upload is done, click okay to finalize.</li>
+                            <li>Once the upload is done, send it away!</li>
                           </ol>
                         </div>
 
                         <div class="sendButton" id="flyButton">
-                              <button type="button" class="flies" style="align-self: center;">
+                            <button type="button" class="flies" style="align-self: center;">
                               <span style="font-size: 4em; border-radius: 10px;">
                                 <i class="fas fa-paper-plane" ></i>
                               </span>
@@ -76,7 +78,16 @@ REMARKS:
                               File is ready, let it fly!
                             </div>
 
+                            <label class="file-name" id="file-name">
 
+                            </label>
+
+                        </div>
+
+                        <div style="display: none;" id="change-file">
+                          <button type="button" name="button">
+                            Change File
+                          </button>
                         </div>
 
                       </div>

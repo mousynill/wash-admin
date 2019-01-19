@@ -34,6 +34,17 @@ $(document).ready(function(){
         $("#xlsx-desc").fadeOut("fast");
       })
       $("#inputFile").val(null); //this resets the input.
+
+      $("#the-desc-xlsx").css("display", "flex");
+      $("#flyButton").css("display","none");
+      $('#xlsx-title').show();
+      $('#xlsx-logo').show();
+
+
+      $("#file-name").text("");
+
+      $('#inputFile').css('z-index', '1');
+      $("#inputFile").prop("disabled", false); //this disables the input - set to not clickable
   });
 
   $("#2").on('mouseenter',function(){
@@ -65,12 +76,6 @@ $(document).ready(function(){
       })
   });
 
-
-  // $('form input').change(function () {
-  //   $('form p').text(this.files.length + " file(s) selected");
-  // });
-
-
 $('#inputFile').on('change',function(){
       if($('#inputFile').val() != ""){
           //this means the input has a file now
@@ -79,6 +84,9 @@ $('#inputFile').on('change',function(){
           $("#flyButton").css("display","flex");
           $('#xlsx-title').hide();
           $('#xlsx-logo').hide();
+
+
+          $("#file-name").text($('#inputFile')[0].files[0].name);
 
           $('#inputFile').css('z-index', '-1');
           $("#inputFile").prop("disabled", true); //this disables the input - set to not clickable
