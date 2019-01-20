@@ -9,6 +9,7 @@ TO DOs:
 [✓] Add a "change file" button for xlsx upload. <- Not needed because it's automatic.
 [✓] Add a filename to know what the user entered.
 [✓] Make template link clickable for xlsx-format download.
+[✓] Find a way to make template link clickable.
 [+] Ajax functionality when "fly" button is clicked (send to localhost/wash-admin/private/uploadwithxlsx.php)
 [+] Design for panel when a file is hovered, and when a file is entered.
 
@@ -16,9 +17,6 @@ LEGEND FOR TO DO:
   [+] - Add
   [x] - Modify
   [✓] - Accomplished
-
-REMARKS:
-  -> Find a way to make template link clickable.
 
  -->
 
