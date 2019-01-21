@@ -34,7 +34,7 @@ LEGEND FOR TO DO:
       <div class="col-xl flexmine choice-container" id="xlsx">
         <div class="fixFlex rebutton rebutton-left">
 
-          <div class="closeContainer takeWhole">
+          <div class="closeContainer takeWhole" id="closeContainerXlsx">
             <button type="button" class="closeButton" id="close-xlsx">
               <span style="font-size: 1.5em;">
                 <i class="far fa-times-circle" id="close-icon-xlsx"></i>

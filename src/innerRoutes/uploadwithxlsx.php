@@ -2,7 +2,7 @@
 
 // TO DO:
 //   [x] Logic for inserting data into database
-//   [x] Return objects upon successfull upload for USER review 
+//   [x] Return objects upon successfull upload for USER review
 //   [x] Queries for inserting each data into table
 //
 // LEGEND FOR TO DO:
@@ -35,18 +35,17 @@ $app->post('/uploadwithxlsx', function($request, $response){
       $fileError = $_FILES['formFile']['error'];
       $fileType = $_FILES['formFile']['type'];
 
+
     $fileExt =  explode('.', $fileName);
     $fileActualExt = strtolower(end($fileExt));
 
-
      if ($fileError === 0) {
        if(in_array($fileActualExt, $allowed)){
-
         //this is where all the process is handled
         if($fileActualExt == "xlsx"){
          $reader = new \PhpOffice\PhpSpreadsheet\Reader\Xlsx();
          }else if($fileActualExt == "ods"){
-           $reader = new \PhpOffice\PhpSpreadsheet\Reader\Ods();
+         $reader = new \PhpOffice\PhpSpreadsheet\Reader\Ods();
          }else{
          $reader = new \PhpOffice\PhpSpreadsheet\Reader\Csv();
         }
@@ -58,7 +57,7 @@ $app->post('/uploadwithxlsx', function($request, $response){
 
          foreach($sheetData as $key=>$rowVals){
            foreach($rowVals as $key=>$rowCell){
-
+             
              if($rowCell != "" && $key == 0){
                $currentCategory = $rowCell;
              }

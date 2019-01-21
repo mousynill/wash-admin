@@ -16,6 +16,7 @@ $(document).ready(function(){
       $("#makeset").hide();
       $("xlsx-desc").show();
       $("#close-xlsx").css("visibility", "visible");
+      $("#closeContainerXlsx").css("display", "flex");
       document.getElementById("1").style.alignItems = "stretch"; //placed in top center
       $("#1").off('mouseleave'); //this disables the hover effect
       // $("#inputFile").css("display", "flex");
