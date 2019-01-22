@@ -1,5 +1,9 @@
 <?php
 
+//MYSQL CONSTRAINT FORMATTING
+// FK_theColumn_theReference
+// ^type     ^column      ^table referencing to
+
 // TO DO:
 //   [x] Logic for inserting data into database
 //   [x] Return objects upon successfull upload for USER review
@@ -14,9 +18,11 @@ $app->post('/uploadwithxlsx', function($request, $response){
     require_once('../src/config/db.php');
     require '../vendor/autoload.php';
 
-    $insertNewCategory = "";
-    $insertNewQuestion = "";
-    $insertNewChoice = "";
+    return "hello";
+
+    $insertNewCategory = "INSERT INTO questioncategories(CategoryTitle) VALUES (:currentCategory)";
+    $insertNewQuestion = "INSERT INTO surveyquestions(QuestionDesc, QuestionCategory) VALUES (:currentQuestion, :currentCategory)";
+    $insertNewChoice = "INSERT INTO questionchoices(ChoiceDescription, QuestionID) VALUES (:currentChoice, :currentQuestion)";
 
     $allowed = array("xlsx", "ods", "xml");
       $fixedForPrint = implode(', ', $allowed);
@@ -39,49 +45,88 @@ $app->post('/uploadwithxlsx', function($request, $response){
     $fileExt =  explode('.', $fileName);
     $fileActualExt = strtolower(end($fileExt));
 
-     if ($fileError === 0) {
-       if(in_array($fileActualExt, $allowed)){
-        //this is where all the process is handled
-        if($fileActualExt == "xlsx"){
-         $reader = new \PhpOffice\PhpSpreadsheet\Reader\Xlsx();
-         }else if($fileActualExt == "ods"){
-         $reader = new \PhpOffice\PhpSpreadsheet\Reader\Ods();
-         }else{
-         $reader = new \PhpOffice\PhpSpreadsheet\Reader\Csv();
-        }
+    try {
+      $db = new db();
 
-         $reader->setReadDataOnly(true);
-         $spreadsheet = $reader->load($_FILES['formFile']['tmp_name']);
+      //connect
+      $db = $db->connect();
 
-         $sheetData = $spreadsheet->getActiveSheet()->toArray();
+      $insertNewCategory = $db->prepare($insertNewCategory);
+      $insertNewQuestion = $db->prepare($insertNewQuestion);
+      $insertNewChoice = $db->prepare($insertNewChoice);
 
-         foreach($sheetData as $key=>$rowVals){
-           foreach($rowVals as $key=>$rowCell){
-             
-             if($rowCell != "" && $key == 0){
-               $currentCategory = $rowCell;
-             }
-             else
-             if($rowCell != "" && $key == 1){
-               $currentQuestion = $rowCell;
-             }
-             else
-             if($rowCell != "" && $key == 2){
-               $currentChoice = $rowCell;
-             }
 
-           }
+      //how to execute
+      // $statement->execute([
+      //     'fname' => 'Bob',
+      //     'sname' => 'Desaunois',
+      //     'age' => '18',
+      // ]);
 
-           echo "\n";
+      if ($fileError === 0) {
+        if(in_array($fileActualExt, $allowed)){
+         //this is where all the process is handled
+         if($fileActualExt == "xlsx"){
+          $reader = new \PhpOffice\PhpSpreadsheet\Reader\Xlsx();
+          }else if($fileActualExt == "ods"){
+          $reader = new \PhpOffice\PhpSpreadsheet\Reader\Ods();
+          }else{
+          $reader = new \PhpOffice\PhpSpreadsheet\Reader\Csv();
          }
 
+          $reader->setReadDataOnly(true);
+          $spreadsheet = $reader->load($_FILES['formFile']['tmp_name']);
 
-       }else{
-        echo $toReturn["error-na"];
-       }
-     }else{
-      echo $toReturn["error-exist"];
-     }
+          $sheetData = $spreadsheet->getActiveSheet()->toArray();
+
+          foreach($sheetData as $key=>$rowVals){
+
+            if($key != 0){
+              foreach($rowVals as $key=>$rowCell){
+
+                if($rowCell != "" && $key == 0){
+                  $currentCategory = $rowCell;
+                  $insertNewCategory->execute([
+                    'currentCategory' => $currentCategory
+                  ]);
+                }
+                else
+                if($rowCell != "" && $key == 1){
+                  $currentQuestion = $rowCell;
+                  $insertNewQuestion->execute([
+                    'currentQuestion' => $currentQuestion,
+                    'currentCategory' => $currentCategory
+                  ]);
+                }
+                else
+                if($rowCell != "" && $key == 2){
+                  $currentChoice = $rowCell;
+                  $insertNewChoice->execute([
+                    'currentChoice' => $currentChoice,
+                    'currentQuestion' => $currentQuestion
+                  ]);
+                }
+
+              }
+
+            }//end of if
+
+            echo "\n";
+          }
+
+
+        }else{
+         echo $toReturn["error-na"];
+        }
+      }else{
+       echo $toReturn["error-exist"];
+      }
+    } catch (PDOException $e) {
+      return '{"error": {"text": '.$e->getMessage().'}';
+    }
+
+
+
 
   }
 )

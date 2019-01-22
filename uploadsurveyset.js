@@ -97,17 +97,20 @@ $('#inputFile').on('change',function(){
 });
 
 $('#flyButton').on('click', function(){
-  console.log("hello im working");
-  // $.ajax({
-  //   url: './uploadwithxlsx.php',
-  //   type: 'post',
-  //   dataType: 'json',
-  //   data: $("#formFile").serialize(),
-  //   success: function(data){
-  //     swal("", "The file is succesfully uploaded!", "success");
-  //     console.log(data);
-  //   }
-  // })
+  console.log($("#inputFile"));
+  $.ajax({
+    url: './private/uploadwithxlsx',
+    type: 'post',
+    dataType: 'form-data',
+    data: $("#inputFile"),
+    success: function(data){
+      swal("", "The file is succesfully uploaded!", "success");
+      console.log(data);
+    },
+    fail: function(xhr, textStatus, errorThrown){
+       console.log(errorThrown)
+    }
+  })
 });
 
 })
