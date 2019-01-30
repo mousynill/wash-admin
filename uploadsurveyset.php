@@ -44,7 +44,7 @@ LEGEND FOR TO DO:
 
           <div class="mainContainer takeWhole" id="1">
           <div class="mainButton invi fixFlex" name="mainButton">
-            <input type="file" name="xlsx-file" class="inputButton" id="inputFile">
+            <input type="file" name="inputFile" class="inputButton" id="inputFile">
                     <!-- this is the xlsx icon from fontawesome -->
 
                         <div style="font-size: 5em; align-self: center;" id="xlsx-logo">

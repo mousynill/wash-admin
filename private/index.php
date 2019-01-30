@@ -7,5 +7,7 @@ require '../src/config/db.php';
 
 $app = new \Slim\App;
 require_once('../src/innerRoutes/uploadwithxlsx.php');
+require_once('../src/innerRoutes/try.php');
+
 
 $app->run();

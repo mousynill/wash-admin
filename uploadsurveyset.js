@@ -97,12 +97,21 @@ $('#inputFile').on('change',function(){
 });
 
 $('#flyButton').on('click', function(){
-  console.log($("#inputFile"));
+
+  var formData = new FormData();
+
+  if ($('#inputFile').get(0).files.length === 0) {
+    console.log("No files selected.");
+  }else{
+    formData.append('inputFile', $('#inputFile')[0].files[0]);
+  }
+
   $.ajax({
-    url: './private/uploadwithxlsx',
+    url: 'private/uploadwithxlsx',
     type: 'post',
-    dataType: 'form-data',
-    data: $("#inputFile"),
+    data: formData,
+    processData: false,
+    contentType: false,
     success: function(data){
       swal("", "The file is succesfully uploaded!", "success");
       console.log(data);
@@ -111,6 +120,7 @@ $('#flyButton').on('click', function(){
        console.log(errorThrown)
     }
   })
+
 });
 
 })

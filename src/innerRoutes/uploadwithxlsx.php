@@ -1,5 +1,8 @@
 <?php
 
+//how to get current increment value for a table
+//SELECT `AUTO_INCREMENT` FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'wash' AND TABLE_NAME = 'questioncategories';
+
 //MYSQL CONSTRAINT FORMATTING
 // FK_theColumn_theReference
 // ^type     ^column      ^table referencing to
@@ -16,13 +19,16 @@
 
 $app->post('/uploadwithxlsx', function($request, $response){
     require_once('../src/config/db.php');
+    require '../src/config/surveyObject.php';
     require '../vendor/autoload.php';
-
-    return "hello";
 
     $insertNewCategory = "INSERT INTO questioncategories(CategoryTitle) VALUES (:currentCategory)";
     $insertNewQuestion = "INSERT INTO surveyquestions(QuestionDesc, QuestionCategory) VALUES (:currentQuestion, :currentCategory)";
     $insertNewChoice = "INSERT INTO questionchoices(ChoiceDescription, QuestionID) VALUES (:currentChoice, :currentQuestion)";
+
+    $getCategoryIncrement = "SELECT `AUTO_INCREMENT` AS `CategoryIndex` FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'wash' AND TABLE_NAME = 'questioncategories'";
+    $getQuestionIncrement = "SELECT `AUTO_INCREMENT` AS `QuestionIndex` FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'wash' AND TABLE_NAME = 'surveyquestions'";
+    $getChoiceIncrement = "SELECT `AUTO_INCREMENT` FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'wash' AND TABLE_NAME = 'questionchoices'";
 
     $allowed = array("xlsx", "ods", "xml");
       $fixedForPrint = implode(', ', $allowed);
@@ -34,12 +40,12 @@ $app->post('/uploadwithxlsx', function($request, $response){
       "error-na" => 'We do not support the filetype you just entered. We only accept '.$fixedForPrint.'.'
     );
 
-    $file = $_FILES['formFile']; //<-- this should be the name of the input or form
-      $fileName = $_FILES['formFile']['name'];
-      $fileTmpName = $_FILES['formFile']['tmp_name'];
-      $fileSize = $_FILES['formFile']['size'];
-      $fileError = $_FILES['formFile']['error'];
-      $fileType = $_FILES['formFile']['type'];
+    $file = $_FILES['inputFile']; //<-- this should be the name of the input or form
+      $fileName = $_FILES['inputFile']['name'];
+      $fileTmpName = $_FILES['inputFile']['tmp_name'];
+      $fileSize = $_FILES['inputFile']['size'];
+      $fileError = $_FILES['inputFile']['error'];
+      $fileType = $_FILES['inputFile']['type'];
 
 
     $fileExt =  explode('.', $fileName);
@@ -55,13 +61,14 @@ $app->post('/uploadwithxlsx', function($request, $response){
       $insertNewQuestion = $db->prepare($insertNewQuestion);
       $insertNewChoice = $db->prepare($insertNewChoice);
 
+      $getCategoryIncrement = $db->query($getCategoryIncrement);
+      $getQuestionIncrement = $db->query($getQuestionIncrement);
+      $getChoiceIncrement = $db->query($getChoiceIncrement);
 
-      //how to execute
-      // $statement->execute([
-      //     'fname' => 'Bob',
-      //     'sname' => 'Desaunois',
-      //     'age' => '18',
-      // ]);
+
+      $categoryIndex = 0;
+      $questionIndex = 0;
+
 
       if ($fileError === 0) {
         if(in_array($fileActualExt, $allowed)){
@@ -75,35 +82,57 @@ $app->post('/uploadwithxlsx', function($request, $response){
          }
 
           $reader->setReadDataOnly(true);
-          $spreadsheet = $reader->load($_FILES['formFile']['tmp_name']);
+          $spreadsheet = $reader->load($_FILES['inputFile']['tmp_name']);
 
           $sheetData = $spreadsheet->getActiveSheet()->toArray();
 
           foreach($sheetData as $key=>$rowVals){
 
+            $getCategoryIncrement->execute();
+            $getQuestionIncrement->execute();
+
+
             if($key != 0){
               foreach($rowVals as $key=>$rowCell){
 
                 if($rowCell != "" && $key == 0){
-                  $currentCategory = $rowCell;
+
+                  $currentCategory = $rowCell; //the value of the the current category
+
+                  $categoryObject = $getCategoryIncrement->fetch(PDO::FETCH_OBJ); // get the next index
+
+                  // echo $categoryObject->CategoryIndex;
+                  $categoryIndex = $categoryObject->CategoryIndex;
+
                   $insertNewCategory->execute([
                     'currentCategory' => $currentCategory
                   ]);
+
                 }
                 else
-                if($rowCell != "" && $key == 1){
+                if($rowCell != NULL && $key == 1){
+
                   $currentQuestion = $rowCell;
+
+                  $questionObject = $getQuestionIncrement->fetch(PDO::FETCH_OBJ);
+
+                  // echo $questionObject->QuestionIndex;
+                  $questionIndex = $questionObject->QuestionIndex;
+
                   $insertNewQuestion->execute([
                     'currentQuestion' => $currentQuestion,
-                    'currentCategory' => $currentCategory
+                    'currentCategory' => $categoryIndex
                   ]);
+
                 }
                 else
-                if($rowCell != "" && $key == 2){
+                if($rowCell != NULL && $key == 2){
+
                   $currentChoice = $rowCell;
+
                   $insertNewChoice->execute([
                     'currentChoice' => $currentChoice,
-                    'currentQuestion' => $currentQuestion
+                    'currentQuestion' => $questionIndex
                   ]);
                 }
 
