@@ -1,9 +1,10 @@
 <?php
 
 class Survey {
-  var $category;
-  var $question;
-  var $choice;
+  public $category;
+  public $question;
+  public $choice;
+
 
     function setCategoryIndex($par){
         $this->category = $par;
@@ -28,6 +29,10 @@ class Survey {
     function getChoiceIndex(){
       return $this->choice;
     }
+}
+
+class Category {
+  public $someshit="someshit";
 }
 
 ?>

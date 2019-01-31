@@ -2,9 +2,13 @@
 
 $app->get('/trythis', function($request, $response){
     require_once('../src/config/db.php');
+    require '../src/config/surveyObject.php';
 
+    $foo = new Survey();
 
-    echo 'hello';
+    $foo->category = new Category();
+
+    echo $foo->category->someshit;
 
   })
 ?>
