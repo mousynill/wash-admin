@@ -1,6 +1,7 @@
 {
     "require": {
         "slim/slim": "^3.0",
-        "phpoffice/phpspreadsheet": "^1.6"
+        "phpoffice/phpspreadsheet": "^1.6",
+        "php-ai/php-ml": "^0.7.0"
     }
 }

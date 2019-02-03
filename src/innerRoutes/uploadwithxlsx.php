@@ -19,7 +19,6 @@
 
 $app->post('/uploadwithxlsx', function($request, $response){
     require_once('../src/config/db.php');
-    require '../src/config/surveyObject.php';
     require '../vendor/autoload.php';
 
     $insertNewCategory = "INSERT INTO questioncategories(CategoryTitle) VALUES (:currentCategory)";

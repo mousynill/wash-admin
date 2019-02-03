@@ -78,6 +78,7 @@ class ComposerStaticInit72ad207cc834aac039a19a55811e8af0
             'Psr\\SimpleCache\\' => 16,
             'Psr\\Http\\Message\\' => 17,
             'Psr\\Container\\' => 14,
+            'Phpml\\' => 6,
             'PhpOffice\\PhpSpreadsheet\\' => 25,
         ),
         'M' => 
@@ -114,6 +115,10 @@ class ComposerStaticInit72ad207cc834aac039a19a55811e8af0
         'Psr\\Container\\' => 
         array (
             0 => __DIR__ . '/..' . '/psr/container/src',
+        ),
+        'Phpml\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/php-ai/php-ml/src',
         ),
         'PhpOffice\\PhpSpreadsheet\\' => 
         array (
