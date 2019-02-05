@@ -123,4 +123,7 @@ $('#flyButton').on('click', function(){
 
 });
 
+
+console.log($('#accordion'));
+
 })

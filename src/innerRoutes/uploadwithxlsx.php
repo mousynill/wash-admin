@@ -21,13 +21,15 @@ $app->post('/uploadwithxlsx', function($request, $response){
     require_once('../src/config/db.php');
     require '../vendor/autoload.php';
 
+    $stringToReturn = ""
+
     $insertNewCategory = "INSERT INTO questioncategories(CategoryTitle) VALUES (:currentCategory)";
-    $insertNewQuestion = "INSERT INTO surveyquestions(QuestionDesc, QuestionCategory) VALUES (:currentQuestion, :currentCategory)";
-    $insertNewChoice = "INSERT INTO questionchoices(ChoiceDescription, QuestionID) VALUES (:currentChoice, :currentQuestion)";
+      $insertNewQuestion = "INSERT INTO surveyquestions(QuestionDesc, QuestionCategory) VALUES (:currentQuestion, :currentCategory)";
+      $insertNewChoice = "INSERT INTO questionchoices(ChoiceDescription, QuestionID) VALUES (:currentChoice, :currentQuestion)";
 
     $getCategoryIncrement = "SELECT `AUTO_INCREMENT` AS `CategoryIndex` FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'wash' AND TABLE_NAME = 'questioncategories'";
-    $getQuestionIncrement = "SELECT `AUTO_INCREMENT` AS `QuestionIndex` FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'wash' AND TABLE_NAME = 'surveyquestions'";
-    $getChoiceIncrement = "SELECT `AUTO_INCREMENT` FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'wash' AND TABLE_NAME = 'questionchoices'";
+      $getQuestionIncrement = "SELECT `AUTO_INCREMENT` AS `QuestionIndex` FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'wash' AND TABLE_NAME = 'surveyquestions'";
+      $getChoiceIncrement = "SELECT `AUTO_INCREMENT` FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'wash' AND TABLE_NAME = 'questionchoices'";
 
     $allowed = array("xlsx", "ods", "xml");
       $fixedForPrint = implode(', ', $allowed);
@@ -46,9 +48,8 @@ $app->post('/uploadwithxlsx', function($request, $response){
       $fileError = $_FILES['inputFile']['error'];
       $fileType = $_FILES['inputFile']['type'];
 
-
     $fileExt =  explode('.', $fileName);
-    $fileActualExt = strtolower(end($fileExt));
+      $fileActualExt = strtolower(end($fileExt));
 
     try {
       $db = new db();
@@ -100,12 +101,11 @@ $app->post('/uploadwithxlsx', function($request, $response){
 
                   $categoryObject = $getCategoryIncrement->fetch(PDO::FETCH_OBJ); // get the next index
 
-                  // echo $categoryObject->CategoryIndex;
                   $categoryIndex = $categoryObject->CategoryIndex;
 
-                  $insertNewCategory->execute([
-                    'currentCategory' => $currentCategory
-                  ]);
+                  // $insertNewCategory->execute([
+                  //   'currentCategory' => $currentCategory
+                  // ]);
 
                 }
                 else
@@ -115,13 +115,12 @@ $app->post('/uploadwithxlsx', function($request, $response){
 
                   $questionObject = $getQuestionIncrement->fetch(PDO::FETCH_OBJ);
 
-                  // echo $questionObject->QuestionIndex;
                   $questionIndex = $questionObject->QuestionIndex;
 
-                  $insertNewQuestion->execute([
-                    'currentQuestion' => $currentQuestion,
-                    'currentCategory' => $categoryIndex
-                  ]);
+                  // $insertNewQuestion->execute([
+                  //   'currentQuestion' => $currentQuestion,
+                  //   'currentCategory' => $categoryIndex
+                  // ]);
 
                 }
                 else
@@ -129,10 +128,11 @@ $app->post('/uploadwithxlsx', function($request, $response){
 
                   $currentChoice = $rowCell;
 
-                  $insertNewChoice->execute([
-                    'currentChoice' => $currentChoice,
-                    'currentQuestion' => $questionIndex
-                  ]);
+
+                  // $insertNewChoice->execute([
+                  //   'currentChoice' => $currentChoice,
+                  //   'currentQuestion' => $questionIndex
+                  // ]);
                 }
 
               }
