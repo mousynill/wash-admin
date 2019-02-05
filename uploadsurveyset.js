@@ -1,6 +1,7 @@
 
 $(document).ready(function(){
   $("#inputFile").hide();
+  $("#survey").addClass("active");
 
   $("#1").on('mouseenter',function(){
     $("#xlsx").animate({flexGrow: "5"}, "fast");

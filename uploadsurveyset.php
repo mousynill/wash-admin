@@ -48,7 +48,7 @@ LEGEND FOR TO DO:
                     <!-- this is the xlsx icon from fontawesome -->
 
                         <div style="font-size: 5em; align-self: center;" id="xlsx-logo">
-                              <i class="far fa-file-excel"></i>
+                              <i class="far fa-file-excel green"></i>
                         </div>
 
                         <div class="special-title bring-to-front" id="xlsx-title">
