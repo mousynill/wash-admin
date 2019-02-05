@@ -149,10 +149,15 @@
 }
 
 .flies:hover{
-  color: blue;
+  color: #278BCF;
   cursor: pointer;
+}
+.flies:active{
+  color: #227AB5;
+  outline: none;
+  border: none;
 }
 
 .category{
-  
+
 }
