@@ -137,36 +137,7 @@ LEGEND FOR TO DO:
     <!-- this is where we will place the response for review. -->
 
     <div id="accordion">
-      <div class="card">
-        <div class="card-header" id="headingOne">
-          <h5 class="mb-0">
-            <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" type="button">
-              Collapsible Group Item #1
-            </button>
-          </h5>
-        </div>
 
-        <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
-          <div class="card-body">
-            Hello putang ina
-          </div>
-        </div>
-      </div>
-      <div class="card">
-        <div class="card-header" id="headingTwo">
-          <h5 class="mb-0">
-            <button class="btn btn-link" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo" type="button">
-              Collapsible Group Item #2
-            </button>
-          </h5>
-        </div>
-
-        <div id="collapseTwo" class="collapse show" aria-labelledby="headingTwo" data-parent="#accordion">
-          <div class="card-body">
-            It's another one.
-          </div>
-        </div>
-      </div>
     </div>
   </form>
 

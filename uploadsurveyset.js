@@ -115,7 +115,7 @@ $('#flyButton').on('click', function(){
     contentType: false,
     success: function(data){
       swal("", "The file is succesfully uploaded!", "success");
-      console.log(data);
+      $("#accordion").append(data);
     },
     fail: function(xhr, textStatus, errorThrown){
        console.log(errorThrown)

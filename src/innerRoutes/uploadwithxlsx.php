@@ -21,7 +21,7 @@ $app->post('/uploadwithxlsx', function($request, $response){
     require_once('../src/config/db.php');
     require '../vendor/autoload.php';
 
-    $stringToReturn = ""
+    $stringToReturn = "";
 
     $insertNewCategory = "INSERT INTO questioncategories(CategoryTitle) VALUES (:currentCategory)";
       $insertNewQuestion = "INSERT INTO surveyquestions(QuestionDesc, QuestionCategory) VALUES (:currentQuestion, :currentCategory)";
@@ -58,12 +58,12 @@ $app->post('/uploadwithxlsx', function($request, $response){
       $db = $db->connect();
 
       $insertNewCategory = $db->prepare($insertNewCategory);
-      $insertNewQuestion = $db->prepare($insertNewQuestion);
-      $insertNewChoice = $db->prepare($insertNewChoice);
+        $insertNewQuestion = $db->prepare($insertNewQuestion);
+        $insertNewChoice = $db->prepare($insertNewChoice);
 
       $getCategoryIncrement = $db->query($getCategoryIncrement);
-      $getQuestionIncrement = $db->query($getQuestionIncrement);
-      $getChoiceIncrement = $db->query($getChoiceIncrement);
+        $getQuestionIncrement = $db->query($getQuestionIncrement);
+        $getChoiceIncrement = $db->query($getChoiceIncrement);
 
 
       $categoryIndex = 0;
@@ -97,15 +97,28 @@ $app->post('/uploadwithxlsx', function($request, $response){
 
                 if($rowCell != "" && $key == 0){
 
+                  $stringToReturn .= "<div class='card'>";
+
                   $currentCategory = $rowCell; //the value of the the current category
 
                   $categoryObject = $getCategoryIncrement->fetch(PDO::FETCH_OBJ); // get the next index
 
                   $categoryIndex = $categoryObject->CategoryIndex;
 
+                  $stringToReturn .= "
+                  <div class='card-header' id='heading'>
+                    <h5 class='mb-0'>
+                      <button class='btn btn-link' data-toggle='collapse' data-target='$currentCategory' aria-expanded='true' aria-controls='$currentCategory' type='button'>
+                        $currentCategory
+                      </button>
+                    </h5>
+                  </div>
+                  ";
+
                   // $insertNewCategory->execute([
                   //   'currentCategory' => $currentCategory
                   // ]);
+
 
                 }
                 else
@@ -135,6 +148,8 @@ $app->post('/uploadwithxlsx', function($request, $response){
                   // ]);
                 }
 
+                $stringToReturn .= "</div>";
+
               }
 
             }//end of if
@@ -142,6 +157,7 @@ $app->post('/uploadwithxlsx', function($request, $response){
             echo "\n";
           }
 
+          return $stringToReturn;
 
         }else{
          echo $toReturn["error-na"];
@@ -149,6 +165,7 @@ $app->post('/uploadwithxlsx', function($request, $response){
       }else{
        echo $toReturn["error-exist"];
       }
+
     } catch (PDOException $e) {
       return '{"error": {"text": '.$e->getMessage().'}';
     }
