@@ -2,22 +2,24 @@
 
 require_once('../src/config/db.php');
 require_once  '../vendor/autoload.php';
-require '../src/config/surveyObject.php';
 use Phpml\Classification\NaiveBayes;
 
 $app->get('/trythis', function($request, $response){
 
+  $surveyArray = array();
+
+  $currentCategory = "something";
+
+  $toPushObject = new Category();
+
+  $toPushObject->category = $currentCategory;
+
+  array_push($toPushObject->questions, "What is your name");
+
+  array_push($surveyArray, $toPushObject);
 
 
-
-    $foo = new Survey();
-
-
-    $classifier = new NaiveBayes();
-
-    // $foo->category = new Category();
-    //
-    // echo $foo->category->someshit;
+  print_r($surveyArray);
 
   })
 ?>

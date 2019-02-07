@@ -17,9 +17,12 @@
 //   [x] - Modify
 //   [✓] - Accomplished
 
+require_once('../src/config/db.php');
+require '../vendor/autoload.php';
+require '../src/config/surveyObject.php';
+
+
 $app->post('/uploadwithxlsx', function($request, $response){
-    require_once('../src/config/db.php');
-    require '../vendor/autoload.php';
 
     $stringToReturn = "";
 
@@ -66,6 +69,9 @@ $app->post('/uploadwithxlsx', function($request, $response){
         $getChoiceIncrement = $db->query($getChoiceIncrement);
 
 
+      $currentCategory = "";
+      $currentQuestion = "";
+
       $categoryIndex = 0;
       $questionIndex = 0;
 
@@ -86,8 +92,10 @@ $app->post('/uploadwithxlsx', function($request, $response){
 
           $sheetData = $spreadsheet->getActiveSheet()->toArray();
 
-          foreach($sheetData as $key=>$rowVals){
+          $surveyArray = array();
 
+
+          foreach($sheetData as $key=>$rowVals){
             $getCategoryIncrement->execute();
             $getQuestionIncrement->execute();
 
@@ -97,23 +105,17 @@ $app->post('/uploadwithxlsx', function($request, $response){
 
                 if($rowCell != "" && $key == 0){
 
-                  $stringToReturn .= "<div class='card'>";
-
                   $currentCategory = $rowCell; //the value of the the current category
 
                   $categoryObject = $getCategoryIncrement->fetch(PDO::FETCH_OBJ); // get the next index
 
+                  $toPushObject = new Category();
+
                   $categoryIndex = $categoryObject->CategoryIndex;
 
-                  $stringToReturn .= "
-                  <div class='card-header' id='heading'>
-                    <h5 class='mb-0'>
-                      <button class='btn btn-link' data-toggle='collapse' data-target='$currentCategory' aria-expanded='true' aria-controls='$currentCategory' type='button'>
-                        $currentCategory
-                      </button>
-                    </h5>
-                  </div>
-                  ";
+                  $toPushObject->category = $currentCategory;
+
+                  array_push($surveyArray, $toPushObject);
 
                   // $insertNewCategory->execute([
                   //   'currentCategory' => $currentCategory
@@ -130,6 +132,7 @@ $app->post('/uploadwithxlsx', function($request, $response){
 
                   $questionIndex = $questionObject->QuestionIndex;
 
+                  array_push($toPushObject->questions, $currentQuestion);
                   // $insertNewQuestion->execute([
                   //   'currentQuestion' => $currentQuestion,
                   //   'currentCategory' => $categoryIndex
@@ -148,7 +151,6 @@ $app->post('/uploadwithxlsx', function($request, $response){
                   // ]);
                 }
 
-                $stringToReturn .= "</div>";
 
               }
 
@@ -157,7 +159,7 @@ $app->post('/uploadwithxlsx', function($request, $response){
             echo "\n";
           }
 
-          return $stringToReturn;
+          print_r($surveyArray);
 
         }else{
          echo $toReturn["error-na"];

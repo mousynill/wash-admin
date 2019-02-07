@@ -115,7 +115,9 @@ $('#flyButton').on('click', function(){
     contentType: false,
     success: function(data){
       swal("", "The file is succesfully uploaded!", "success");
-      $("#accordion").append(data);
+
+      $("#accordionExample").append(data);
+      $("#uploadsystem").hide();
     },
     fail: function(xhr, textStatus, errorThrown){
        console.log(errorThrown)
@@ -123,8 +125,5 @@ $('#flyButton').on('click', function(){
   })
 
 });
-
-
-console.log($('#accordion'));
 
 })

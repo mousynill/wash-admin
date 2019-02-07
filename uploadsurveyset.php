@@ -10,8 +10,8 @@ TO DOs:
 [✓] Add a filename to know what the user entered.
 [✓] Make template link clickable for xlsx-format download.
 [✓] Find a way to make template link clickable.
+[✓] Design for panel when a file is hovered, and when a file is entered.
 [+] Ajax functionality when "fly" button is clicked (send to localhost/wash-admin/private/uploadwithxlsx.php)
-[+] Design for panel when a file is hovered, and when a file is entered.
 
 LEGEND FOR TO DO:
   [+] - Add
@@ -30,7 +30,7 @@ LEGEND FOR TO DO:
 
   <form class="" method="post" id="formFile" name="formFile">
 
-    <div class="row no-gutters container-fluid">
+    <div class="row no-gutters container-fluid" id="uploadsystem">
       <div class="col-xl flexmine choice-container" id="xlsx">
         <div class="fixFlex rebutton rebutton-left">
 
@@ -136,7 +136,7 @@ LEGEND FOR TO DO:
 
     <!-- this is where we will place the response for review. -->
 
-    <div id="accordion">
+    <div class="accordion" id="accordionExample">
 
     </div>
   </form>
