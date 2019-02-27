@@ -118,8 +118,8 @@
             <input type="text" class="form-control mb-2" name="ans2B" id="ans2B" placeholder="Enter the second choice here">
           </div>
           <div class="radio col-sm-6 col-xs-2">
-            <input type="radio" value="" name="optradio2" id="opt2C">
-            <label for="opt2C" id="lbl2C" >Option 1</label>
+            <input type="radio" value="" name="optradio2" id="opt2B">
+            <label for="opt2B" id="lbl2B" >Option 1</label>
           </div>
         </div>
         <div class="row">
@@ -398,45 +398,45 @@
         //----ASSIGN VALUE OF QUEstion TO PARAGRAPH tag
         //----ASSIGN LABEL OF RADIO button
         //----ASSIGN VALUE OF RADIO BUTTON
-        document.getElementById("ansQuestion1").innerHTML = document.getElementById("question1").value;
-        document.getElementById("lbl1A").innerHTML = document.getElementById("ans1A").value;
+
+        //document.getElementById("lbl1A").innerHTML = document.getElementById("ans1A").value;
         document.getElementById("opt1A").value = document.getElementById("ans1A").value;
-        document.getElementById("lbl1B").innerHTML = document.getElementById("ans1B").value;
+        //document.getElementById("lbl1B").innerHTML = document.getElementById("ans1B").value;
         document.getElementById("opt1B").value = document.getElementById("ans1B").value;
-        document.getElementById("lbl1C").innerHTML = document.getElementById("ans1C").value;
+        //document.getElementById("lbl1C").innerHTML = document.getElementById("ans1C").value;
         document.getElementById("opt1C").value = document.getElementById("ans1C").value;
 
-        document.getElementById("ansQuestion2").innerHTML = document.getElementById("question2").value;
-        document.getElementById("lbl2A").innerHTML = document.getElementById("ans2A").value;
+
+        //document.getElementById("lbl2A").innerHTML = document.getElementById("ans2A").value;
         document.getElementById("opt2A").value = document.getElementById("ans2A").value;
-        document.getElementById("lbl2B").innerHTML = document.getElementById("ans2B").value;
+        //document.getElementById("lbl2B").innerHTML = document.getElementById("ans2B").value;
         document.getElementById("opt2B").value = document.getElementById("ans2B").value;
-        document.getElementById("lbl2C").innerHTML = document.getElementById("ans2C").value;
+        //document.getElementById("lbl2C").innerHTML = document.getElementById("ans2C").value;
         document.getElementById("opt2C").value = document.getElementById("ans2C").value;
 
-        document.getElementById("ansQuestion3").innerHTML = document.getElementById("question3").value;
-        document.getElementById("lbl3A").innerHTML = document.getElementById("ans3A").value;
+
+        //document.getElementById("lbl3A").innerHTML = document.getElementById("ans3A").value;
         document.getElementById("opt3A").value = document.getElementById("ans3A").value;
-        document.getElementById("lbl3B").innerHTML = document.getElementById("ans3B").value;
+        //document.getElementById("lbl3B").innerHTML = document.getElementById("ans3B").value;
         document.getElementById("opt3B").value = document.getElementById("ans3B").value;
-        document.getElementById("lbl3C").innerHTML = document.getElementById("ans3C").value;
+        //document.getElementById("lbl3C").innerHTML = document.getElementById("ans3C").value;
         document.getElementById("opt3C").value = document.getElementById("ans3C").value;
 
 
-        document.getElementById("ansQuestion4").innerHTML = document.getElementById("question4").value;
-        document.getElementById("lbl4A").innerHTML = document.getElementById("ans4A").value;
+
+        //document.getElementById("lbl4A").innerHTML = document.getElementById("ans4A").value;
         document.getElementById("opt4A").value = document.getElementById("ans4A").value;
-        document.getElementById("lbl4B").innerHTML = document.getElementById("ans4B").value;
+        //document.getElementById("lbl4B").innerHTML = document.getElementById("ans4B").value;
         document.getElementById("opt4B").value = document.getElementById("ans4B").value;
-        document.getElementById("lbl4C").innerHTML = document.getElementById("ans4C").value;
+        //document.getElementById("lbl4C").innerHTML = document.getElementById("ans4C").value;
         document.getElementById("opt4C").value = document.getElementById("ans4C").value;
 
-        document.getElementById("ansQuestion5").innerHTML = document.getElementById("question5").value;
-        document.getElementById("lbl5A").innerHTML = document.getElementById("ans5A").value;
+
+        //document.getElementById("lbl5A").innerHTML = document.getElementById("ans5A").value;
         document.getElementById("opt5A").value = document.getElementById("ans5A").value;
-        document.getElementById("lbl5B").innerHTML = document.getElementById("ans5B").value;
+        //document.getElementById("lbl5B").innerHTML = document.getElementById("ans5B").value;
         document.getElementById("opt5B").value = document.getElementById("ans5B").value;
-        document.getElementById("lbl5C").innerHTML = document.getElementById("ans5C").value;
+        //document.getElementById("lbl5C").innerHTML = document.getElementById("ans5C").value;
         document.getElementById("opt5C").value = document.getElementById("ans5C").value;
 
         // $.ajax({
