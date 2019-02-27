@@ -40,7 +40,7 @@
              Videos
             </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="upload.php">Upload Videos</a>
+                <a class="dropdown-item" href="uploadvideos.php">Upload Videos</a>
                 <a class="dropdown-item" href="editvideos.php">Edit Videos</a>
               </div>
           </li>

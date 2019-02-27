@@ -19,7 +19,7 @@
 
 <body>
   <div class="progress" style="height:30px">
-    <div id="progressBar" class="progress-bar bg-danger" style="width:33%;">
+    <div id="progressBar" class="progress-bar bg-danger" style="width:50%;">
       <b id="progressText" class="lead">Upload Videos</b>
     </div>
   </div>
@@ -67,11 +67,34 @@
         <div class="col-sm-6 col-xs-2">
           <input type="text" class="form-control form-control-lg" name="question1" id="question1"placeholder="Enter your first question here"><br>
         </div>
-        <div class="col-sm-6 col-xs-2">
-          <input type="text" class="form-control mb-2" name="ans1A" id="ans1A" placeholder="Enter the first choice here">
-          <input type="text" class="form-control mb-2" name="ans1B" id="ans1B"placeholder="Enter the second choice here">
-          <input type="text" class="form-control mb-2" name="ans1C"id="ans1C"placeholder="Enter the third choice here">
+        <div class="row">
+          <div class="col-sm-6 col-xs-2">
+            <input type="text" class="form-control mb-2" name="ans1A" id="ans1A" placeholder="Enter the first choice here">
+          </div>
+          <div class="col-sm-6 col-xs-2 radio">
+            <input type="radio" value="Option1" name="optradio1" id="opt1A">
+            <label for="opt1A" id="lbl1A" >Option 1</label>
+          </div>
         </div>
+        <div class="row">
+          <div class="col-sm-6 col-xs-2">
+            <input type="text" class="form-control mb-2" name="ans1B" id="ans1B"placeholder="Enter the second choice here">
+          </div>
+          <div class="radio col-sm-6 col-xs-2">
+            <input type="radio" value="" name="optradio1" id="opt1B">
+            <label for="opt1B" id="lbl1B" >Option 1</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-6 col-xs-2">
+            <input type="text" class="form-control mb-2" name="ans1C"id="ans1C"placeholder="Enter the third choice here">
+          </div>
+          <div class="radio col-sm-6 col-xs-2">
+            <input type="radio" value="" name="optradio1" id="opt1C">
+            <label for="opt1C" id="lbl1C" >Option 1</label>
+          </div>
+        </div>
+
         <div class="form-group mt-3">
           <a href="#" class="btn btn-danger" id="next-1">Next</a>
         </div>
@@ -81,10 +104,32 @@
         <div class="col-sm-6 col-xs-2">
           <input type="text" class="form-control form-control-lg" name="question2" id="question2" placeholder="Enter your second question here"><br>
         </div>
-        <div class="col-sm-6 col-xs-2">
-          <input type="text" class="form-control mb-2" name="ans2A" id="ans2A" placeholder="Enter the first choice here">
-          <input type="text" class="form-control mb-2" name="ans2B" id="ans2B" placeholder="Enter the second choice here">
-          <input type="text" class="form-control mb-2" name="ans2C" id="ans2C" placeholder="Enter the third choice here">
+        <div class="row">
+          <div class="col-sm-6 col-xs-2">
+            <input type="text" class="form-control mb-2" name="ans2A" id="ans2A" placeholder="Enter the first choice here">
+          </div>
+          <div class="radio col-sm-6 col-xs-2">
+            <input type="radio" value="" name="optradio2" id="opt2A">
+            <label for="opt2A" id="lbl2A" >Option 1</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-6 col-xs-2">
+            <input type="text" class="form-control mb-2" name="ans2B" id="ans2B" placeholder="Enter the second choice here">
+          </div>
+          <div class="radio col-sm-6 col-xs-2">
+            <input type="radio" value="" name="optradio2" id="opt2C">
+            <label for="opt2C" id="lbl2C" >Option 1</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-6 col-xs-2">
+            <input type="text" class="form-control mb-2" name="ans2C" id="ans2C" placeholder="Enter the third choice here">
+          </div>
+          <div class="radio col-sm-6 col-xs-2">
+            <input type="radio" value="" name="optradio2" id="opt2C">
+            <label for="opt2C" id="lbl2C" >Option 1</label>
+          </div>
         </div>
         <div class="form-group mt-3">
           <a href="#" class="btn btn-danger" id="prev-2">Previous</a>
@@ -96,10 +141,32 @@
         <div class="col-sm-6 col-xs-2">
           <input type="text" class="form-control form-control-lg" name="question3" id="question3" placeholder="Enter your third question here"><br>
         </div>
-        <div class="col-sm-6 col-xs-2">
-          <input type="text" class="form-control mb-2" name="ans3A" id="ans3A" placeholder="Enter the first choice here">
-          <input type="text" class="form-control mb-2" name="ans3B" id="ans3B" placeholder="Enter the second choice here">
-          <input type="text" class="form-control mb-2" name="ans3C" id="ans3C" placeholder="Enter the third choice here">
+        <div class="row">
+          <div class="col-sm-6 col-xs-2">
+            <input type="text" class="form-control mb-2" name="ans3A" id="ans3A" placeholder="Enter the first choice here">
+          </div>
+          <div class="radio col-sm-6 col-xs-2">
+            <input type="radio" value="" name="optradio3" id="opt3A">
+            <label for="opt3A" id="lbl3A" >Option 1</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-6 col-xs-2">
+            <input type="text" class="form-control mb-2" name="ans3B" id="ans3B" placeholder="Enter the second choice here">
+          </div>
+          <div class="radio col-sm-6 col-xs-2">
+            <input type="radio" value="" name="optradio3" id="opt3B">
+            <label for="opt3B" id="lbl3B" >Option 1</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-6 col-xs-2">
+            <input type="text" class="form-control mb-2" name="ans3C" id="ans3C" placeholder="Enter the third choice here">
+          </div>
+          <div class="radio col-sm-6 col-xs-2">
+            <input type="radio" value="" name="optradio3" id="opt3C">
+            <label for="opt3C" id="lbl3C" >Option 1</label>
+          </div>
         </div>
         <div class="form-group mt-3">
           <a href="#" class="btn btn-danger" id="prev-3">Previous</a>
@@ -111,11 +178,33 @@
         <div class="col-sm-6 col-xs-2">
           <input type="text" class="form-control form-control-lg" name="question4" id="question4" placeholder="Enter your fourth question here"><br>
         </div>
+        <div class="row">
+          <div class="col-sm-6 col-xs-2">
+            <input type="text" class="form-control mb-2" name="ans4A" id="ans4A" placeholder="Enter the first choice here">
+          </div>
+          <div class="radio col-sm-6 col-xs-2">
+            <input type="radio" value="" name="optradio4" id="opt4A">
+            <label for="opt4A" id="lbl4A" >Option 1</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-6 col-xs-2">
+            <input type="text" class="form-control mb-2" name="ans4B" id="ans4B" placeholder="Enter the second choice here">
+          </div>
+          <div class="radio col-sm-6 col-xs-2">
+            <input type="radio" value="" name="optradio4" id="opt4B">
+            <label for="opt4B" id="lbl4B" >Option 1</label>
+          </div>
+        </div>
+      <div class="row">
         <div class="col-sm-6 col-xs-2">
-          <input type="text" class="form-control mb-2" name="ans4A" id="ans4A" placeholder="Enter the first choice here">
-          <input type="text" class="form-control mb-2" name="ans4B" id="ans4B" placeholder="Enter the second choice here">
           <input type="text" class="form-control mb-2" name="ans4C" id="ans4C" placeholder="Enter the third choice here">
         </div>
+        <div class="radio col-sm-6 col-xs-2">
+          <input type="radio" value="" name="optradio4" id="opt4C">
+          <label for="opt4C" id="lbl4C" >Option 1</label>
+        </div>
+      </div>
         <div class="form-group mt-3">
           <a href="#" class="btn btn-danger" id="prev-4">Previous</a>
           <a href="#" class="btn btn-danger" id="next-4">Next</a>
@@ -126,138 +215,41 @@
         <div class="col-sm-6 col-xs-2">
           <input type="text" class="form-control form-control-lg "name="question5" id="question5"placeholder="Enter your fifth question here"><br>
         </div>
-        <div class="col-sm-6 col-xs-2">
-          <input type="text" class="form-control mb-2" name="ans5A" id="ans5A" placeholder="Enter the first choice here">
-          <input type="text" class="form-control mb-2" name="ans5B" id="ans5B" placeholder="Enter the second choice here">
-          <input type="text" class="form-control mb-2" name="ans5C" id="ans5C" placeholder="Enter the third choice here">
+        <div class="row">
+          <div class="col-sm-6 col-xs-2">
+            <input type="text" class="form-control mb-2" name="ans5A" id="ans5A" placeholder="Enter the first choice here">
+          </div>
+          <div class="radio col-sm-6 col-xs-2">
+            <input type="radio" value="" name="optradio5" id="opt5A">
+            <label for="opt5A" id="lbl5A" >Option 1</label>
+          </div>
         </div>
+        <div class="row">
+          <div class="col-sm-6 col-xs-2">
+            <input type="text" class="form-control mb-2" name="ans5B" id="ans5B" placeholder="Enter the second choice here">
+          </div>
+          <div class="radio col-sm-6 col-xs-2">
+            <input type="radio" value="" name="optradio5" id="opt5B">
+            <label for="opt5B" id="lbl5B" >Option 1</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-6 col-xs-2">
+            <input type="text" class="form-control mb-2" name="ans5C" id="ans5C" placeholder="Enter the third choice here">
+          </div>
+          <div class="radio col-sm-6 col-xs-2">
+            <input type="radio" value="" name="optradio5" id="opt5C">
+            <label for="opt5C" id="lbl5C" >Option 1</label>
+          </div>
+        </div>
+
         <div class="form-group mt-3">
           <a href="#" class="btn btn-danger" id="prev-5">Previous</a>
-          <a href="#" class="btn btn-success" id="next-5">Finish</a>
+          <input type="submit" class="btn btn-success" id="next-5">``
         </div>
       </div>
     </div>
   </div>
-
-  <div class="row justify-content-center">
-    <div class="col-lg-8 mt-5 bg-light"id="third">
-      <div class="progress mb-3" style="height:40px">
-        <div class="progress-bar bg-danger" role="progressbar" style="width:20%" id="progressBar3">
-          <b class="lead" id="progressText3"> Answer Question 1 </b>
-        </div>
-      </div>
-      <div class="p-2 bg-light" id="third-1">
-        <div class="col-sm-6 col-xs-2">
-          <p id="ansQuestion1">Question 1 here</p><br>
-        </div>
-        <div class="radio">
-          <input type="radio" value="Option1" name="optradio1" id="opt1A">
-          <label for="opt1A" id="lbl1A" >Option 1</label>
-        </div>
-        <div class="radio">
-          <input type="radio" value="" name="optradio1" id="opt1B">
-          <label for="opt1B" id="lbl1B" >Option 1</label>
-        </div>
-        <div class="radio">
-          <input type="radio" value="" name="optradio1" id="opt1C">
-          <label for="opt1C" id="lbl1C" >Option 1</label>
-        </div>
-        <div class="form-group mt-3">
-          <a href="#" class="btn btn-danger" id="next2-1">Next</a>
-        </div>
-      </div>
-
-      <div class="p-2 bg-light" id="third-2">
-        <div class="col-sm-6 col-xs-2">
-          <p id="ansQuestion2">Question2 here</p><br>
-        </div>
-        <div class="radio">
-          <input type="radio" value="" name="optradio2" id="opt2A">
-          <label for="opt2A" id="lbl2A" >Option 1</label>
-        </div>
-        <div class="radio">
-          <input type="radio" value="" name="optradio2" id="opt2B">
-          <label for="opt2B" id="lbl2B" >Option 1</label>
-        </div>
-        <div class="radio">
-          <input type="radio" value="" name="optradio2" id="opt2C">
-          <label for="opt2C" id="lbl2C" >Option 1</label>
-        </div>
-        <div class="form-group mt-3">
-          <a href="#" class="btn btn-danger" id="prev2-2">Previous</a>
-          <a href="#" class="btn btn-danger" id="next2-2">Next</a>
-        </div>
-      </div>
-
-      <div class="p-2 bg-light" id="third-3">
-        <div class="col-sm-6 col-xs-2">
-          <p id="ansQuestion3">Question 3 here</p><br>
-        </div>
-        <div class="radio">
-          <input type="radio" value="" name="optradio3" id="opt3A">
-          <label for="opt3A" id="lbl3A" >Option 1</label>
-        </div>
-        <div class="radio">
-          <input type="radio" value="" name="optradio3" id="opt3B">
-          <label for="opt3B" id="lbl3B" >Option 1</label>
-        </div>
-        <div class="radio">
-          <input type="radio" value="" name="optradio3" id="opt3C">
-          <label for="opt3C" id="lbl3C" >Option 1</label>
-        </div>
-        <div class="form-group mt-3">
-          <a href="#" class="btn btn-danger" id="prev2-3">Previous</a>
-          <a href="#" class="btn btn-danger" id="next2-3">Next</a>
-        </div>
-      </div>
-
-      <div class="p-2 bg-light" id="third-4">
-        <div class="col-sm-6 col-xs-2">
-          <p id="ansQuestion4">Question 4 here</p><br>
-        </div>
-        <div class="radio">
-          <input type="radio" value="" name="optradio4" id="opt4A">
-          <label for="opt4A" id="lbl4A" >Option 1</label>
-        </div>
-        <div class="radio">
-          <input type="radio" value="" name="optradio4" id="opt4B">
-          <label for="opt4B" id="lbl4B" >Option 1</label>
-        </div>
-        <div class="radio">
-          <input type="radio" value="" name="optradio4" id="opt4C">
-          <label for="opt4C" id="lbl4C" >Option 1</label>
-        </div>
-        <div class="form-group mt-3">
-          <a href="#" class="btn btn-danger" id="prev2-4">Previous</a>
-          <a href="#" class="btn btn-danger" id="next2-4">Next</a>
-        </div>
-      </div>
-
-      <div class="p-2 bg-light" id="third-5">
-        <div class="col-sm-6 col-xs-2">
-          <p id="ansQuestion5">Question 5 here</p><br>
-        </div>
-        <div class="radio">
-          <input type="radio" value="" name="optradio5" id="opt5A">
-          <label for="opt5A" id="lbl5A" >Option 1</label>
-        </div>
-        <div class="radio">
-          <input type="radio" value="" name="optradio5" id="opt5B">
-          <label for="opt5B" id="lbl5B" >Option 1</label>
-        </div>
-        <div class="radio">
-          <input type="radio" value="" name="optradio5" id="opt5C">
-          <label for="opt5C" id="lbl5C" >Option 1</label>
-        </div>
-        <div class="form-group mt-3">
-          <a href="#" class="btn btn-danger" id="prev2-5">Previous</a>
-          <input type="submit" class="btn btn-success" id="next2-5">
-        </div>
-      </div>
-    </div>
-  </div>
-
-
 
   </form>
 
@@ -271,8 +263,8 @@
         e.preventDefault();
         $("#first").hide();
         $("#second").show();
-        $("#progressBar").css("width","60%");
-        $("#progressBar").html("Create Questions");
+        $("#progressBar").css("width","100%");
+        $("#progressBar").html("Create and Answer Questions");
 
 
 
@@ -400,11 +392,7 @@
         } else{
         //the code to next progress
         }*/
-        $("#second").hide();
-        $("#third").show();
-        $("#third-1").show();
-        $("#progressBar").css("width", "100%");
-        $("#progressBar").html("Define answer");
+
 
         //-----ARRANGEMENT BY NUMBER------
         //----ASSIGN VALUE OF QUEstion TO PARAGRAPH tag
@@ -451,6 +439,29 @@
         document.getElementById("lbl5C").innerHTML = document.getElementById("ans5C").value;
         document.getElementById("opt5C").value = document.getElementById("ans5C").value;
 
+        // $.ajax({
+        //   url:'uploadvideosfunction.php',
+        //   method:'POST',
+        //   data:$("#myVideo").serialize(),
+        //    success:function(response){
+        //    swal("", "The Videos and Questions are succesfully uploaded!", "success");
+        //    console.log(response);
+        //   }
+        // });
+
+        var form = document.getElementById('myVideo');
+        var formData = new FormData(form);
+
+        for (var pair of formData.entries()) {
+            console.log(pair[0]+ ', ' + pair[1]);
+        }
+
+        var xhr = new XMLHttpRequest();
+      // Add any event handlers here...
+      xhr.open('POST', 'uploadvideosfunction.php', true);
+      xhr.send(formData);
+      swal("", "The videos and questions have been uploaded!", 'success');
+
 
       });
       $("#prev-2").click(function(){
@@ -479,83 +490,7 @@
         $("#progressText2").html("Question 4");
       });
 
-      //------THIRD PROGRESS BAR --------
-      $("#next2-1").click(function(e){
-        $("#third-1").hide();
-        $("#third-2").show();
-        $("#progressBar3").css("width", "40%");
-        $("#progressText3").html("Answer Question 2");
-      });
-      $("#next2-2").click(function(e){
-        $("#third-2").hide();
-        $("#third-3").show();
-        $("#progressBar3").css("width", "60%");
-        $("#progressText3").html("Answer Question 3");
 
-      });
-      $("#next2-3").click(function(e){
-        $("#third-3").hide();
-        $("#third-4").show();
-        $("#progressBar3").css("width", "80%");
-        $("#progressText3").html("Answer Question 4");
-      });
-      $("#next2-4").click(function(e){
-        $("#third-4").hide();
-        $("#third-5").show();
-        $("#progressBar3").css("width", "100%");
-        $("#progressText3").html("Answer Question 5");
-
-      });
-      $("#next2-5").click(function(e){
-        e.preventDefault();
-        // $.ajax({
-        //   url:'uploadvideosfunction.php',
-        //   method:'POST',
-        //   data:$("#myVideo").serialize(),
-        //    success:function(response){
-        //    swal("", "The Videos and Questions are succesfully uploaded!", "success");
-        //    console.log(response);
-        //   }
-        // });
-
-        var form = document.getElementById('myVideo');
-        var formData = new FormData(form);
-
-        for (var pair of formData.entries()) {
-            console.log(pair[0]+ ', ' + pair[1]);
-        }
-
-        var xhr = new XMLHttpRequest();
-      // Add any event handlers here...
-      xhr.open('POST', 'uploadvideosfunction.php', true);
-      xhr.send(formData);
-      swal("", "The videos and questions have been uploaded!", 'success');
-
-      });
-      $("#prev2-2").click(function(){
-        $("#third-2").hide();
-        $("#third-1").show();
-        $("#progressBar3").css("width", "20%");
-        $("#progressText3").html("Answer Question 1");
-      });
-      $("#prev2-3").click(function(){
-        $("#third-3").hide();
-        $("#third-2").show();
-        $("#progressBar3").css("width", "40%");
-        $("#progressText3").html("Answer Question 2");
-      });
-      $("#prev2-4").click(function(){
-        $("#third-4").hide();
-        $("#third-3").show();
-        $("#progressBar3").css("width", "60%");
-        $("#progressText3").html("Answer Question 3");
-      });
-      $("#prev2-5").click(function(){
-        $("#third-5").hide();
-        $("#third-4").show();
-        $("#progressBar3").css("width", "80%");
-        $("#progressText3").html("Answer Question 4");
-      });
 
     })
   </script>
