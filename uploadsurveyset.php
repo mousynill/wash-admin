@@ -11,7 +11,7 @@ TO DOs:
 [✓] Make template link clickable for xlsx-format download.
 [✓] Find a way to make template link clickable.
 [✓] Design for panel when a file is hovered, and when a file is entered.
-[+] Ajax functionality when "fly" button is clicked (send to localhost/wash-admin/private/uploadwithxlsx.php)
+[✓] Ajax functionality when "fly" button is clicked (send to localhost/wash-admin/private/uploadwithxlsx.php)
 
 LEGEND FOR TO DO:
   [+] - Add

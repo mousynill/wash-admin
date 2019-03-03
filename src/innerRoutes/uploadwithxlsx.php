@@ -160,10 +160,13 @@ $app->post('/uploadwithxlsx', function($request, $response){
           }
 
           print_r($surveyArray);
+          //this part is where we return the output
+
 
         }else{
          echo $toReturn["error-na"];
         }
+        
       }else{
        echo $toReturn["error-exist"];
       }
