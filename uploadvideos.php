@@ -49,10 +49,16 @@
         Title: &nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="videoTitle" placeholder="Enter title here">
         <br>Author: <input type="text" name="videoAuthor" placeholder="Enter author here">
         <br>Price:&nbsp;&nbsp;&nbsp;  <input type="number" name="videoPrice" placeholder="Enter price here">
+        <br>Category:&nbsp;  <select name="videoCategory">
+                                <option value="" disabled selected hidden>Select video category</option>
+                                <option value="Prevention">Prevention</option>
+                                <option value="Treatment">Treatment</option>
+                                <option value="Entertainment">Entertainment</option>
+                             </select>
       </div>
 
       <div class="desc">
-          Description:<br><textarea name="videoDescription" rows="8" cols="36" placeholder="Enter the description here"></textarea>
+          Description:<br><textarea name="videoDescription" rows="7" cols="36" placeholder="Enter the description here"></textarea>
       </div>
 
   </div>

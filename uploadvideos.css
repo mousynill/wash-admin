@@ -68,7 +68,7 @@ form button:hover{
 
 .first>.author {
   width: 320px;
-  height: 130px;
+  height: 150px;
   margin-top: -300px;
   margin-left: 665px;
   background-color: #fff;
@@ -96,7 +96,7 @@ form button:hover{
 }
 .first>.desc {
   width: 320px;
-  height: 202px;
+  height: 192px;
   margin-top: 18px;
   margin-left: 665px;
   background-color: #fff;
@@ -107,6 +107,21 @@ form button:hover{
   padding-left: 5px;
   font-size: 13.5px;
 
+}
+
+.first>.author select {
+  border: 2px solid #aaa;
+  border-radius: 4px;
+  padding: 3px;
+  box-sizing: border-box;
+  outline: none;
+  transition: .5s;
+  width: 230px;
+  margin-bottom: 7px;
+}
+.first>.author select:focus {
+  border-color: dodgerBlue;
+  box-shadow: 0 0 5px 0 dodgerBlue;
 }
 textarea {
   border: 0px;

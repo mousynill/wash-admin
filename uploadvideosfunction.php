@@ -11,6 +11,7 @@
       $fileAuthor = $_POST['videoAuthor'];
       $fileDescription = $_POST['videoDescription'];
       $filePrice = $_POST['videoPrice'];
+      $fileCategory = $_POST['videoCategory'];
 
       $fileName = $_FILES['videoFile']['name'];
       $fileTmpName = $_FILES['videoFile']['tmp_name'];
@@ -35,7 +36,7 @@
 
             print_r($file);
 
-            $sql = "INSERT INTO videostable(VideoFileName, VideoTitle, VideoAuthor, VideoDescription, VideoPath, VideoSize, VideoPrice) VALUES ('$fileName', '$fileTitle', '$fileAuthor', '$fileDescription', '$fileDestination', '$fileSize', '$filePrice')";
+            $sql = "INSERT INTO videostable(VideoFileName, VideoTitle, VideoAuthor, VideoDescription, VideoPath, VideoSize, VideoPrice, VideoCategory) VALUES ('$fileName', '$fileTitle', '$fileAuthor', '$fileDescription', '$fileDestination', '$fileSize', '$filePrice', '$fileCategory')";
             mysqli_query($conn, $sql);
 
 
