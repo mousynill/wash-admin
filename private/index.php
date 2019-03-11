@@ -8,6 +8,7 @@ require '../src/config/db.php';
 $app = new \Slim\App;
 require_once('../src/innerRoutes/uploadwithxlsx.php');
 require_once('../src/innerRoutes/try.php');
-
+require_once('../src/innerRoutes/online.php');
+require_once('../src/innerRoutes/offline.php');
 
 $app->run();
