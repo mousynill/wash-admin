@@ -86,7 +86,7 @@
 
                   <canvas id="myChart" style="height:20px; width: 60px;"></canvas>
                 </div>-->
-                <table class="table table-striped table-hover" id="tblUser">
+                <table class="table table-striped table-dark table-hover" id="tblUser">
                   <thead>
                     <tr>
                       <th scope="col">User ID</th>
@@ -199,6 +199,7 @@
   $(document).ready(function(){
     $("#dashBoard").addClass("active");
     $("#tblUser").DataTable();
+    $('.dataTables_length').addClass('bs-select');
 
 
 //     var ctx = document.getElementById('myChart').getContext('2d');
