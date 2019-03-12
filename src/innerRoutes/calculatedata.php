@@ -9,7 +9,6 @@ $app->post('/calculatedata', function($request, $response){
 
 
   $JSONObject = json_decode($object, true);
-  // echo $object->categories;
   print_r($JSONObject['categories'][0]['answers'][1]['answer']);
   })
 ?>
