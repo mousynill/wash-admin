@@ -3,6 +3,8 @@
 require_once('../src/config/db.php');
 // require_once('../assets/objects/ruling.json');
 
+//make a formula for calculating probability
+
 $app->post('/calculatedata', function($request, $response){
 
   $object = $_POST['Answers'];
