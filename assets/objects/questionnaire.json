@@ -1,6 +1,141 @@
 {
   "categories" : [
     {
+      "name": "River Questions",
+      "questions": [
+        {
+          "question" : "Do you have livestock/s?",
+          "choices" : [
+            "Yes",
+            "No"
+          ],
+          "isDone" : "false",
+          "isBranch" : "true",
+          "isSingle" : "true",
+          "questionsInBranch": [
+            {
+              "question" : "If yes, what kind of livestock/s?",
+              "choices" : [
+                "Poultry",
+                "Piggery",
+                "Cattle",
+                "Sheep",
+                "Goats",
+                "Others"
+              ],
+              "isDone" : "false",
+              "isBranch" : "false",
+              "isSingle" : "false"
+            },
+
+            {
+              "question" : "How do you manage livestock manure?",
+              "choices" : [
+                "Collect",
+                "Use as fertilizer",
+                "Throw in the river",
+                "Bury",
+                "Pass through a septic tank",
+                "Recycle as source of energy",
+                "Others"
+              ],
+              "isDone" : "false",
+              "isBranch" : "false",
+              "isSingle" : "false"
+            }
+          ]
+        },
+        {
+        "question" : "How do you deal with your waste disposal?",
+        "choices" : [
+          "Own compost pit",
+          "Burn",
+          "Segregated",
+          "Mix (Non/biodegradable)",
+          "Thrown in the river",
+          "Others"
+        ],
+        "isDone" : "false",
+        "isBranch" : "false",
+        "isSingle" : "false"
+      },
+        {
+        "question" : "Have you done the following activities in the river?",
+        "choices" : [
+          "Laundry",
+          "Defecating",
+          "Urinating",
+          "Drainage catch basin"
+        ],
+        "isDone" : "false",
+        "isBranch" : "false",
+        "isSingle" : "false"
+      },
+      {
+        "question" : "Do you have a pet?",
+        "choices" : [
+          "Yes",
+          "No"
+        ],
+        "isDone" : "false",
+        "isBranch" : "true",
+        "isSingle" : "true",
+        "questionsInBranch":[
+          {
+            "question" : "Where does your pet litter?",
+            "choices" : [
+              "Backyard",
+              "Near the river",
+              "Other"
+            ],
+            "isDone" : "false",
+            "isBranch" : "false",
+            "isSingle" : "false"
+          }
+        ]
+      },
+        {
+          "question" : "Do you have toilet facility?",
+          "choices" : [
+            "Yes",
+            "No"
+          ],
+          "isDone" : "false",
+          "isBranch" : "true",
+          "isSingle" : "true",
+
+          "questionsInBranch" : [{
+            "question" : "If yes, what type of toilet facility it is?",
+            "choices" : [
+              "Tank flush with septic tanks",
+              "Pour/flush latrine",
+              "Sanitary pit privy",
+              "Aqua privy",
+              "Pit privy",
+              "Bucket system"
+            ],
+            "isDone" : "false",
+            "isBranch" : "false",
+            "isSingle" : "false"
+          },
+          {
+            "question" : "If no, where do you urinate/defecate?",
+            "choices" : [
+              "Communal public toilet",
+              "In the river",
+              "In the field",
+              "Others"
+            ],
+            "isDone" : "false",
+            "isBranch" : "false",
+            "isSingle" : "false"
+          }
+      ],
+      "isDone" : "false",
+      "isBranch" : "false"
+
+    },
+    {
       "name" : "Standards of living and water sources",
       "questions" : [
          {
@@ -126,82 +261,9 @@
           "isSingle" : "false"
         },
 
-        {
-          "question" : "Do you have toilet facility?",
-          "choices" : [
-            "Yes",
-            "No"
-          ],
-          "isDone" : "false",
-          "isBranch" : "true",
-          "isSingle" : "true",
-
-          "questionsInBranch" : [{
-            "question" : "If yes, what type of toilet facility it is?",
-            "choices" : [
-              "Tank flush with septic tanks",
-              "Pour/flush latrine",
-              "Sanitary pit privy",
-              "Aqua privy",
-              "Pit privy",
-              "Bucket system"
-            ],
-            "isDone" : "false",
-            "isBranch" : "false",
-            "isSingle" : "false"
-          },
-
-          {
-            "question" : "If no, where do you urinate/defecate?",
-            "choices" : [
-              "Communal public toilet",
-              "In the river",
-              "In the field",
-              "Others"
-            ],
-            "isDone" : "false",
-            "isBranch" : "false",
-            "isSingle" : "false"
-          }]
-        },
-        {
-          "question" : "Do you have a pet?",
-          "choices" : [
-            "Yes",
-            "No"
-          ],
-          "isDone" : "false",
-          "isBranch" : "true",
-          "isSingle" : "true",
-          "questionsInBranch":[
-            {
-              "question" : "Where does your pet litter?",
-              "choices" : [
-                "Backyard",
-                "Near the river",
-                "Other"
-              ],
-              "isDone" : "false",
-              "isBranch" : "false",
-              "isSingle" : "false"
-            }
-          ]
-        },
-        {
-          "question" : "Have you done the following activities in the river?",
-          "choices" : [
-            "Bathing/Swimming",
-            "Laundry",
-            "Fishing",
-            "Defecating",
-            "Urinating",
-            "Drainage catch basin",
-            "Others"
-          ],
-          "isDone" : "false",
-          "isBranch" : "false",
-          "isSingle" : "false"
+        ]
         }
+
       ],
       "isDone" : "false"
     },
@@ -209,21 +271,6 @@
   {
       "name":"Ecological Sanitation",
       "questions": [
-        {
-          "question" : "How do you deal with your waste disposal?",
-          "choices" : [
-            "Own compost pit",
-            "Burn",
-            "Segregated",
-            "Mix (Non/biodegradable)",
-            "Thrown in the river",
-            "Others"
-          ],
-          "isDone" : "false",
-          "isBranch" : "false",
-          "isSingle" : "false"
-        },
-
         {
           "question" : "Do you have a garden or agricultural land?",
           "choices" : [
@@ -255,49 +302,6 @@
                   "isSingle" : "true"
                 }
               ]
-            }
-          ]
-        },
-
-        {
-          "question" : "Do you have livestock/s?",
-          "choices" : [
-            "Yes",
-            "No"
-          ],
-          "isDone" : "false",
-          "isBranch" : "true",
-          "isSingle" : "true",
-          "questionsInBranch": [
-            {
-              "question" : "If yes, what kind of livestock/s?",
-              "choices" : [
-                "Poultry",
-                "Piggery",
-                "Cattle",
-                "Sheep",
-                "Goats",
-                "Others"
-              ],
-              "isDone" : "false",
-              "isBranch" : "false",
-              "isSingle" : "false"
-            },
-
-            {
-              "question" : "How do you manage livestock manure?",
-              "choices" : [
-                "Collect",
-                "Use as fertilizer",
-                "Throw in the river",
-                "Bury",
-                "Pass through a septic tank",
-                "Recycle as source of energy",
-                "Others"
-              ],
-              "isDone" : "false",
-              "isBranch" : "false",
-              "isSingle" : "false"
             }
           ]
         }
