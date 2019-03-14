@@ -18,11 +18,7 @@
 </head>
 
 <body>
-  <div class="progress" style="height:30px">
-    <div id="progressBar" class="progress-bar bg-danger" style="width:50%;">
-      <b id="progressText" class="lead">Upload Videos</b>
-    </div>
-  </div>
+
 
   <!--Upload Form -->
 
@@ -79,7 +75,7 @@
           </div>
           <div class="col-sm-6 col-xs-2 radio">
             <input type="radio" value="Option1" name="optradio1" id="opt1A">
-            <label for="opt1A" id="lbl1A" >Option 1</label>
+            <label for="opt1A" id="lbl1A" ></label>
           </div>
         </div>
         <div class="row">
@@ -88,7 +84,7 @@
           </div>
           <div class="radio col-sm-6 col-xs-2">
             <input type="radio" value="" name="optradio1" id="opt1B">
-            <label for="opt1B" id="lbl1B" >Option 1</label>
+            <label for="opt1B" id="lbl1B" ></label>
           </div>
         </div>
         <div class="row">
@@ -97,7 +93,7 @@
           </div>
           <div class="radio col-sm-6 col-xs-2">
             <input type="radio" value="" name="optradio1" id="opt1C">
-            <label for="opt1C" id="lbl1C" >Option 1</label>
+            <label for="opt1C" id="lbl1C" ></label>
           </div>
         </div>
 
@@ -116,7 +112,7 @@
           </div>
           <div class="radio col-sm-6 col-xs-2">
             <input type="radio" value="" name="optradio2" id="opt2A">
-            <label for="opt2A" id="lbl2A" >Option 1</label>
+            <label for="opt2A" id="lbl2A" ></label>
           </div>
         </div>
         <div class="row">
@@ -125,7 +121,7 @@
           </div>
           <div class="radio col-sm-6 col-xs-2">
             <input type="radio" value="" name="optradio2" id="opt2B">
-            <label for="opt2B" id="lbl2B" >Option 1</label>
+            <label for="opt2B" id="lbl2B" ></label>
           </div>
         </div>
         <div class="row">
@@ -134,7 +130,7 @@
           </div>
           <div class="radio col-sm-6 col-xs-2">
             <input type="radio" value="" name="optradio2" id="opt2C">
-            <label for="opt2C" id="lbl2C" >Option 1</label>
+            <label for="opt2C" id="lbl2C" ></label>
           </div>
         </div>
         <div class="form-group mt-3">
@@ -153,7 +149,7 @@
           </div>
           <div class="radio col-sm-6 col-xs-2">
             <input type="radio" value="" name="optradio3" id="opt3A">
-            <label for="opt3A" id="lbl3A" >Option 1</label>
+            <label for="opt3A" id="lbl3A" ></label>
           </div>
         </div>
         <div class="row">
@@ -162,7 +158,7 @@
           </div>
           <div class="radio col-sm-6 col-xs-2">
             <input type="radio" value="" name="optradio3" id="opt3B">
-            <label for="opt3B" id="lbl3B" >Option 1</label>
+            <label for="opt3B" id="lbl3B" ></label>
           </div>
         </div>
         <div class="row">
@@ -171,7 +167,7 @@
           </div>
           <div class="radio col-sm-6 col-xs-2">
             <input type="radio" value="" name="optradio3" id="opt3C">
-            <label for="opt3C" id="lbl3C" >Option 1</label>
+            <label for="opt3C" id="lbl3C" ></label>
           </div>
         </div>
         <div class="form-group mt-3">
@@ -190,7 +186,7 @@
           </div>
           <div class="radio col-sm-6 col-xs-2">
             <input type="radio" value="" name="optradio4" id="opt4A">
-            <label for="opt4A" id="lbl4A" >Option 1</label>
+            <label for="opt4A" id="lbl4A" ></label>
           </div>
         </div>
         <div class="row">
@@ -199,7 +195,7 @@
           </div>
           <div class="radio col-sm-6 col-xs-2">
             <input type="radio" value="" name="optradio4" id="opt4B">
-            <label for="opt4B" id="lbl4B" >Option 1</label>
+            <label for="opt4B" id="lbl4B" ></label>
           </div>
         </div>
       <div class="row">
@@ -208,7 +204,7 @@
         </div>
         <div class="radio col-sm-6 col-xs-2">
           <input type="radio" value="" name="optradio4" id="opt4C">
-          <label for="opt4C" id="lbl4C" >Option 1</label>
+          <label for="opt4C" id="lbl4C" ></label>
         </div>
       </div>
         <div class="form-group mt-3">
@@ -227,7 +223,7 @@
           </div>
           <div class="radio col-sm-6 col-xs-2">
             <input type="radio" value="" name="optradio5" id="opt5A">
-            <label for="opt5A" id="lbl5A" >Option 1</label>
+            <label for="opt5A" id="lbl5A" ></label>
           </div>
         </div>
         <div class="row">
@@ -236,7 +232,7 @@
           </div>
           <div class="radio col-sm-6 col-xs-2">
             <input type="radio" value="" name="optradio5" id="opt5B">
-            <label for="opt5B" id="lbl5B" >Option 1</label>
+            <label for="opt5B" id="lbl5B" ></label>
           </div>
         </div>
         <div class="row">
@@ -245,7 +241,7 @@
           </div>
           <div class="radio col-sm-6 col-xs-2">
             <input type="radio" value="" name="optradio5" id="opt5C">
-            <label for="opt5C" id="lbl5C" >Option 1</label>
+            <label for="opt5C" id="lbl5C" ></label>
           </div>
         </div>
 
@@ -269,8 +265,6 @@
         e.preventDefault();
         $("#first").hide();
         $("#second").show();
-        $("#progressBar").css("width","100%");
-        $("#progressBar").html("Create and Answer Questions");
 
 
 
@@ -290,7 +284,7 @@
       $("#next-1").click(function(e){
         e.preventDefault();
 
-        /*if($("#question1").val() == ''){
+        if($("#question1").val() == ''){
           swal("", "Please input a question first!", "error");
           return false;
         } else if($("#ans1A").val() == ''){
@@ -302,9 +296,13 @@
         } else if($("#ans1C").val() == ''){
           swal("", "Please input third choice first!", "error");
           return false;
+        // }else if($("optradio1").val() == ''){
+        //     swal("", "Please answer the question first!", "error");
+        //     return false;
+
         } else{
         //the code to next progress
-        }*/
+        }
         $("#second-1").hide();
         $("#second-2").show();
         $("#progressBar2").css("width", "40%");
@@ -466,7 +464,13 @@
       // Add any event handlers here...
       xhr.open('POST', 'uploadvideosfunction.php', true);
       xhr.send(formData);
-      swal("", "The videos and questions have been uploaded!", 'success');
+      xhr.onreadystatechange = function(){
+        if(xhr.readyState == 4 && xhr.status == 200){
+          swal("", "The videos and questions have been uploaded!", 'success');
+
+        }
+      }
+
 
 
       });
